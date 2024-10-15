@@ -1,0 +1,3 @@
+D:/TEST2/Code_Facultate/Anul2/Sem1/AF/Lab1/Ex1/cmake-build-debug/CMakeFiles/Ex1.dir
+D:/TEST2/Code_Facultate/Anul2/Sem1/AF/Lab1/Ex1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/TEST2/Code_Facultate/Anul2/Sem1/AF/Lab1/Ex1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,95 @@
+Vocabulary
+1.
+Join
+
+2.
+Arithmetic Operator
+
+3.
+Column
+
+4.
+Projection
+
+5.
+Null
+
+6.
+Alias
+
+7.
+Arithmetic Expresion
+
+8.
+Selection
+
+9.
+SELECT
+
+10.
+select clause
+
+11.
+from clause 
+
+12.
+Statement
+
+13.
+SQL Command
+
+14.
+clause
+
+
+Try it / Solve it
+
+1.
+Select Country_ID
+FROM Countries
+
+2.
+Select last_name as "Last Name", email as "Email Address"
+from d_clients
+
+3.
+
+SELECT last_name, ROUND(salary*1.05 +.50, 2) as "Salary"
+FROM f_staffs;
+
+4.
+c
+
+5.
+b
+
+6.
+Keywords:
+SELECT employee_id, last_name
+FROM employees;
+
+Statement:
+SELECT employee_id, last_name
+FROM employees
+
+Select Clause:
+ SELECT employee_id, last_name
+
+FROM Clause:
+FROM employees
+
+7.
+a. Selection
+b. Join
+c. Projection
+
+8.
+c
+
+9.
+c
+
+10.
+b.
+
+

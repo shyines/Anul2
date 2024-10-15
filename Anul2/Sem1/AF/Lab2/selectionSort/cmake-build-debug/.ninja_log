@@ -1,0 +1,9 @@
+# ninja log v5
+0	5739	7503280842766721	CMakeFiles/selectionSort.dir/main.cpp.obj	e7a0a76fb6dd6913
+5751	6249	7503280847854522	selectionSort.exe	a460c655acdc3b02
+4	3637	7503281211344478	CMakeFiles/selectionSort.dir/main.cpp.obj	e7a0a76fb6dd6913
+3638	3780	7503281212730767	selectionSort.exe	a460c655acdc3b02
+6	3952	7503281622460978	CMakeFiles/selectionSort.dir/main.cpp.obj	e7a0a76fb6dd6913
+3952	4095	7503281623848742	selectionSort.exe	a460c655acdc3b02
+5	3771	7503283031244674	CMakeFiles/selectionSort.dir/main.cpp.obj	e7a0a76fb6dd6913
+3771	3918	7503283032671263	selectionSort.exe	a460c655acdc3b02

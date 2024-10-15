@@ -1,0 +1,73 @@
+Vocabulary
+
+1.
+Not
+
+2.
+AND
+
+3.
+Rules of precedence
+
+4.
+Or
+
+Try it/Solve it
+
+1.
+One has and - each side must return TRUE
+the other has or - it requires either one of the sides
+to be true
+
+2.
+Select last_name
+from f_staffs
+where last_name like '%e%' and last_name like '%i%'
+
+LAST_NAME
+Miller 
+
+3.
+select first_name || ' ' || last_name as "Full name", Staff_type as "Staff type", salary
+from F_staffs
+where salary > 6.50 and staff_type != 'Order Taker';
+
+Full Name
+Sue Doe
+
+4.
+select *
+from employees
+where last_name like 'D%' and 
+last_name like '%a%' and last_name like '%e%';
+
+Full Name
+Curtis Davies
+Lex De Haan
+
+5.
+SELECT DISTINCT d_venues.loc_type
+FROM  d_events  JOIN d_venues   ON  d_events.venue_id = d_venues.id
+WHERE d_venues.loc_type != 'Private Home';
+
+LOC_TYPE
+Hotel
+
+6.
+c
+
+7.
+SELECT first_name  ||  ' '  || last_name  as "Full Name"
+FROM employees
+WHERE hire_date > '31-May-1998' 
+AND hire_date < '01-Jun-1999' 
+AND salary < 8000 
+AND last_name like '%en%';
+
+8.
+SELECT LOWER(email) ||  '@institutedomain.com'  as "Email Address"
+FROM employees
+WHERE  salary > 9000 
+AND (commission_pct = 0 OR commission_pct IS NULL)  
+AND hire_date >= '01-Jan-1996' 
+AND hire_date <= '31-Mar-1996';

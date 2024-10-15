@@ -1,0 +1,82 @@
+Vocabulary
+
+Asc
+Desc
+Sorting
+
+Try it/Solve it
+
+1.
+Select employee_id as "Number"
+from employees
+order by "Number"
+
+2.
+select Title, year
+from d_cds
+order by title, year asc;
+
+3.
+Select Id, Title as "Our Collection", Duration, Artist, Type_Code as "Type Code"
+from d_cds
+order by title desc;
+
+4.
+SELECT first_name,  last_name,  student_id ,  parking_number
+FROM students
+WHERE year = 1
+ORDER BY  last_name ,  first_name DESC;
+
+5.
+SELECT department_id , last_name, manager_id
+FROM employees
+WHERE employee_id<125
+ORDER BY  department_id DESC , last_name DESC;
+
+Extension Activities
+
+1.
+e
+
+2.
+c
+
+3.
+a, d
+
+4.
+a, b, c
+
+5.
+c
+
+6.
+d
+
+7.
+all
+
+8.
+a, c
+
+9.
+d
+
+10.none
+
+11.
+where last_name Like 'St%'
+
+12.
+above 2100, below 1900
+
+13.
+a. ERE department_id NOT IN (101,102,103)
+b. WHERE last_name = 'King'
+c. WHERE start_date   =   '05-May-1998'
+
+d. remove IS
+e. WHERE id  != 10
+
+14.
+410

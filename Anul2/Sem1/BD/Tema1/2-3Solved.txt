@@ -1,0 +1,59 @@
+Vocabulary
+
+1.
+Escape
+
+2.
+Is Null
+
+3.
+Between...and
+
+4.
+between...and
+
+5.
+like
+
+6.
+in
+
+Try it/Solve it
+
+1.
+Select first_name, last_name, salary
+from f_staffs
+where salary between 5.00 and 10.00
+
+2.
+Select Loc_Type, Comments
+from D_Venues
+where loc_type = 'Private Home'
+
+3.
+SELECT first_name, last_name
+FROM f_staffs
+WHERE salary >= 20.00 and salary <= 60.00;
+
+4.
+select title
+from d_cds
+where title like '_a%'
+
+5.
+select Last_name || ' ' || First_name as "Full Name"
+from d_partners
+where auth_expense_amt is Null;
+
+6.
+select last_name as "Possible Candidates"
+from employees
+where last_name like '%s';
+
+7.
+c
+
+8.
+Select *
+from d_songs
+where type_code in (77, 12, 1);

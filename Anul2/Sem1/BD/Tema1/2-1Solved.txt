@@ -1,0 +1,122 @@
+Vocabulary
+
+1.
+Distinct
+
+2.
+Concatenation
+
+3.
+Literal Values
+
+4.
+Describe
+
+Try it/Solve it
+
+1.
+Select last_name ||' lives on the '||address as "Customers"
+from F_Customers
+
+2.
+
+a - 
+SELECT first_name
+FROM f_staffs;
+
+b -
+SELECT first_name ||' '|| last_name AS "DJs on Demand Clients"
+FROM d_clients;
+
+c-
+SELECT DISTINCT quantity
+FROM f_order_lines;
+
+d-
+
+SELECT order_number
+FROM f_orders;
+
+3.
+Select '*** ' || first_name || ' *** ' || first_name ||' ***' as "Super Star"
+from f_staffs 
+
+4.
+
+d
+
+5.
+SELECT last_name as "Employee last name", salary as "Current Salary", salary +(salary * 5 / 100) as "Salart With 5% Raise"
+FROM f_staffs;
+
+6.
+
+Desc Employees
+
+Nullable:
+
+FIRST_NAME
+PHONE_NUMBER
+SALARY
+COMMISSION_PCT
+MANAGER_ID
+DEPARTMENT_ID
+BONUS
+
+Nullable means that the collumn can have the null value
+
+7.
+
+Select CD_NUMBER as "Inventory Item", 
+TITLE as "CD Title", 
+Producer as "Music Producer", 
+Year as "Year Purchased" 
+FROM D_CDS
+
+8.
+True
+
+9.
+True
+
+10.
+
+SELECT employee_id, last_name
+sal x 12 ANNUAL SALARY
+FROM employees;
+
+mistakes: 
+annual salary does not have ""
+'x' instead of '*'
+sal instead of salary
+alias mistake - needs "as"
+
+11.
+salary * 12
+
+12.
+b
+
+13.
+projection
+
+14.
+c
+
+15.
+b
+
+16.
+c
+
+17.
+c
+
+18.
+b
+
+19.
+a
+
+20.
+done

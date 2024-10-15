@@ -1,0 +1,60 @@
+Vocabulary
+1.
+Where
+
+2.
+Comparision Operators
+
+Try it/Solve it
+
+1.
+Select first_name, last_name, address
+from F_customers
+where id = 456
+
+2.
+select name, start_date, end_date
+from f_promotional_menus
+where give_away = 'ballpen and highlighter'
+
+3.
+
+4.
+SELECT producer, title
+FROM d_cds
+WHERE title = 'Carpe Diem';
+
+result: R & B Inc.
+
+5.
+Select title, year
+from d_cds
+where year < 2000
+
+6.
+All of the above
+
+7.
+SELECT studentno as "student number", fname as "first name", lname as "last name"
+FROM students
+WHERE sex = 'F';
+
+8.
+SELECT studentno as "Student Number"
+FROM students
+WHERE major = 'PE';
+
+9.
+SELECT *
+FROM students
+WHERE sex = 'M';
+
+10.
+SELECT title, year
+FROM d_cds
+WHERE year != 2000;
+
+11.
+SELECT *
+FROM f_staffs
+WHERE birthdate  <  '01-JAN-1980';
