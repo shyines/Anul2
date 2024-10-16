@@ -1,0 +1,106 @@
+Vocabulary
+
+1.
+Dual Table
+
+2.
+format
+
+3.
+INITCAP
+
+4.
+Character function
+
+5.
+Trim
+
+6.
+expression
+
+7.
+Single Row Functions
+
+8.
+UPPER
+
+9.
+input
+
+10.
+Concat
+
+11.
+ouput
+
+12.
+lower
+
+13.
+Lpad
+
+14.
+Substr
+
+15.
+Replace
+
+16.
+InStr
+
+17.
+Count
+
+18.
+Rpad
+
+Try it / Solve it
+1.
+SELECT CONCAT('Oracle', CONCAT(CONCAT(' ', 'Internet'), CONCAT(' ', 'Academy'))) AS "The Best Class"
+FROM DUAL;
+
+2.
+SELECT Substr('Oracle Internet Academy', 13, 3) AS "The Net"
+FROM DUAL;
+
+3.
+Select Length('Oracle Internet Academy')
+from dual
+
+23
+
+4.
+SELECT INSTR ('Oracle Internet Academy', 'I')
+FROM Dual
+
+5.
+SELECT REPLACE(RPAD(LPAD('Oracle Internet Academy', 27, '*'),31,'*'),' ', '****')  AS "Result"
+FROM DUAL;
+
+6.
+SELECT REPLACE(RPAD(LPAD('Oracle Internet Academy', 23,'*'),23,'*'),' ', '$$$') AS "Result"
+FROM DUAL;
+
+7.
+SELECT REPLACE('Oracle Internet Academy',' Internet ', ' 2013-2014 ') AS "The Best Class"
+FROM DUAL;
+
+8.
+SELECT order_date as "Order Date", LPAD( order_total, 9, '$') as total
+FROM f_orders;
+
+9.
+SELECT UPPER (First_Name || ' ' || Last_Name || ' ' || Address || ' ' || City || ', ' || State || ' ' || zip) AS "Address"
+FROM F_customers
+
+10.
+SELECT SUBSTR(First_Name, 1, 1) || Last_name AS "Name", Salary, Department_ID
+FROM Employees
+WHERE Department_ID = :enter_dept_id;
+
+11.
+SELECT department_id as "departmentid", department_name as "departmentname", location_id as "location id"
+FROM departments
+WHERE LOWER(department_name)  = LOWER(:the_department_of_your_choice);
+
+12.

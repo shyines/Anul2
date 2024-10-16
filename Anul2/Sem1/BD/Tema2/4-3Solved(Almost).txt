@@ -1,0 +1,41 @@
+Vocabulary
+
+1.
+Sysdate
+
+2.
+Add_Months
+
+3.
+Last_Day(Sysdate)
+
+4.
+Next_day
+
+5.
+Months_Between
+
+Try it / Solve it
+
+1.
+select round(months_between(sysdate, event_date)) as "Months passed"
+from d_events
+where name = 'Vigil wedding'
+
+2.
+select round(months_between(to_date('30-Sep-2024'), to_date('01-Jul-2024')) * 30.5, 0) as "Days - months of 30.5 days"
+from dual;
+
+select to_date('30-Sep-2024') - to_date('01-Jul-2024') as "Days"
+from dual
+
+3.
+select to_date('1-Jan-2025') - to_date('31-Dec-2024') as "Days"
+from dual
+
+4.
+
+
+5.
+select to_date('1-Jan-2025') - to_date('31-Dec-2024') as "Days between December 31 and January 1"
+from dual

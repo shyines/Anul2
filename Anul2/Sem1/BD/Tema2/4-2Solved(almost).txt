@@ -1,0 +1,50 @@
+Vocabulary
+
+1.
+Trunc
+
+2.
+Number Functions
+
+3.
+Mod
+
+4.
+Round
+
+Try it / Solve it
+1.
+select last_name as "Last Name", salary as "Salary", round(mod(salary, 1.55), 2) as "Salary Rounded", employee_id
+from employees
+where employee_id between 100 and 102
+
+2.
+SELECT last_name, salary, TRUNC(salary*1.0533,2) "Raised Salary"
+FROM employees
+WHERE department_id = 80;
+
+3.
+SELECT CASE WHEN MOD(38873 , 2) = 1 THEN 'odd' ELSE 'even' END as "Odd or Even?"
+FROM dual; 
+
+4.
+select round (845.553, 1), round (30695.348, 2), 
+round (30695.348, -2), trunc(2.3454, 1)
+from dual
+
+5.
+SELECT last_name, salary
+FROM employees
+WHERE MOD(salary, 3) = 0;
+
+6.
+select Mod(34, 8) as "Example"
+from dual
+
+7.
+select 0.004 * 1000000 as "Money not given as salary"
+from dual
+
+the total of money that the employees lost duw to truncating
+is 4000 of cents (1 month) and 48000 in one year.
+ 

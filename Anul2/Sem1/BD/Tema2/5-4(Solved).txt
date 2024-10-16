@@ -1,0 +1,47 @@
+Vocabulary
+
+1.
+DECODE
+
+2.
+conditional expression
+
+3.
+CASE
+
+Try it / Solve it
+
+1.
+SELECT title,
+CASE
+WHEN TO_NUMBER(REPLACE(NVL(duration,'0 min'), ' min', '')) = 2 THEN 'Shortest'
+WHEN TO_NUMBER(REPLACE(NVL(duration,'0 min'), ' min', '')) = 10 THEN 'Longest'
+ELSE NVL(duration,'0 min')
+END
+as "Play Times"
+
+FROM d_songs;
+
+2.
+SELECT NVL(TO_CHAR(department_id), 'none') department_id , last_name, NVL(salary,0) salary,
+CASE department_id
+WHEN 10 THEN 1.25*NVL(salary,0)
+WHEN 90 THEN 1.5*NVL(salary,0)
+WHEN 130 THEN 1.75*NVL(salary,0)
+ELSE NVL(salary,0)
+END
+as "New Salary"
+FROM employees;
+
+3.
+SELECT first_name, last_name, manager_id, commission_pct,
+
+CASE
+WHEN commission_pct IS NULL and manager_id IS NULL THEN 99999
+WHEN manager_id IS NULL THEN commission_pct
+ELSE manager_id
+END
+as "Review"
+
+FROM employees
+WHERE department_id in (80, 90);
