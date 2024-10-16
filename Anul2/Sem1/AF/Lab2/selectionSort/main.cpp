@@ -111,13 +111,13 @@ void demo() {
 
 
 
-void sortingAlgortihm (int (*sort[])(int arr[], int n)) {
+void sortingAlgortihm (int (*sort[])(int arr[], int n), int sorted) {
     int src[10000];
     int dest[10000];
 
     for(int i = 0 ;i < 5; i++) {
         for(int j = 100;j <= 10000; j += 100) {
-            FillRandomArray(src, j);
+            FillRandomArray(src, j, 10, 50000, false, sorted);
             for(int k = 0;k < 3; k++) {
                 CopyArray(dest, src, j);
                 sort[k](dest, j);
@@ -133,10 +133,18 @@ void sortingAlgortihm (int (*sort[])(int arr[], int n)) {
 
     profiler.divideValues("compBubbleSort", 5);
     profiler.divideValues("asgBubbleSort", 5);
+    profiler.createGroup("BubbleSort", "compBubbleSort", "asgBubbleSort");
+}
+
+void perf_all (int (*sort[])(int arr[], int n)) {
+    sortingAlgortihm(sort, UNSORTED);
+    profiler.reset("Best Case");
+    sortingAlgortihm(sort, ASCENDING);
+    profiler.reset("Worst Case");
+    sortingAlgortihm(sort, DESCENDING);
 
     profiler.showReport();
 }
-
 
 int main() {
     int (*fArr[3])(int arr[], int n) {
@@ -146,6 +154,6 @@ int main() {
     std::cout << "Demos direct sorting methods: " << std::endl;
     std::cout << std::endl;
     demo();
-    sortingAlgortihm(fArr);
+    perf_all(fArr);
     return 0;
 }
