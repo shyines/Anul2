@@ -1,4 +1,13 @@
 #include <iostream>
+///All that is here is Min Heap
+#include "Profiler.h"
+Profiler p;
+
+
+typedef struct _heap {
+    int arr[10000];
+    int size;
+}Heap;
 
 void swap(int *a, int *b) {
     int aux = *b;
@@ -36,7 +45,7 @@ void sink (int a[], int n, int index) {
     }
 }
 
-void buildHeap(int a[], int n) {
+void buildMinHeap(int a[], int n) {
     for(int i = n / 2;i >= 1; i++) {
         swim(a, n, i);
     }
@@ -51,15 +60,98 @@ void heapSort(int a[], int n) {
     }
     std::cout << a[1] << " ";
 }
+///End of min Heap
 
-void demo() {
-    int a[] = {6, 2, 4, 2, 1};
-    int n = sizeof(a) / sizeof(int);
-    buildHeap(a, n);
+
+
+int getRight(int index) {
+    return (2 * index) + 1;
+}
+
+int getLeft (int index) {
+    return 2 * index;
+}
+
+int getParrent(int index) {
+    return index/2;
+}
+
+void maxHeapify(Heap *h, int index) {
+    int largest = 0;
+    int l = getLeft(index);
+    int r = getRight(index);
+
+    if(l <= h->size && h->arr[l] > h->arr[index]) {
+        largest = l;
+    }
+    else
+        largest = index;
+
+    if(r <= h->size && h->arr[r] > h->arr[largest]) {
+        largest = r;
+    }
+
+    if(largest != index) {
+        swap(&h->arr[index], &h->arr[largest]);
+        maxHeapify(h, largest);
+    }
+}
+
+void buildHeapBottomUp(Heap *h) {
+    for(int i = h->size / 2; i >= 0; i--) {
+        maxHeapify(h, i);
+    }
+}
+
+void insertKey(Heap *h, int index, int key) {
+    if(key < h->arr[index]) {
+        std::cout << "new key is smaller than current key";
+    }
+
+    h->arr[index] = key;
+    int parent = getParrent(index);
+
+    while(index > 0 && h->arr[parent] < h->arr[index]) {
+        swap(&h->arr[index], &h->arr[parent]);
+        index = parent;
+    }
+}
+
+
+void buildHeapTopDown(Heap *h, int arr[], int n) {
     for(int i = 0;i < n; i++) {
-        std::cout << a[i] << " ";
+        h->size++;
+        h->arr[h->size] = INT_MIN;
+        insertKey(h, h->size, arr[i]);
+    }
+}
+
+void showArr(int arr[], int n) {
+    for(int i = 0;i < n; i++) {
+        std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
+}
+
+
+///demo function that is called from main to test out algorithms of building a heap
+void demo() {
+    Heap h;
+    int arr[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
+    int n = sizeof(arr) / sizeof(int);
+
+    h.size = 0;
+    buildHeapTopDown(&h, arr, n);
+    showArr(h.arr, h.size);
+
+    CopyArray(h.arr, arr, n);
+    h.size = n;
+    buildHeapBottomUp(&h);
+    showArr(h.arr, h.size);
+}
+
+void perfAll() {
+
 }
 
 

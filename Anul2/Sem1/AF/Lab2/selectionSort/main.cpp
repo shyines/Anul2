@@ -1,9 +1,6 @@
 #include <iostream>
 #include "Profiler.h"
 
-
-
-
 Profiler profiler;
 
 void swap(int *a, int *b) {
