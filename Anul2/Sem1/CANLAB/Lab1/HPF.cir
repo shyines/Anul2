@@ -1,11 +1,11 @@
 [aimspice]
 [description]
-128
+99
 Filtru trece sus (HIGH PASS FILTER)
 c1 in out 470n
 r1 out 0 10k
 !vin in 0 dc 5 sin(0 5 1k 0 0)
-vin in 0 dc 5 sin(0 5 1k 0 0)
+
 [tran]
 1e-9
 6e-3

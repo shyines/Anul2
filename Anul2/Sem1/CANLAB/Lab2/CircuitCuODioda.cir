@@ -1,0 +1,25 @@
+[aimspice]
+[description]
+102
+!Circuit Dioda
+
+D1 1 2 DiodaS
+.Model DiodaS D tt = 1e-9
+vin 1 0 dc 5 sin(0 5 1k 0 0)
+rl 2 0 100
+
+[tran]
+1e9
+6e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -6 6
+2
+v(1)
+v(2)
+[end]

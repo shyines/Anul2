@@ -1,0 +1,64 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Oct 18 13:26:26 2024
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab2\CircuitCuODioda.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  !Circuit Dioda
+     2:  
+     3:  D1 1 2 DiodaS
+     4:  .Model DiodaS D tt = 1e-9
+     5:  vin 1 0 dc 5 sin(0 5 1k 0 0)
+     6:  rl 2 0 100
+     7:  
+     8:  .tran 1e9 6e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e9
+	Final time .......... : 6e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 337
+	Number of iterations for transient analysis....: 330
+	Total number of timepoints.....................: 94
+	Number of timepoints accepted..................: 75
+	Number of timepoints rejected..................: 19
+	Total analysis time (sec)......................: 0.028
+	Transient analysis time (sec)..................: 0.024
+	Time spent in device loading (sec).............: 0.004
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: !Circuit Dioda
+
+
