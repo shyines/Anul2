@@ -3,9 +3,6 @@
 #include "Profiler.h"
 Profiler p;
 
-
-
-
 typedef struct _heap {
     int arr[10000];
     int size;
@@ -17,6 +14,104 @@ void swap(int *a, int *b) {
     *a = aux;
 }
 
+///Bubble Sort written with the help of Geeks for Geeks website
+
+void bubbleSortRec(int arr[], int n, Operation *bbSortRecCmp, Operation *bbSortRecAsg) {
+    // Base case
+    if (n == 1)
+        return;
+
+    int count = 0;
+    // One pass of bubble sort. After
+    // this pass, the largest element
+    // is moved (or bubbled) to end.
+    for (int i = 0; i < n-1; i++) {
+        bbSortRecCmp->count();
+        if (arr[i] > arr[i + 1]){
+            bbSortRecAsg->count(3);
+            swap(&arr[i], &arr[i + 1]);
+            count++;
+        }
+    }
+
+    // Check if any recursion happens or not
+    // If any recursion is not happen then return
+    if (count==0)
+        return;
+    // Largest element is fixed,
+    // recur for remaining array
+    bubbleSortRec(arr, n-1, bbSortRecCmp, bbSortRecAsg);
+}
+
+void bubbleSortRecNoOpp(int arr[], int n/*, Operation *bbSortRecCmp, Operation *bbSortRecAsg*/) {
+    // Base case
+    if (n == 1)
+        return;
+
+    int count = 0;
+    // One pass of bubble sort. After
+    // this pass, the largest element
+    // is moved (or bubbled) to end.
+    for (int i = 0; i < n-1; i++) {
+        //bbSortRecCmp->count();
+        if (arr[i] > arr[i + 1]){
+            //bbSortRecAsg->count(3);
+            swap(&arr[i], &arr[i + 1]);
+            count++;
+        }
+    }
+
+    // Check if any recursion happens or not
+    // If any recursion is not happen then return
+    if (count==0)
+        return;
+    // Largest element is fixed,
+    // recur for remaining array
+    bubbleSortRecNoOpp(arr, n-1/*, bbSortRecCmp, bbSortRecAsg*/);
+}
+
+
+int bubbleSort(int a[], int n) {
+    Operation compBubbleSort = p.createOperation("compBubbleSort", n);
+    Operation asgBubbleSort = p.createOperation("asgBubbleSort", n);
+    bool sorted = false;
+    int i = 0;
+    do {
+        sorted = true;
+        for(int j = 0;j < n - i - 1; j++) {
+            compBubbleSort.count();
+            if(a[j] > a[j + 1]) {
+                asgBubbleSort.count(3);
+                swap(&a[j], &a[j + 1]);
+                sorted = false;
+            }
+        }
+        i++;
+    }while (!sorted);
+
+    return 0;
+}
+
+int bubbleSortNoOpp(int a[], int n) {
+    //Operation compBubbleSort = p.createOperation("compBubbleSort", n);
+    //Operation asgBubbleSort = p.createOperation("asgBubbleSort", n);
+    bool sorted = false;
+    int i = 0;
+    do {
+        sorted = true;
+        for(int j = 0;j < n - i - 1; j++) {
+            //compBubbleSort.count();
+            if(a[j] > a[j + 1]) {
+                //asgBubbleSort.count(3);
+                swap(&a[j], &a[j + 1]);
+                sorted = false;
+            }
+        }
+        i++;
+    }while (!sorted);
+
+    return 0;
+}
 
 void swim (int a[], int n, int index) {
     while(index > 1 && a[index] < a[index/2]) {
@@ -164,6 +259,27 @@ void demo() {
 
 }
 
+void demoBbSort() {
+    int arr[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
+    int n = sizeof(arr) / sizeof(int);
+    int arr2[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
+    Operation bbSortRecAsg = p.createOperation("bbSortRecAsg", n);
+    Operation bbSortRecCmp = p.createOperation("bbSortRecCmp", n);
+
+
+    std::cout << "before bbsort alg (not recursive)"<< std::endl;
+    showArr(arr, n);
+    bubbleSort(arr, n);
+    std::cout << "sorted: " << std::endl;
+    showArr(arr, n);
+
+    std::cout << "before bbsort alg (recursive)" << std::endl;
+    showArr(arr2, n);
+    bubbleSortRec(arr2, n, &bbSortRecCmp, &bbSortRecAsg);
+    std::cout << "sorted: " << std::endl;
+    showArr(arr2, n);
+}
+
 
 
 void perf() {
@@ -186,15 +302,67 @@ void perf() {
 
     p.divideValues("bottomUpAsg", 5);
     p.divideValues("bottomUpComp", 5);
+}
+
+void perf2 () {
+    int src[10000];
+    int dest[10000];
+
+    for(int i = 0;i < 5; i++) {
+        for(int j = 100;j <= 10000; j += 100) {
+            FillRandomArray(src, j);
+            CopyArray(dest, src, j);
+            Operation bbSortRecAsg = p.createOperation("bbSortRecAsg", j);
+            Operation bbSortRecCmp = p.createOperation("bbSortRecCmp", j);
+            bubbleSort(src, j);
+            bubbleSortRec(dest, j, &bbSortRecCmp, &bbSortRecAsg);
+        }
+    }
+
+    p.divideValues("compBubbleSort", 5);
+    p.divideValues("asgBubbleSort", 5);
+    p.divideValues("bbSortRecAsg", 5);
+    p.divideValues("bbSortRecCmp", 5);
+    p.createGroup("BubbleSort", "compBubbleSort", "asgBubbleSort", "bbSortRecAsg","bbSortRecCmp");
+}
+
+void perfTime() {
+    int src[10000];
+    int dest[10000];
+
+    for(int j = 100;j <= 10000; j += 100) {
+        p.startTimer("BubbleSortRecTimer", j);
+        for(int test=0; test<100; ++test) {
+            FillRandomArray(src, j);
+            bubbleSortRecNoOpp(src, j);
+        }
+        p.stopTimer("BubbleSortRecTimer", j);
+
+        p.startTimer("BubbleSortTimer", j);
+        for(int test=0; test<100; ++test) {
+            FillRandomArray(src, j);
+            bubbleSortNoOpp(src, j);
+        }
+        p.stopTimer("BubbleSortTimer", j);
+    }
+}
+
+void perfAll() {
+    perf();
+    p.reset("BubbleSort VS BubbleSortRec");
+    perf2();
+    p.reset("BubbleSort VS BubbleSortRec (TIME)");
+    perfTime();
 
     p.showReport();
 }
-
-
 int main() {
-    ///demo
+
+    ///demos
     demo();
-    ///perf
-    perf();
+    demoBbSort();
+
+    //Perf
+    perfAll();
     return 0;
 }
