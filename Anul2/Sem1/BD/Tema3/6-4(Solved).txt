@@ -1,0 +1,61 @@
+Vocabulary
+1.
+Self-Join
+
+2.
+hierarchical query
+
+3.
+level
+
+4.
+start with
+
+5.
+connect by
+
+Try it / Solve it
+
+1.
+select emp.last_name "Employee", emp.employee_id "Emp#", 
+mng.last_name "Manager", mng.employee_id "Mgr#"
+from employees emp join employees mng 
+on (emp.employee_id = mng.employee_id)
+
+2.
+select emp.last_name "Employee", 
+emp.employee_id "Emp#", 
+mng.last_name "Manager", 
+mng.employee_id "Mgr#"
+from employees emp left outer join employees mng 
+on (emp.employee_id = mng.employee_id)
+order by emp.last_name asc
+
+3.
+SELECT emp.last_name "Employee",  emp.hire_date "Emp Hired",   mgr.last_name "Manager", mgr.hire_date "Mgr Hired"
+FROM  employees emp LEFT OUTER JOIN  employees  mgr  ON emp.manager_id  = mgr.employee_Id
+WHERE emp.hire_date < mgr.hire_date
+ORDER BY  "Employee";
+
+4.
+SELECT last_name, salary, department_id
+FROM employees
+START WITH first_name = 'Lex'  AND last_name = 'De Haan'
+CONNECT BY PRIOR employee_id = manager_id;
+
+5.
+
+
+6.
+SELECT LPAD(last_name, LENGTH(last_name)+(LEVEL - 1)*2,'-')
+AS "Org Chart"
+FROM employees
+START WITH last_name = ( SELECT last_name from employees WHERE manager_id IS NULL)
+CONNECT BY PRIOR employee_id = manager_id
+
+7.
+SELECT LPAD(last_name, LENGTH(last_name) + (LEVEL-1)*2, '-') "organization chart "
+FROM employees
+START WITH last_name = ( SELECT last_name from employees WHERE manager_id IS NULL)
+CONNECT BY PRIOR employee_id = manager_id AND last_name != 'De Haan';
+

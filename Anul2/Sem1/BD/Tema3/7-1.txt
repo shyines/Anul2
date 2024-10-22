@@ -1,0 +1,72 @@
+Vocabulary
+
+1.
+Cartesian Product
+
+2.
+Equijoin
+
+3.
+proprietary join
+
+4.
+alias
+
+5.
+join conditions
+
+Try it / Solve it
+
+1.
+select p.event_id, p.song_id, p.comments, t.song_id, t.cd_number, t.track
+from d_play_list_items p, d_track_listings t
+
+2.
+select p.event_id, p.song_id, p.comments, t.song_id, t.cd_number, t.track
+from d_play_list_items p, d_track_listings t
+where p.song_id = t.song_id
+
+3.
+select d_types.code, d_types.description, d_songs.id, d_songs.Title, d_songs.artist
+from d_types, d_songs
+where d_types.code = d_songs.type_code
+
+4.
+select d_types.code, d_types.description, d_songs.id, d_songs.Title, d_songs.artist
+from d_types, d_songs
+where d_types.code = d_songs.type_code and d_songs.id in (47, 48)
+
+5.
+SELECT d_clients.email AS "d_clients - email" , 
+d_clients.phone AS "d_clients - phone" , 
+d_clients.last_name AS "d_clients - last_name" , 
+d_clients.first_name AS "d_clients - first_name"  , 
+d_clients.client_number AS "d_clients - client_number"  , 
+d_events.id AS "d_events - id", 
+d_events.name AS "d_events - name", 
+d_events.event_date AS "d_events - event_date", 
+d_events.description AS "d_events - description", 
+d_events.cost AS "d_events - cost", 
+d_events.venue_id AS "d_events - venue_id", 
+d_events.package_code AS "d_events - package_code", 
+d_events.theme_code AS "d_events - theme_code", 
+d_events.client_number AS "d_events - client_number", 
+d_job_assignments.partner_id AS "d_job_assignments - partner_id", d_job_assignments.event_id AS "d_job_assignments - event_id", d_job_assignments.job_date AS "d_job_assignments - job_date", d_job_assignments.status AS "d_job_assignments - status"
+FROM d_clients, d_events, d_job_assignments
+WHERE d_clients.client_number = d_events.client_number AND d_events.id =  d_job_assignments.event_id;
+
+6.
+SELECT d_track_listings.song_id "song id in tracklist", d_cds.title "title in cds"
+FROM d_track_listings, d_cds
+WHERE d_track_listings.cd_number = d_cds.cd_number;
+
+7.
+False
+True
+True
+False
+True
+False
+True
+
+8.

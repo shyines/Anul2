@@ -1,0 +1,40 @@
+Vocabulary
+1.
+On
+
+2.
+Using
+
+Try it / Solve it
+
+1.
+SELECT department_id,department_name, location_id, city
+FROM departments JOIN locations USING (location_id)
+WHERE location_id = 1400;
+
+2.
+SELECT song_id, cd_number, title, comments
+from d_track_listings join d_cds using(cd_number) 
+join d_play_list_items using(song_id)
+
+3.
+SELECT city, department_name, location_id, department_id
+FROM departments JOIN locations USING (location_id)
+WHERE department_id in (10, 20 , 30) AND city = 'Seattle';
+
+4.
+SELECT country_name, region_id, region_name
+FROM countries  JOIN regions USING(region_id)
+WHERE region_name = 'Americas';
+
+5.
+SELECT first_name || ' ' || last_name as "Name", hire_date, job_id, job_title, max_salary 
+FROM employees  JOIN jobs USING(job_id)
+WHERE max_salary > 12000;
+
+6.
+SELECT  job_title,  first_name,  last_name, LOWER(email) || 'somecomname.sometld' as email
+FROM employees JOIN jobs USING(job_id)
+WHERE  job_title = 'Stock Clerk';
+
+7.

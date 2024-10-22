@@ -1,0 +1,19 @@
+Vocabulary
+
+1. Natural Join
+2. Cross Join
+
+Try it / Solve it
+
+1.
+SELECT last_name, first_name, department_name
+FROM employees CROSS JOIN departments;
+
+2.
+Select department_id, department_name, location_id, city
+from departments Natural Join locations
+
+3.
+Select department_id, department_name, location_id, city
+from departments Natural Join locations
+where department_id in (20, 50);

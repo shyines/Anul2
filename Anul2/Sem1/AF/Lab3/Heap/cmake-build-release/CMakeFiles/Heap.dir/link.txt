@@ -1,0 +1,3 @@
+"D:\Apps\Clion\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Heap.dir/objects.a
+"D:\Apps\Clion\CLion 2024.1.4\bin\mingw\bin\ar.exe" qc CMakeFiles\Heap.dir/objects.a @CMakeFiles\Heap.dir\objects1.rsp
+"D:\Apps\Clion\CLion 2024.1.4\bin\mingw\bin\g++.exe" -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\Heap.dir/objects.a -Wl,--no-whole-archive -o Heap.exe -Wl,--out-implib,libHeap.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Heap.dir\linkLibs.rsp
