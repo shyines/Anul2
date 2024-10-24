@@ -43,7 +43,7 @@ void bubbleSortRec(int arr[], int n, Operation *bbSortRecCmp, Operation *bbSortR
     bubbleSortRec(arr, n-1, bbSortRecCmp, bbSortRecAsg);
 }
 
-void bubbleSortRecNoOpp(int arr[], int n/*, Operation *bbSortRecCmp, Operation *bbSortRecAsg*/) {
+void bubbleSortRecNoOpp(int arr[], int n) {
     // Base case
     if (n == 1)
         return;
@@ -53,9 +53,7 @@ void bubbleSortRecNoOpp(int arr[], int n/*, Operation *bbSortRecCmp, Operation *
     // this pass, the largest element
     // is moved (or bubbled) to end.
     for (int i = 0; i < n-1; i++) {
-        //bbSortRecCmp->count();
         if (arr[i] > arr[i + 1]){
-            //bbSortRecAsg->count(3);
             swap(&arr[i], &arr[i + 1]);
             count++;
         }
@@ -67,7 +65,7 @@ void bubbleSortRecNoOpp(int arr[], int n/*, Operation *bbSortRecCmp, Operation *
         return;
     // Largest element is fixed,
     // recur for remaining array
-    bubbleSortRecNoOpp(arr, n-1/*, bbSortRecCmp, bbSortRecAsg*/);
+    bubbleSortRecNoOpp(arr, n-1);
 }
 
 
@@ -180,12 +178,15 @@ void maxHeapify(Heap *h, int index, Operation *asg, Operation *comp) {
 
     if(l <= h->size && h->arr[l] > h->arr[index]) {
         largest = l;
+        asg->count();
     }
-    else
+    else {
         largest = index;
-
+        asg->count();
+    }
     if(r <= h->size && h->arr[r] > h->arr[largest]) {
         largest = r;
+        asg->count();
     }
     comp->count(2);
 
@@ -193,6 +194,27 @@ void maxHeapify(Heap *h, int index, Operation *asg, Operation *comp) {
         asg->count(3);
         swap(&h->arr[index], &h->arr[largest]);
         maxHeapify(h, largest, asg, comp);
+    }
+}
+
+void maxHeapifyNoOpp(Heap *h, int index) {
+    int largest = 0;
+    int l = getLeft(index);
+    int r = getRight(index);
+
+    if(l <= h->size && h->arr[l] > h->arr[index]) {
+        largest = l;
+    }
+    else {
+        largest = index;
+    }
+    if(r <= h->size && h->arr[r] > h->arr[largest]) {
+        largest = r;
+    }
+
+    if(largest != index) {
+        swap(&h->arr[index], &h->arr[largest]);
+        maxHeapifyNoOpp(h, largest);
     }
 }
 
@@ -213,9 +235,9 @@ void insertKey(Heap *h, int index, int key, Operation *asg, Operation *comp) {
     h->arr[index] = key;
     int parent = getParent(index);
 
+    comp->count(2);
     while(index > 0 && h->arr[parent] < h->arr[index]) {
-        comp->count();
-        asg->count(3);
+        asg->count(5);
         swap(&h->arr[index], &h->arr[parent]);
         index = parent;
         parent = getParent(index);  // recalculate parent after swap
@@ -240,6 +262,17 @@ void showArr(int arr[], int n) {
     std::cout << std::endl;
 }
 
+void heapSortMax(Heap *h) {
+    int n = h->size;
+    h->size--;
+    buildHeapBottomUp(h);
+    for(int i = n - 1;i >= 1; i--) {
+        swap(&h->arr[0], &h->arr[i]);
+        h->size--;
+        maxHeapifyNoOpp(h, 0);
+        showArr(h->arr, n);
+    }
+}
 
 ///demo function that is called from main to test out algorithms of building a heap
 void demo() {
@@ -256,38 +289,39 @@ void demo() {
     buildHeapTopDown(&h, arr, n);
     showArr(h.arr, h.size);
 
-
+    CopyArray(h.arr, arr, n);
+    h.size = n;
+    heapSortMax(&h);
+    h.size = n;
+    showArr(h.arr, h.size);
 }
 
 void demoBbSort() {
     int arr[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
     int n = sizeof(arr) / sizeof(int);
     int arr2[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
-    Operation bbSortRecAsg = p.createOperation("bbSortRecAsg", n);
-    Operation bbSortRecCmp = p.createOperation("bbSortRecCmp", n);
 
 
     std::cout << "before bbsort alg (not recursive)"<< std::endl;
     showArr(arr, n);
-    bubbleSort(arr, n);
+    bubbleSortNoOpp(arr, n);
     std::cout << "sorted: " << std::endl;
     showArr(arr, n);
 
     std::cout << "before bbsort alg (recursive)" << std::endl;
     showArr(arr2, n);
-    bubbleSortRec(arr2, n, &bbSortRecCmp, &bbSortRecAsg);
+    bubbleSortRecNoOpp(arr2, n);
     std::cout << "sorted: " << std::endl;
     showArr(arr2, n);
 }
 
 
-
-void perf() {
+void perf(int sorted) {
     int src[10000];
     Heap h;
     for(int i = 0;i < 5; i++) {
         for(int j = 100;j <= 10000; j += 100) {
-            FillRandomArray(src, j);
+            FillRandomArray(src, j, 10, 50000, false, sorted);
             CopyArray(h.arr, src, j);
             h.size = j;
             buildHeapBottomUp(&h);
@@ -328,18 +362,17 @@ void perf2 () {
 
 void perfTime() {
     int src[10000];
-    int dest[10000];
 
     for(int j = 100;j <= 10000; j += 100) {
         p.startTimer("BubbleSortRecTimer", j);
-        for(int test=0; test<100; ++test) {
+        for(int test=0; test<1000; ++test) {
             FillRandomArray(src, j);
             bubbleSortRecNoOpp(src, j);
         }
         p.stopTimer("BubbleSortRecTimer", j);
 
         p.startTimer("BubbleSortTimer", j);
-        for(int test=0; test<100; ++test) {
+        for(int test=0; test<1000; ++test) {
             FillRandomArray(src, j);
             bubbleSortNoOpp(src, j);
         }
@@ -348,7 +381,11 @@ void perfTime() {
 }
 
 void perfAll() {
-    perf();
+    perf(UNSORTED);
+    p.reset("Worst Case");
+    perf(ASCENDING);
+    p.reset("Best Case");
+    perf(DESCENDING);
     p.reset("BubbleSort VS BubbleSortRec");
     perf2();
     p.reset("BubbleSort VS BubbleSortRec (TIME)");
@@ -360,9 +397,9 @@ int main() {
 
     ///demos
     demo();
-    demoBbSort();
+    //demoBbSort();
 
     //Perf
-    perfAll();
+    //perfAll();
     return 0;
 }
