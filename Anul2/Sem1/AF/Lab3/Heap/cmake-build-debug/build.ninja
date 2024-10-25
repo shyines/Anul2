@@ -57,6 +57,14 @@ build CMakeFiles/Heap.dir/main.cpp.obj: CXX_COMPILER__Heap_unscanned_Debug D$:/T
   TARGET_COMPILE_PDB = CMakeFiles\Heap.dir\
   TARGET_PDB = Heap.pdb
 
+build CMakeFiles/Heap.dir/Heap.cpp.obj: CXX_COMPILER__Heap_unscanned_Debug D$:/TEST2/Anul2/Anul2/Sem1/AF/Lab3/Heap/Heap.cpp || cmake_object_order_depends_target_Heap
+  DEP_FILE = CMakeFiles\Heap.dir\Heap.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Heap.dir
+  OBJECT_FILE_DIR = CMakeFiles\Heap.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Heap.dir\
+  TARGET_PDB = Heap.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Heap
@@ -65,7 +73,7 @@ build CMakeFiles/Heap.dir/main.cpp.obj: CXX_COMPILER__Heap_unscanned_Debug D$:/T
 #############################################
 # Link the executable Heap.exe
 
-build Heap.exe: CXX_EXECUTABLE_LINKER__Heap_Debug CMakeFiles/Heap.dir/main.cpp.obj
+build Heap.exe: CXX_EXECUTABLE_LINKER__Heap_Debug CMakeFiles/Heap.dir/main.cpp.obj CMakeFiles/Heap.dir/Heap.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Heap.dir

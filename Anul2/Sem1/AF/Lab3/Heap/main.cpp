@@ -195,6 +195,7 @@ void maxHeapify(Heap *h, int index, Operation *asg, Operation *comp) {
         swap(&h->arr[index], &h->arr[largest]);
         maxHeapify(h, largest, asg, comp);
     }
+    comp->count();
 }
 
 void maxHeapifyNoOpp(Heap *h, int index) {
@@ -363,16 +364,16 @@ void perf2 () {
 void perfTime() {
     int src[10000];
 
-    for(int j = 100;j <= 10000; j += 100) {
+    for(int j = 100;j <= 10000; j += 500) {
         p.startTimer("BubbleSortRecTimer", j);
-        for(int test=0; test<1000; ++test) {
+        for(int test=0; test<100; ++test) {
             FillRandomArray(src, j);
             bubbleSortRecNoOpp(src, j);
         }
         p.stopTimer("BubbleSortRecTimer", j);
 
         p.startTimer("BubbleSortTimer", j);
-        for(int test=0; test<1000; ++test) {
+        for(int test=0; test<100; ++test) {
             FillRandomArray(src, j);
             bubbleSortNoOpp(src, j);
         }
@@ -397,9 +398,9 @@ int main() {
 
     ///demos
     demo();
-    //demoBbSort();
+    demoBbSort();
 
-    //Perf
-    //perfAll();
+    ///Perf
+    perfAll();
     return 0;
 }
