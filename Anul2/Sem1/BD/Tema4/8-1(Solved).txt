@@ -1,0 +1,58 @@
+Vocabulary
+
+1.
+AVG
+
+2.
+Count
+
+3.
+Group functions
+
+4.
+Min
+
+5.
+Variance
+
+6.
+Sum
+
+7.
+MAX
+
+8.
+Aggregate
+
+Try it / Solve it
+
+1.SELECT  AVG(salary) || ' is Average Salary of ' || COUNT(salary) || ' employees. This table has primary key employee_id which won''t be null. So, ' || (COUNT(employee_id) - COUNT(salary)) || ' rows are skipped in  Average Salary calculation.' "Example"
+FROM EMPLOYEES;
+
+2.
+Select round(avg(cost), 2) as "Avg cost of events" 
+from d_events;
+
+3.
+select avg(salary) 
+from f_Staffs
+where manager_id = 19;
+
+4.
+select to_char(round(avg(salary), 2), '$999999.99') as "Avg Salary"
+from f_Staffs
+where manager_id = 19;
+
+5.
+SELECT MIN(salary) "lowest salary", MAX(hire_date) "most recent hire date", MIN(last_name) "top last name", MAX(last_name) "bottom last name"
+FROM employees
+WHERE department_id in (50, 60);
+
+6.
+one
+
+7.
+SELECT AVG(NVL(salary, hourly_rate* hrs_worked_in_yr  ))
+This way the null fields beings ignored will also be counted in.
+
+8.

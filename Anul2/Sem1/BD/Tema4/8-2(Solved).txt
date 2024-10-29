@@ -1,0 +1,28 @@
+Vocabulary
+
+1.
+
+
+
+
+
+Try it / Solve it
+
+select count(id)
+from d_songs
+
+2.
+SELECT COUNT(DISTINCT  loc_type)
+FROM d_venues;
+
+3.
+SELECT COUNT(song_id) AS "song with possible duplication", COUNT(distinct cd_number)  "cd no. distinct"
+FROM d_track_listings;
+
+4.
+SELECT COUNT(email) "count with email"
+FROM d_clients;
+
+5.
+SELECT (COUNT(*) - COUNT(auth_expense_amt)) "Free from limit count"
+FROM d_partners;
