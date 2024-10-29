@@ -1,6 +1,0 @@
-# ninja log v5
-1	397	7515465855121817	CMakeFiles/Heap.dir/Heap.cpp.obj	4fcbe9cbd17c1b50
-8	8728	7515465938557135	CMakeFiles/Heap.dir/main.cpp.obj	b95a59cd65ed97ac
-8734	8932	7515465940551357	Heap.exe	2b4afbc8cf7eed33
-6	9198	7515466197822638	CMakeFiles/Heap.dir/main.cpp.obj	b95a59cd65ed97ac
-9198	9374	7515466199528078	Heap.exe	2b4afbc8cf7eed33

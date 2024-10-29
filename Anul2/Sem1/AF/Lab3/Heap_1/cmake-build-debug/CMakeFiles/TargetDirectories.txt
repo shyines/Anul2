@@ -1,0 +1,3 @@
+D:/Apps/Docs/Facultate/Anul2/Anul2/Sem1/AF/Lab3/Heap_1/cmake-build-debug/CMakeFiles/Heap_1.dir
+D:/Apps/Docs/Facultate/Anul2/Anul2/Sem1/AF/Lab3/Heap_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Docs/Facultate/Anul2/Anul2/Sem1/AF/Lab3/Heap_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

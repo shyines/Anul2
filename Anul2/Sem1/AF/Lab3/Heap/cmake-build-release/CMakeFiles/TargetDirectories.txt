@@ -1,3 +1,0 @@
-D:/TEST2/Anul2/Anul2/Sem1/AF/Lab3/Heap/cmake-build-release/CMakeFiles/Heap.dir
-D:/TEST2/Anul2/Anul2/Sem1/AF/Lab3/Heap/cmake-build-release/CMakeFiles/edit_cache.dir
-D:/TEST2/Anul2/Anul2/Sem1/AF/Lab3/Heap/cmake-build-release/CMakeFiles/rebuild_cache.dir
