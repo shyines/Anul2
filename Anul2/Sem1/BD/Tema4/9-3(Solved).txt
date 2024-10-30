@@ -1,0 +1,68 @@
+Vocabulary
+
+1.
+Union
+
+2.
+To_Charr(Null)
+To_Date(Null)
+To_Number(Null)
+
+3.
+union all
+
+4.
+set operators
+
+5.
+minus
+
+6.
+intersect
+
+Try it / Solve it
+
+1.
+UNION
+UNION ALL
+MINUS
+INTERSECT
+
+2.
+SELECT employee_id, job_id, hire_date, department_id
+FROM employees
+UNION
+SELECT employee_id, job_id,  start_date,  department_id
+FROM job_history
+ORDER BY employee_id, hire_date;
+
+3.
+SELECT employee_id, job_id, hire_date, department_id
+FROM employees
+UNION ALL
+SELECT employee_id, job_id,  start_date,  department_id
+FROM job_history
+ORDER BY employee_id, hire_date;
+
+4.
+SELECT DISTINCT employee_id
+FROM employees
+MINUS
+SELECT DISTINCT employee_id
+FROM job_history;
+
+5.
+SELECT DISTINCT employee_id
+FROM employees
+INTERSECT
+SELECT DISTINCT employee_id
+FROM job_history;
+
+6.
+SELECT employee_id, job_id, NVL(salary, 0)
+FROM employees
+UNION
+SELECT employee_id, job_id, 0
+FROM job_history
+ORDER BY employee_id;
+
