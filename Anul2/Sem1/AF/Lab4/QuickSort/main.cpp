@@ -22,13 +22,17 @@ void swap (int *a, int *b) {
 }
 
 
-int partition (int a[], int left, int right, int pivot) {
+int partition (int a[], int left, int right, int pivot, Operation* asg, Operation* cmp) {
     swap (&a[right], &a[pivot]);
+    asg->count(3);
     int j = left - 1;
     for(int i = left; i <= right; i++) {
+        cmp->count();
+        cmp->count();
         if(a[i] <= a[right]) {
             j++;
             swap(&a[i], &a[j]);
+            asg->count(3);
         }
     }
 
@@ -36,14 +40,16 @@ int partition (int a[], int left, int right, int pivot) {
 }
 
 
-void quickSort (int a[], int left, int right) {
+void quickSort (int a[], int left, int right, Operation *asg, Operation *cmp) {
     if(right <= left) {
         return;
     }
-    int k = partition(a, left, right, right);
+    cmp->count();
+    asg->count();
+    int k = partition(a, left, right, right, asg, cmp);
 
-    quickSort(a, left, k - 1);
-    quickSort(a, k + 1, right);
+    quickSort(a, left, k - 1, asg, cmp);
+    quickSort(a, k + 1, right, asg, cmp);
 }
 
 int getRight(int index) {
@@ -100,7 +106,10 @@ void demoQuickSort () {
     std::cout << "unsorted array" << std::endl;
     showArr(a, n);
 
-    quickSort(a, 0, n - 1);
+    Operation asg = p.createOperation("asgDemo1", n);
+    Operation cmp = p.createOperation("cmpDemo1", n);
+
+    quickSort(a, 0, n - 1, &asg, &cmp);
 
     std::cout << "sorted array" << std::endl;
     showArr(a, n);
@@ -117,11 +126,156 @@ void heapSortMax(Heap *h) {
         swap(&h->arr[0], &h->arr[i]);
         h->size--;
         maxHeapify(h, 0, &heapSortAsg, &heapSortCmp);
-        showArr(h->arr, n);
     }
+}
+
+void demoHeapSort() {
+    Heap h;
+    int arr[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 ,7};
+    int n = sizeof(arr) / sizeof(int);
+
+    std::cout << "unsorted array" << std::endl;
+    showArr(arr, n);
+
+    CopyArray(h.arr, arr, n);
+    h.size = n;
+    heapSortMax(&h);
+    h.size = n;
+
+    std::cout << "sorted array" << std::endl;
+    showArr(h.arr, h.size);
+}
+
+void quickSortPerfect(int sorted) {
+    int arr[10000];
+
+    for(int i = 0;i < 5; i++) {
+        for(int j = 1000;j <= 10000; j += 100) {
+            Operation quickSortAsg = p.createOperation("quickSortAsg", j);
+            Operation quickSortCmp = p.createOperation("quickSortCmp", j);
+            FillRandomArray(arr, j, 10, 50000, false, sorted);
+            quickSort(arr, 0, j - 1, &quickSortAsg, &quickSortCmp);
+        }
+    }
+    p.divideValues("quickSortAsg", 5);
+    p.divideValues("quickSortCmp", 5);
+
+}
+
+void quickSortVsHeapSort(int sorted) {
+    int arr[10000];
+    Heap h;
+
+    for(int i = 0;i < 5; i++) {
+        for(int j = 1000;j <= 10000; j += 100) {
+            Operation quickSortAsg = p.createOperation("quickSortAsg", j);
+            Operation quickSortCmp = p.createOperation("quickSortCmp", j);
+            FillRandomArray(arr, j, 10, 50000, false, sorted);
+            CopyArray(h.arr, arr, j);
+            h.size = j;
+            quickSort(arr, 0, j - 1, &quickSortAsg, &quickSortCmp);
+            heapSortMax(&h);
+        }
+    }
+    p.divideValues("quickSortAsg", 5);
+    p.divideValues("quickSortCmp", 5);
+    p.addSeries("QuickSort", "quickSortAsg", "quickSortCmp");
+    p.divideValues("heapSortAsg", 5);
+    p.divideValues("heapSortCmp", 5);
+    p.addSeries("HeapSort", "heapSortAsg", "heapSortCmp");
+
+    p.createGroup("Comparation", "QuickSort", "HeapSort");
+
+}
+
+int insertionSort(int a[], int left, int right, Operation *asg, Operation *cmp) {
+    int j = 0;
+    for(int i = left;i <= right; i++) {
+        int aux = a[i];
+        j = i - 1;
+        cmp->count();
+        while(j >= left && a[j] > aux) {
+            asg->count();
+            a[j + 1] = a[j];
+            j--;
+            asg->count();
+        }
+        asg->count();
+        a[j + 1] = aux;
+    }
+
+    return 0;
+}
+
+void hybridQuickSort(int a[], int left, int right, Operation *asg, Operation *cmp, int threshHold) {
+    while (left < right){
+        cmp->count();
+        cmp->count();
+        if (right - left + 1 < threshHold){
+            insertionSort(a, left, right, asg, cmp);
+            break;
+        }
+        else{
+            asg->count();
+            int pivot = partition(a, left, right, right, asg, cmp);
+            cmp->count();
+            if (pivot - left < right - pivot)
+            {
+                hybridQuickSort(a, left, pivot - 1, asg, cmp, threshHold);
+                left = pivot + 1;
+            }
+            else{
+                hybridQuickSort(a, pivot + 1, right, asg, cmp, threshHold);
+                right = pivot - 1;
+            }
+        }
+    }
+}
+
+
+void demoQuickSortHybrid () {
+    int a[] = {7,12,3,19,5,14,1,8,17,10};
+    int n = sizeof(a) / sizeof (int);
+
+    Operation asg = p.createOperation("asgDemo", n);
+    Operation cmp = p.createOperation("cmpDemo", n);
+
+    std::cout << "unsorted array" << std::endl;
+    showArr(a, n);
+
+    hybridQuickSort(a, 0, n - 1, &asg, &cmp, 8);
+
+    std::cout << "sorted array" << std::endl;
+    showArr(a, n);
+}
+
+void perf2() {
+    quickSortPerfect(UNSORTED);
+    p.reset("QuickSort worst case");
+    quickSortPerfect(ASCENDING);
+    p.reset("QuickSort vs HeapSort");
+}
+
+void perf3() {
+    quickSortVsHeapSort(UNSORTED);
+    p.reset("Finding ThreshHold for Hybridized QuickSort");
+}
+
+
+
+void perfAll() {
+    perf2();
+    perf3();
+
+    p.showReport();
 }
 
 int main() {
     demoQuickSort();
+    demoHeapSort();
+    demoQuickSortHybrid();
+
+    p.reset("Graphs");
+    perfAll();
     return 0;
 }
