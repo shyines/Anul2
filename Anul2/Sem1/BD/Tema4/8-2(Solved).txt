@@ -7,7 +7,7 @@ Vocabulary
 
 
 Try it / Solve it
-
+1.
 select count(id)
 from d_songs
 
@@ -26,3 +26,7 @@ FROM d_clients;
 5.
 SELECT (COUNT(*) - COUNT(auth_expense_amt)) "Free from limit count"
 FROM d_partners;
+
+7.
+Select Round(AVG(auth_expense,amt), 2) as "Result"
+from d_partners

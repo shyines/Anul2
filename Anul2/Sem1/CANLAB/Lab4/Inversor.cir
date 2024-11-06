@@ -1,0 +1,26 @@
+[aimspice]
+[description]
+163
+!Inversor
+
+vin in 0 dc 0 pulse (0 5 0 1e-9 1e-9 1e-7 2e-7)
+vec ec 0 dc 5
+r1 in b 1k
+r2 out ec 1k
+q1 out b 0 transistor
+.model transistor npn tr=5e-9 tf=8e-9
+[dc]
+1
+vin
+0
+5
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 0 5
+2
+v(in)
+v(out)
+[end]
