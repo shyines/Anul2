@@ -1,0 +1,63 @@
+avem low si high
+
+am fi limitati daca am avea o singura valoare - d aia avem o val intermediara
+
+la circuitul avem: 1 cand intr 0
+		   0 cand amb intr sunt 1
+
+cazul 2:
+
+potential scazut d2 inchis
+
+la iesire 3,15
+
+
+tranz: tr = 5e-9, tf = 8e-9
+Diode: tt = 5e-9
+
+Pulse: 0 5 0 1e-9, 1e-6, 2e-6 doar la va, vb e fara pulse
+
+va, vb vout
+
+tr	
+stepsize: 1e-9
+fnaltime: 6e-6
+
+condensator
+c1 out 0 15p 
+
+
+
+
+
+
+
+
+
+
+Circuite logice ttl
+r1 1 c 4k
+r2 3 c 1.6k
+r4 5 c 130
+r3 4 0 1k
+
+c1 out 0 1p
+
+q1a 2 1 a tranzistor
+q1b 2 1 b tranzistor
+q2 3 2 4 tranzistor 
+q3 out 4 0 tranzistor
+q4 5 3 6 tranzistor
+.model tranzistor npn tr=5e-9 tf=8e-9
+
+d1 0 a dioda
+d2 0 b dioda
+d 6 out dioda
+.model dioda d tt=5e-9
+
+	    v1 v2 dl tr tf   T     L
+va a 0 pulse(0 5 0 1e-9 1e-9 1e-6 2e-6)
+vb b 0 dc 5
+vcc c 0 dc 5
+
+vinitiala, vfin, timpdelay, timprise, timp fall, perioada, latimea

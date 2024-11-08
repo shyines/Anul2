@@ -1,0 +1,48 @@
+[aimspice]
+[description]
+375
+!serii de circuite integrate ttl
+va a 0 dc 5 pulse (0 5 0 1e-9 1e-9 1e-6 2e-6)
+vb b 0 dc 5
+vcc cc 0 dc 5
+
+c1 out 0 1p
+
+d1 0 b diodas
+d2 0 a diodas
+d3 6 out diodas
+.model diodas D tt = 5e-9
+
+q1a 2 1 a tranz
+q1b 2 1 b tranz
+q2 3 2 4 tranz
+q3 out 4 0 tranz
+q4 5 3 6 tranz
+.model tranz NPN tr = 5e-9 tf = 8e-9
+
+r1 1 cc 4k
+r2 3 cc 1.6k
+r3 4 0 1k
+r4 cc 5 130	
+[dc]
+1
+va
+0
+5
+0.1
+[tran]
+1e-9
+6e-6
+X
+X
+0
+[ana]
+1 1
+0
+1 1
+1 1 -1 6
+3
+v(a)
+v(b)
+v(out)
+[end]

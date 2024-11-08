@@ -1,0 +1,78 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov  8 10:47:20 2024
+	Circuit File: Untitled
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  !serii de circuite integrate ttl
+     2:  va a 0 dc 5 pulse (0 5 0 1e-9 1e-6 2e-6)
+     3:  vb b 0 dc 5
+     4:  vcc cc 0 dc 5
+     5:  
+     6:  d1 0 b diodas
+     7:  d2 0 a diodas
+     8:  d3 6 out diodas
+     9:  .model diodas D tt = 5e-9
+    10:  
+    11:  q1a 2 1 a tranz
+    12:  q1b 2 1 b tranz
+    13:  q2 3 2 4 tranz
+    14:  q3 out 4 0 tranz
+    15:  q4 5 3 6 tranz
+    16:  .model tranz NPN tr = 5e-9 tf = 8e-9
+    17:  
+    18:  r1 cc 1 4k
+    19:  r2 cc 3 1.6k
+    20:  r3 4 0 1k
+    21:  r4 cc 5 130	
+    22:  .tran 1e-9 6e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 712
+	Number of iterations for transient analysis....: 698
+	Total number of timepoints.....................: 196
+	Number of timepoints accepted..................: 165
+	Number of timepoints rejected..................: 31
+	Total analysis time (sec)......................: 0.048
+	Transient analysis time (sec)..................: 0.044
+	Time spent in device loading (sec).............: 0.001
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: !serii de circuite integrate ttl
+
+

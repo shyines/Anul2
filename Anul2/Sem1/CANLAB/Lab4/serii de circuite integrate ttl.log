@@ -1,0 +1,74 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov  8 11:14:02 2024
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab4\serii de circuite integrate ttl.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  !serii de circuite integrate ttl
+     2:  va a 0 dc 5 pulse (0 5 0 1e-9 1e-9 1e-6 2e-6)
+     3:  vb b 0 dc 5
+     4:  vcc cc 0 dc 5
+     5:  
+     6:  c1 out 0 1p
+     7:  
+     8:  d1 0 b diodas
+     9:  d2 0 a diodas
+    10:  d3 6 out diodas
+    11:  .model diodas D tt = 5e-9
+    12:  
+    13:  q1a 2 1 a tranz
+    14:  q1b 2 1 b tranz
+    15:  q2 3 2 4 tranz
+    16:  q3 out 4 0 tranz
+    17:  q4 5 3 6 tranz
+    18:  .model tranz NPN tr = 5e-9 tf = 8e-9
+    19:  
+    20:  r1 1 cc 4k
+    21:  r2 3 cc 1.6k
+    22:  r3 4 0 1k
+    23:  r4 cc 5 130	
+    24:  .dc va 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : va
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 163
+	Total analysis time (sec)............: 0.028
+	Time spent in device loading (sec)...: 0.001
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: !serii de circuite integrate ttl
+
+
