@@ -106,6 +106,20 @@ void freeLists(Node **h[], int k) {
     }
 }
 
+//ajutat umpic de chatGpt
+std::vector<int> generateSizes(int n, int k) {
+    std::vector<int> sizes(k, 1);  // Start by assigning 1 element to each list
+    int remaining = n - k;         // Remaining elements to distribute
+
+    // Randomly distribute the remaining elements across the lists
+    for (int i = 0; i < remaining; ++i) {
+        int index = rand() % k;
+        sizes[index]++;
+    }
+
+    return sizes;
+}
+
 void mergeKOrderedList(Node *h[], int k, int n, Operation *asg, Operation *cmp) {
     buildMinHeapList(h, k, asg, cmp);
     //not really corect i think
@@ -144,18 +158,16 @@ void demo() {
     Operation asg = p.createOperation("asg", n);
     Operation cmp = p.createOperation("cmp", n);
 
+    std::vector<int> sizes = generateSizes(n, k);
+
     for(int i = 1;i <= k; i++) {
-        if(i == k) {
-            size = n;
-        } else {
-            size = 1 + (rand() % n);
-        }
+        size = sizes[i - 1];
         FillRandomArray(source, size, 10, 50000, false, ASCENDING);
         h[i] = newNode(source[0]);
-        for(int j = 1;j <= size; j++) {
+        for(int j = 1;j < size; j++) {
             addLast(h[i], source[j]);
         }
-        n -= size;
+        showList(h[i]);
     }
     mergeKOrderedList(h, k, copyN, &asg, &cmp);
 }
@@ -176,19 +188,16 @@ void perf() {
                 for(int j = 100; j <= 10000; j+=100) {
                     Operation mergeAsgFive = p.createOperation("mergeAsgFive", j);
                     Operation mergeCmpFive = p.createOperation("mergeCmpFive", j);
-                    int n = j;
+
+                    std::vector<int> sizes = generateSizes(j, k);
+
                     for(int m = 1;m <= k; m++) {
-                        if(m == k) {
-                            size = n;
-                        } else {
-                            size = 1 + (rand() % n);
-                        }
+                        size = sizes[m - 1];
                         FillRandomArray(source, size, 10, 50000, false, ASCENDING);
                         h[m] = newNode(source[0]);
                         for(int q = 1;q <= size; q++) {
                             addLast(h[m], source[q]);
                         }
-                        n -= size;
                     }
                     mergeKOrderedList(h, k, j, &mergeAsgFive, &mergeCmpFive);
                 }
@@ -200,19 +209,16 @@ void perf() {
                 for(int j = 100; j <= 10000; j+=100) {
                     Operation mergeAsgTen = p.createOperation("mergeAsgTen", j);
                     Operation mergeCmpTen = p.createOperation("mergeCmpTen", j);
-                    int n = j;
+
+                    std::vector<int> sizes = generateSizes(j, k);
+
                     for(int m = 1;m <= k; m++) {
-                        if(m == k) {
-                            size = n;
-                        } else {
-                            size = 1 + (rand() % n);
-                        }
+                        size = sizes[m - 1];
                         FillRandomArray(source, size, 10, 50000, false, ASCENDING);
                         h[m] = newNode(source[0]);
                         for(int q = 1;q <= size; q++) {
                             addLast(h[m], source[q]);
                         }
-                        n -= size;
                     }
                     mergeKOrderedList(h, k, j, &mergeAsgTen, &mergeCmpTen);
                 }
@@ -224,19 +230,16 @@ void perf() {
                 for(int j = 100; j <= 10000; j+=100) {
                     Operation mergeAsgHund = p.createOperation("mergeAsgHund", j);
                     Operation mergeCmpHund = p.createOperation("mergeCmpHund", j);
-                    int n = j;
+
+                    std::vector<int> sizes = generateSizes(j, k);
+
                     for(int m = 1;m <= k; m++) {
-                        if(m == k) {
-                            size = n;
-                        } else {
-                            size = 1 + (rand() % n);
-                        }
+                        size = sizes[m - 1];
                         FillRandomArray(source, size, 10, 50000, false, ASCENDING);
                         h[m] = newNode(source[0]);
                         for(int q = 1;q <= size; q++) {
                             addLast(h[m], source[q]);
                         }
-                        n -= size;
                     }
                     mergeKOrderedList(h, k, j, &mergeAsgHund, &mergeCmpHund);
                 }
@@ -258,6 +261,7 @@ void perfall() {
 }
 
 int main() {
+    srand(time(0));
     perfall();
     return 0;
 }
