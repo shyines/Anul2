@@ -1,0 +1,3 @@
+D:/TEST2/Anul2/Anul2/CCC/Level2/cmake-build-debug/CMakeFiles/Level2.dir
+D:/TEST2/Anul2/Anul2/CCC/Level2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/TEST2/Anul2/Anul2/CCC/Level2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,15 @@
+frecventa sinus mica de 50, amplitudine 10
+Condensator 1m/5m
+
+1e-9
+60e-3
+
+dz 0 out zener
+.model zener d bv = 6.8
+
+
+
+collector - baza - emitor
+
+q1 outr vz out transistor
+.model transistor npn tr = 1e-9 tf = 1e-9
