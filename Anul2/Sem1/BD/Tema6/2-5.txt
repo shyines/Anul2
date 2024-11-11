@@ -1,0 +1,54 @@
+Vocabulary
+
+1.
+Explicit
+
+2.
+Implicit
+
+Try it / Solve it
+
+1.
+579
+579
+VARCHAR2 a fost convertit la NUMBER
+
+2.
+declare
+v_programmer_name varchar2(50) := 'Chira Matei-Leonard';
+v_programmer_name_length number:= 0;
+begin
+    v_programmer_name_length := length(v_programmer_name);
+    dbms_output.put_line(v_programmer_name_length);
+end;
+
+3.
+declare
+my_date date := sysdate;
+v_last_day date;
+begin
+    v_last_day := last_day(my_date);
+    dbms_output.put_line(to_char(v_last_day, 'Month dd, yyyy'));
+end;
+
+4.
+declare
+my_date date := sysdate;
+v_last_day date;
+begin
+    v_last_day := my_date + 45;
+    dbms_output.put_line(round(months_between(v_last_day, my_Date), 0));
+end;
+
+5.
+11
+11
+conversie de la number la varchar2 si ordinea 
+efectuarii operatilor
+
+6.
+True
+
+7.
+Conversiile pot sa nu se intample mereu asa cum vrem noi daca nu suntem atenti.
+Conversiile pot sa afecteze eficienta programului.

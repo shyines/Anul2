@@ -1,0 +1,48 @@
+Vocabulary
+
+1.
+Boolean
+
+2.
+%Type
+
+
+Try it / Solve it
+
+2.
+Nu ar trebui sa folosim aceleasi nume pentru variabile si pentru
+coloane.
+
+country_name => v_country_name
+median_age => v_median age
+
+3.
+DECLARE
+ country_name wf_countries.country_name%TYPE;
+ median_age wf_countries.median_age%TYPE;
+BEGIN
+ SELECT country_name, median_age INTO country_name, median_age
+ FROM wf_countries
+ WHERE country_name = 'Japan';
+ DBMS_OUTPUT.PUT_LINE('The median age in '|| country_name || ' is '
+ || median_age || '.');
+END;
+
+4.
+-putem evita erorile cauzate de nepotrivirea tipului de date sau de precizia greșită
+-nu trebuie să modificăm declarația variabilelor dacă definiția coloanei tabelului se modifică
+
+Prin codificarea tare a tipurilor de date putem întâlni probleme precum: 
+dacă am declarat deja unele variabile pentru coloanele country_name 
+și median_age fără a folosi atributul %TYPE, atunci blocul PL/SQL 
+poate returna erori dacă coloana tabelului este modificată.
+
+5.
+Declare
+v_today date := sysdate;
+v_tomorrow v_today%type;
+Begin
+v_tomorrow := v_today + 1;
+dbms_output.put_line(v_today);
+dbms_output.put_line(v_tomorrow);
+end;

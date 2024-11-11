@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1cd902a8-c769-48d7-a509-fdf1aec80ca5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/.idea/firstProblem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/cache-v2-91dfc90d00ca88aa4a8e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-695a40532a2ac5aa33cb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7b87ce2698dad102980c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-25T13-09-06-0131.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/target-firstProblem-Debug-22baa214d36d02bfadc1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-02d5b60fa30986287c76.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/level1_1.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level1/firstProblem/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/.idea/Level2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e6ac1aa1874e96b02a2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-f55c5141778085587156.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-cf76cdf4ad299e645221.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-25T13-16-44-0927.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/target-Level2-Debug-8dd6b14eef4926dc840b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-af3e6bb29f4ff13cbbd5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/Level2.dir/main.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/Level2.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../CCC/Level2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/Lab2/Untitled.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab3/Condensatorul înmagazinează energie în intervalele de timp în care tensiunea furnizată de redresor este mai mare decât tensiunea între armăturile sale şi debitează energie în intervalele de timp în care tensiunea f.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab3/Laborator3.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab4/Laborator4.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab4/Surse Tensiune Continua.cir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab4/Untitled.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CANLAB/lab4/lalal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/src/Complex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/src/Matrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab5/Complex/untitled/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AF/Lab3/Heap/cmake-build-release/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AF/Lab3/Heap/cmake-build-release/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CANLAB/Lab2/Untitled.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CANLAB/Lab2/Untitled.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ogzU1zVKGIFqymadIB3LyeleG4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/TEST2/Anul2/Anul2/Sem1/OOP/Lab6/Rechizite&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cd902a8-c769-48d7-a509-fdf1aec80ca5" name="Changes" comment="" />
+      <created>1731306019100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731306019100</updated>
+      <workItem from="1731306020195" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

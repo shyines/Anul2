@@ -1,0 +1,50 @@
+Vocabulary
+
+1.
+Qualifier
+
+2.
+Variable scope
+
+3.
+Variable visibility
+
+Try it / Solve it
+
+1.
+A. 2
+B. Wester Europe
+C. 601
+D. Product 10012 is in stock
+E. NULL
+
+2.
+
+A.
+Blocul interior afiseaza job_id 103 pentru ca este declarata 
+o variabila v_employee_id si nu este folosit nici un qualifier
+
+B.
+Blocul exterior afiseaza job_id 100 pentru ca este declarata 
+o variabila v_employee_id, iar blocul interior s-a terminat
+
+C.
+<<outer>> 
+DECLARE
+	v_employee_id employees.employee_id%TYPE;
+	 v_job employees.job_id%TYPE;
+BEGIN
+SELECT employee_id, job_id INTO v_employee_id, v_job
+FROM employees
+WHERE employee_id = 100;
+DECLARE
+	 v_employee_id employees.employee_id%TYPE;
+	 v_job employees.job_id%TYPE;
+	 BEGIN
+	 SELECT employee_id, job_id INTO v_employee_id, v_job
+	 FROM employees
+ 	WHERE employee_id = 103;
+ 	DBMS_OUTPUT.PUT_LINE(outer.v_employee_id || ' is a(n) ' || v_job); 
+	END;
+ 	DBMS_OUTPUT.PUT_LINE(v_employee_id || ' is a(n) ' || v_job);
+END; 

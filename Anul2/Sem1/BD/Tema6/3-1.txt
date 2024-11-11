@@ -1,0 +1,74 @@
+PL_Tema_2.5.txt
+Vocabulary 
+
+delete
+insert
+merge
+update
+ddl
+dml
+
+Try it / Solve it 
+
+1.C
+
+2.B
+
+3. create table grocery_items (product_id number(3,0) not null, brand varchar(255), description varchar(255))
+
+4.
+insert into grocery_items (product_id, brand, description)
+values (110, 'Colgate', 'Toothpaste')
+
+insert into grocery_items (product_id, brand, description)
+values (111, 'Ivory', 'Soap')
+
+insert into grocery_items (product_id, brand, description)
+values (112, 'Heinz', 'Ketchup')
+
+5.
+insert into grocery_items (product_id, brand, description)
+values (113, 'Pepsi', 'Juice')
+
+6.
+update grocery_items
+set description='tomato catsup'
+where brand='Heinz'
+
+7.insert into grocery_items
+values (114 , 'Milka', 'Chocolate')
+
+8.update grocery_items
+set brand='Dove'
+where brand='Ivory'
+
+
+9.
+CREATE TABLE new_items (
+    product_id INT PRIMARY KEY,
+    brand VARCHAR2(50),
+    description VARCHAR2(100)
+);
+
+INSERT INTO new_items (product_id, brand, description) VALUES (110, 'Colgate', 'Dental paste');
+INSERT INTO new_items (product_id, brand, description) VALUES (175, 'Dew', 'Soda');
+INSERT INTO new_items (product_id, brand, description) VALUES (275, 'Palmolive', 'Dish detergent');
+
+10.
+MERGE INTO grocery_items g
+USING new_items n
+ON (g.product_id = n.product_id)
+WHEN MATCHED THEN
+    UPDATE SET g.brand = n.brand, g.description = n.description
+WHEN NOT MATCHED THEN
+    INSERT (product_id, brand, description) 
+    VALUES (n.product_id, n.brand, n.description);
+
+11.
+1 row
+
+12.
+3 rows
+
+13.
+A

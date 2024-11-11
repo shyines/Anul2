@@ -1,0 +1,68 @@
+PL_Tema_2.5.txt
+1. not valid
+not valid
+not valid
+valid
+not valid
+valid
+not valid
+not valid
+valid
+
+2. DECLARE v_max_deptno departments.department_id%TYPE;
+BEGIN
+SELECT MAX(departmentno_id) INTO v_max_deptno FROM departments;
+DBMS_OUTPUT.PUT_LINE (' departamentul este : ' || v_max_deptno);
+END
+
+3. DECLARE 
+v_country_name wf_countries.country_name%TYPE 
+:= ‘United States of America’; 
+v_lowest_elevation wf_countries.lowest_elevation%TYPE; 
+v_highest_elevation wf_countries.highest_elevation%TYPE; 
+BEGIN 
+SELECT lowest_elevation, highest_elevation 
+INTO v_lowest_elevation, v_highest_elevation
+FROM wf_countries; 
+DBMS_OUTPUT.PUT_LINE('The lowest elevation in 
+'||country_name||' is '||v_lowest_elevation 
+||’ and the highest elevation is '|| 
+v_highest_elevation||'.'); 
+END; 
+
+4. a)Pentru ca exista mai multi agenti cu agelasi id
+b) Pentru ca ID_PRAG nu exista
+
+5. eroare : WHERE last_name = last_name
+
+a) CREATE TABLE emp_dup AS
+SELECT * FROM employees;
+
+b) SELECT first_name, last_name
+FROM emp_dup;
+
+e) drop table emp_dup;
+
+f) DECLARE
+V_LAST_NAME VARCHAR2(25) := ‘FAY’;
+ BEGIN
+UPDATE EMP_DUP SET FISRT_NAME = ‘JENNIFER’
+ WHERE LAST_NAME = V_LAST_NAME;END;
+
+6) CREATE TABLE GROCERY_ITEM(
+PRODUCT_ID NUMBER(6,0) PRIMARY KEY,
+BRAND VARCHAR2(100),
+GROCERY_ITEM VARCHAR(100) 
+);
+INSERT INTO GROCERY ITEM (PRODUCT_ID, BRAND, GROCERY_ITEM) VALUES
+(100,’COLGATE’, ‘PASTA DENTARA’);
+
+Da este posibi;
+
+7. CREATE TABLE GRPCERY_ITEM(
+GROCERY_ITEM NUMBER(6,0) PRIMARY KEY,
+GROCERY_ITEM VARCHAR2(100),
+GROCERY_ITEM VARCHAR(100)
+);
+
+Nu este posibil

@@ -1,0 +1,41 @@
+Vocabulary
+
+1.
+Variables
+
+2.
+Parameters
+
+
+Try it / Solve it
+1.
+
+A.
+Function
+
+B.
+Executable
+
+C.
+Parameters
+
+2.
+b e invalid - o valoare constanta trebuie sa fie initializata
+
+3.
+c
+
+5.
+Declare
+    v_country_name VARCHAR2(100) := 'United States of America';
+    v_lowest_elevation INTEGER := 0;
+    v_highest_elevation INTEGER := 0;
+Begin
+    Select highest_elevation, lowest_elevation into v_lowest_elevation, v_highest_elevation
+    from countries 
+    where country_name = v_country_name;
+
+    dbms_output.put_line('Highest: ' || v_highest_elevation || ' Lowest: ' || v_lowest_elevation);
+end;
+
+

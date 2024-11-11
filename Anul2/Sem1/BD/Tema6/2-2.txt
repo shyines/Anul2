@@ -1,0 +1,53 @@
+Vocabulary
+
+1.
+Literals
+
+2.
+Delimiters
+
+3.
+Reserved Words
+
+6.
+identifier
+
+Try it / Solve it
+
+1.
+Identifier	Valid (X)	Invalid (X)	Why Invalid?
+Today		X		
+Last name				X	Contains a space
+today’s_date				X	Contains an invalid character (apostrophe)
+number_of_days_in_february_this_ year	X	Contains a space
+Isleap$year	X		
+#number					X	Starts with an invalid character (#)
+NUMBER#					X	Contains an invalid character (#)
+Number1to7	X	
+
+2.
+Word	Reserved? Y/N
+create		Y
+make		N
+table		Y
+seat		N
+alter		Y	
+rename		Y
+row		N
+number		Y
+web		N
+
+
+3.
+Value		Lexical Unit
+SELECT		Reserved word
+:=		Delimiter (Assignment Operator)
+'TEST'		Literal (Character/String Literal)
+FALSE		Literal (Boolean Literal)
+-- new 		process	Comment (Single-line)
+FROM		Reserved word
+/* select the country with the highest elevation */	Comment (Multi-line)
+v_test		Identifier
+4.09		Literal (Numeric Literal)
+
+	

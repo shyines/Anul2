@@ -1,0 +1,70 @@
+PL_Tema_4.1.txt
+Practice4-1
+1-IF
+2-LOOP
+3-Condicion
+4-CASE
+
+1.Conditional processing extends the usefulness of programs by allowing the use of simple logical tests to determine wich statements are exexuted.
+2.
+-IF Statements
+-CASE expressions
+-LOOP Control Structures
+3.
+-IF 
+-END IF
+-ELSIF
+-ELSE
+-THEN 
+4.
+-IF
+-THEN
+-END IF
+5.DECLARE
+v_india wf_countries.population%TYPE ;
+v_nume wf_countries.COUNTRY_NAME%TYPE;
+BEGIN
+SELECT population,COUNTRY_NAME INTO v_india,v_nume
+FROM wf_countries
+WHERE country_id=44;
+IF v_india<1000000000 THEN
+DBMS_OUTPUT.PUT_LINE('populatia mai mica de 1.000.000.000 este ' ||v_nume);
+END IF;
+END;
+6.
+DECLARE
+v_india wf_countries.population%TYPE ;
+v_nume wf_countries.COUNTRY_NAME%TYPE;
+BEGIN
+SELECT population,COUNTRY_NAME INTO v_india,v_nume
+FROM wf_countries
+WHERE country_id=86;
+IF v_india>1000000000 THEN
+DBMS_OUTPUT.PUT_LINE('populatia mai mare de 1.000.000.000 este ' ||v_nume);
+ELSIF  v_india>0 THEN
+DBMS_OUTPUT.PUT_LINE('populatia mai mare de 0 este ' ||v_nume);
+ELSIF  v_india=null  THEN
+DBMS_OUTPUT.PUT_LINE('populatia = null este ' ||v_nume);
+END IF;
+END;
+7.
+A. print C
+B. print B
+C. print A
+D. 
+Antarctica 672 NO NO C
+Iraq 964 YES NO A
+Spain 34 NO YES B
+United States 1 YES NO A
+8.The two numbers are equal
+NUMBER=NULL
+9.DECLARE
+ v_AN NUMBER(4) := 2000;
+ v_4 NUMBER(4) := 4;
+BEGIN
+ IF MOD(v_AN,4) = 0 AND MOD(v_AN,100) <> 0 OR MOD(v_AN,400) = 0  THEN
+ DBMS_OUTPUT.PUT_LINE('Leap year');
+ ELSE
+ DBMS_OUTPUT.PUT_LINE('Not a leap year');
+ END IF;
+END;
