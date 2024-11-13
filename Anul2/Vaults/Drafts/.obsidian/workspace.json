@@ -32,9 +32,21 @@
               "icon": "excalidraw-icon",
               "title": "Drawing 2024-11-11 21.35.48.excalidraw"
             }
+          },
+          {
+            "id": "4547aa1f9e3f43ff",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Poza.png"
+              },
+              "icon": "lucide-image",
+              "title": "Poza"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -176,10 +188,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a82d23e176d053c2",
+  "active": "4547aa1f9e3f43ff",
   "lastOpenFiles": [
-    "The selection Problem.md",
+    "BD Notes.md",
+    "Poza.png",
     "Excalidraw/Drawing 2024-11-11 21.35.48.excalidraw.md",
+    "The selection Problem.md",
     "Excalidraw",
     "QuickSort.md",
     "Heapify.md",
