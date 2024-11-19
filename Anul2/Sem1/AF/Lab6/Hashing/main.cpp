@@ -126,9 +126,9 @@ void perfTwo() {
         while(count < numOfElToInsert && count2 < 1500) {
             Entry e;
             do {
-                e.id = source[rand() % (2 * numOfElToInsert)];
+                e.id = rand();
                 strcpy(e.name, "found");
-                ok = insertEntry(arr, e, m);
+                ok = insertEntry(arr, e, numOfElToInsert);
                 if(ok != -1) {
                     goodEntries[count++] = e;
                 }
@@ -138,7 +138,7 @@ void perfTwo() {
 
 
         for(int l = 0; l < 1500; l++) {
-            acc = 0;
+            acc = 0.0f;
             int index = rand() % numOfElToInsert;
 
             Entry toSearch;

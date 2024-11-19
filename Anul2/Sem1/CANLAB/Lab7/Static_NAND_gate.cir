@@ -1,0 +1,37 @@
+[aimspice]
+[description]
+228
+NOR:
+
+VGG vgg 0 dc 7.5
+VDD vdd 0 dc 5
+va a 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+vb b 0 dc 0
+
+M3 vdd vgg vout vout nor l=25u w=10u
+M1 vout a 0 0 nor l=1u w=10u
+M2 vout b 0 0 nor l=1u w=10u
+
+.model nor nmos vto=2.5
+[dc]
+1
+va
+0
+5
+0.1
+[tran]
+1e-9
+6e-3
+X
+X
+0
+[ana]
+1 1
+0
+1 1
+1 1 -1 6
+3
+v(a)
+v(b)
+v(vout)
+[end]

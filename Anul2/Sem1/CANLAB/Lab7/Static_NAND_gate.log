@@ -1,0 +1,63 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov 15 11:30:20 2024
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab7\Static_NAND_gate.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  NOR:
+     2:  
+     3:  VGG vgg 0 dc 7.5
+     4:  VDD vdd 0 dc 5
+     5:  va a 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+     6:  vb b 0 dc 0
+     7:  
+     8:  M3 vdd vgg vout vout nor l=25u w=10u
+     9:  M1 vout a 0 0 nor l=1u w=10u
+    10:  M2 vout b 0 0 nor l=1u w=10u
+    11:  
+    12:  .model nor nmos vto=2.5
+    13:  .dc va 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : va
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 121
+	Total analysis time (sec)............: 0.035
+	Time spent in device loading (sec)...: 0.001
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: NOR:
+
+

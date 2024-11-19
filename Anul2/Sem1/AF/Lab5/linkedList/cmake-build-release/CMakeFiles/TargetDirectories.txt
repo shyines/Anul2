@@ -1,0 +1,3 @@
+D:/TEST2/Anul2/Anul2/Sem1/AF/Lab5/linkedList/cmake-build-release/CMakeFiles/linkedList.dir
+D:/TEST2/Anul2/Anul2/Sem1/AF/Lab5/linkedList/cmake-build-release/CMakeFiles/edit_cache.dir
+D:/TEST2/Anul2/Anul2/Sem1/AF/Lab5/linkedList/cmake-build-release/CMakeFiles/rebuild_cache.dir
