@@ -1,4 +1,3 @@
-
 Closed chaining(cu uincercari si pozitii umratoare)
 n = nr elemente
 N = dim tabela

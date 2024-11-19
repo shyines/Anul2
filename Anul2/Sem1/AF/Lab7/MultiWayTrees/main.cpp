@@ -5,7 +5,7 @@
 
 typedef struct node2 {
     int key;
-    std::list<node2> childs;
+    std::list<node2*> childs;
 }Node2;
 //*R2, R2_const[500];
 
@@ -34,6 +34,12 @@ Btree *createNode() {
     return node;
 }
 
+Node2 *createMwNode(int key) {
+    Node2 *node = new Node2;
+    node->key = key;
+
+    return node;
+}
 Btree* buildTree(int arr[], int *index) {
     Btree *root = createNode();
     if(arr[*index] == 0) {
@@ -59,9 +65,7 @@ Btree* buildTree(int arr[], int *index) {
 void inOrder(Btree *root) {
     if(root != nullptr) {
         inOrder(root->leftChild);
-        if(root->parent != nullptr) {
-            std::cout << root->key << " parrent: " << root->parent->key << " ";
-        }
+        std::cout << root->key << " ";
         inOrder(root->rightChild);
     }
 }
@@ -70,23 +74,19 @@ void postOrder(Btree *root) {
     if(root != nullptr) {
         postOrder(root->leftChild);
         postOrder(root->rightChild);
-        if(root->parent != nullptr) {
-            std::cout << root->key << " parrent: " << root->parent->key <<" ";
-        }
+            std::cout << root->key <<" ";
     }
 }
 
 void preOrder(Btree *root) {
     if(root != nullptr) {
-        if(root->parent != nullptr) {
-            std::cout << root->key << " parrent: " << root->parent->key << " ";
-        }
+        std::cout << root->key << " ";
         preOrder(root->leftChild);
         preOrder(root->rightChild);
     }
 }
-/*
-void interativeTreePrint(Btree *root) {
+
+void iterativeTreePrint(Btree *root) {
     Btree *node = root;
     int d = 1;
     do {
@@ -99,6 +99,7 @@ void interativeTreePrint(Btree *root) {
         }
 
         if(d == 2) {
+            std::cout << node->key << " ";
             if(node->rightChild != nullptr) {
                 node = node->rightChild;
                 d = 1;
@@ -108,9 +109,17 @@ void interativeTreePrint(Btree *root) {
             }
         }
 
-    }while()
+        if(d == 3) {
+            if(node->parent != nullptr) {
+                if(node == node->parent->leftChild) {
+                    d = 2;
+                }
+                node = node->parent;
+            }
+        }
+    }while(node != root || d != 3);
 }
-*/
+
 void demoShowBTree() {
     int arr[] = {1 ,7 ,2 ,0 ,5 ,0 ,0 ,
                  0 ,9 ,3 ,0 ,0 ,4 ,0 ,
@@ -124,6 +133,28 @@ void demoShowBTree() {
     std::cout << std::endl;
     postOrder(tree);
     std::cout << std::endl;
+
+    iterativeTreePrint(tree);
+}
+
+Node2 *T1(int parents[], int n) {
+    Node2 *root = createMwNode(0);
+
+    std::vector<node2*> ref;
+    for(int i = 0;i < n; i++) {
+        Node2 *temp = createMwNode(i);
+        ref.push_back(temp);
+    }
+
+    for(int i = 0;i < n; i++) {
+        if(parents[i] == -1) {
+            root = ref[i];
+        } else {
+            ref[parents[i]]->childs.push_back(ref[i]);
+        }
+    }
+
+    return root;
 }
 
 void prettyPrintR1(int parent[], int n, int tabs, int indexParent) {
@@ -147,7 +178,7 @@ void prettyPrintR2(Node2 *R2, int tabs) {
     std::cout << R2->key << "\n";
 
     for(auto i: R2->childs) {
-        prettyPrintR2(&i, tabs + 1);
+        prettyPrintR2(i, tabs + 1);
     }
 }
 
@@ -164,8 +195,17 @@ void prettyPrintR3(Node3 *R3, int tabs) {
 }
 
 
+void demo() {
+    int parents[] = {1, 6, 4, 1, 6, 6, -1, 4, 1};
+    int size = sizeof(parents) / sizeof(int);
 
+    Node2* tree = T1(parents, size);
+    prettyPrintR2(tree, 0);
+
+}
 int main() {
     demoShowBTree();
+    std::cout << std::endl;
+    demo();
     return 0;
 }
