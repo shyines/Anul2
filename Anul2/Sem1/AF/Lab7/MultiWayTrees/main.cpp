@@ -6,6 +6,7 @@
 typedef struct node2 {
     int key;
     std::list<node2*> childs;
+    node2 *parent;
 }Node2;
 //*R2, R2_const[500];
 
@@ -13,6 +14,7 @@ typedef struct node3 {
     int key;
     node3 *left;//copilul
     node3 *right;//fratele
+    node3 *parent;
 }Node3;
 //node3 *R3
 
@@ -37,6 +39,17 @@ Btree *createNode() {
 Node2 *createMwNode(int key) {
     Node2 *node = new Node2;
     node->key = key;
+    node->parent = nullptr;
+
+    return node;
+}
+
+Node3 *createBtree(int key) {
+    Node3 *node = new Node3;
+    node->key = key;
+    node->left = nullptr;
+    node->right = nullptr;
+    node->parent = nullptr;
 
     return node;
 }
@@ -151,12 +164,62 @@ Node2 *T1(int parents[], int n) {
             root = ref[i];
         } else {
             ref[parents[i]]->childs.push_back(ref[i]);
+            ref[i]->parent = ref[parents[i]];
         }
     }
 
     return root;
 }
 
+
+Node3 *T2 (Node2 *root) {
+    Node3 *tree = createBtree(root->key);
+    int d = 1;
+    Node2 *p = root;
+
+    do {
+        if(d == 1) {
+            if(p->childs.front() != nullptr) {
+                tree->left = createBtree(p->childs.front()->key);
+                tree->left->parent = tree;
+                tree = tree->left;
+                p = p->childs.front();
+            }
+            else {
+                p = p->parent;
+                p->childs.pop_front();
+                d = 2;
+            }
+        }
+
+        if(d == 2) {
+            if(p->childs.front() != nullptr) {
+                tree->right = createBtree(p->childs.front()->key);
+                tree->right->parent = tree;
+                tree = tree->right;
+                p = p->childs.front();
+                d = 1;
+            }
+            else {
+                d = 3;
+            }
+        }
+        if(d == 3) {
+            if(tree->parent != nullptr) {
+                while(tree->key != p->key && tree->parent != nullptr) {
+                    tree = tree->parent;
+                }
+                if(p->parent != nullptr) {
+                    p = p->parent;
+                    p->childs.pop_front();
+                    d = 2;
+                }
+            }
+        }
+    }while(p != root || d != 3);
+
+    return tree;
+}
 void prettyPrintR1(int parent[], int n, int tabs, int indexParent) {
 
     for(int i = 0;i < tabs; i++) {
@@ -202,6 +265,9 @@ void demo() {
     Node2* tree = T1(parents, size);
     prettyPrintR2(tree, 0);
 
+    Node3 *tree2 = T2(tree);
+    std::cout << std::endl << std::endl << "R3: ";
+    prettyPrintR3(tree2, 0);
 }
 int main() {
     demoShowBTree();
