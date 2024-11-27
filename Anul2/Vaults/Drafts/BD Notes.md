@@ -3,3 +3,19 @@ Steps for Using Explicit Cursors
 FETCH, and CLOSE statements to control a cursor.!
 
 [[Poza.png]]
+
+
+Categorie
+1. Aperitiv rece
+2. Aperitiv cald
+3. Supa
+4. Ciorba
+5. Fel principal
+6. salata
+7. desert
+
+
+
+Reteta
+	1.
+	
