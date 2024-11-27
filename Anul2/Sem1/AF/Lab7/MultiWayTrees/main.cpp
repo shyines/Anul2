@@ -2,6 +2,9 @@
 #include <list>
 #include <fstream>
 #include <vector>
+#include "Profiler.h"
+
+Profiler p;
 
 typedef struct node2 {
     int key;
@@ -73,6 +76,43 @@ Btree* buildTree(int arr[], int *index) {
     }
 
     return root;
+}
+
+void insertKey(int key, Btree *root) {
+    Btree *node = createNode();
+    node->key = key;
+
+    do  {
+        if(node->key > root->key && root->rightChild != nullptr) {
+            root = root->rightChild;
+        }
+        else if(root->leftChild != nullptr && node->key < root->key){
+            root = root->leftChild;
+        }
+    } while(!(root->leftChild == nullptr || root->rightChild == nullptr));
+
+    if(node->key > root->key) {
+        root->rightChild = node;
+    }else {
+        root->leftChild = node;
+    }
+}
+
+Btree *buildTreeInsert() {
+    Btree *tree = createNode();
+    tree->key = 1;
+
+    int source[] = {7, 5, 10, 8, 2, 3};
+    int size = sizeof(source) / sizeof(int);
+    for(int i = 0;i < size; i++) {
+        insertKey(source[i], tree);
+    }
+    /*
+    for(int i = 100;i <= 10000; i += 100) {
+
+    }
+     */
+    return tree;
 }
 
 void inOrder(Btree *root) {
@@ -269,9 +309,20 @@ void demo() {
     std::cout << std::endl << std::endl << "R3: ";
     prettyPrintR3(tree2, 0);
 }
+
+void demo2() {
+    Btree *tree = buildTreeInsert();
+    inOrder(tree);
+    std::cout << std::endl;
+    postOrder(tree);
+    std::cout << std::endl;
+    preOrder(tree);
+    std::cout << std::endl;
+}
 int main() {
     demoShowBTree();
-    std::cout << std::endl;
-    demo();
+    std::cout << "\nnext is tree built from inserts: " << std::endl;
+    //demo();
+    demo2();
     return 0;
 }
