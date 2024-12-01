@@ -21,6 +21,7 @@ Bst *createBst(int left, int right, int a[]) {
     }
     int mid = (left + right) / 2;
 
+
     Bst*node = createNode(a[mid], right - left + 1);
     node->left = createBst(left, mid - 1, a);
     node->right = createBst(mid + 1, right, a);
@@ -35,41 +36,98 @@ void prettyPrint(Bst *root, int tabs) {
     for(int i = 0;i < tabs; i++) {
         std::cout << "\t";
     }
-    prettyPrint(root->right, tabs + 1);
     std::cout << root->key << "\n";
     prettyPrint(root->left, tabs + 1);
+    prettyPrint(root->right, tabs + 1);
 }
 
-Bst *osSelect(Bst *root, int i) {
-    int r = 0;
-    if(root->left == nullptr) {
-        r = root->size;
-    }else {
-        r = root->left->size + 1;
+Bst *osSelect(Bst *root, int i, bool delCase, Bst *&parent) {
+    int r = 1;
+    if(root->left != nullptr){
+        if(delCase) {
+            r = root->left->size + 1;
+            root->size--;
+        }else {
+            r = root->left->size + 1;
+        }
     }
     if(r == i) {
         return root;
     }
     if(r > i) {
-        return osSelect(root->left, i);
+        parent = root;
+        return osSelect(root->left, i, delCase, parent);
+    } else {
+        parent = root;
+        return osSelect(root->right, i - r, delCase, parent);
     }
-        return osSelect(root->right, i - r);
+}
+
+void osDelete(Bst **root, int i) {
+    Bst *parent = nullptr;
+    Bst *toDelete = osSelect(*root, i, true, parent);
+
+    if(toDelete->right == nullptr && toDelete->left == nullptr) {
+        if(parent->right == toDelete) {
+            delete toDelete;
+            parent->right = nullptr;
+        }else {
+            delete toDelete;
+            parent->left = nullptr;
+        }
+
+    }else if(toDelete->right != nullptr && toDelete->left == nullptr) {
+        Bst *dummy = toDelete;
+        toDelete = toDelete->right;
+        if(parent->right == dummy) {
+            parent->right = toDelete;
+            parent->left = nullptr;
+        }else {
+            parent->left = toDelete;
+            parent->right = nullptr;
+        }
+        delete dummy;
+    }else if(toDelete->left != nullptr && toDelete->right == nullptr) {
+        Bst *dummy = toDelete;
+        toDelete = toDelete->left;
+        if(parent->right == dummy) {
+            parent->right = toDelete;
+        }else {
+            parent->left = toDelete;
+        }
+        delete dummy;
+        dummy = nullptr;
+    }else if(toDelete->left != nullptr && toDelete->right != nullptr) {
+        Bst *succParent = nullptr;
+        Bst *suc = osSelect(*root, i + 1, false, succParent);
+        if(succParent != nullptr) {
+            succParent->left = suc->right;
+        }else {
+            toDelete->right = suc->right;
+        }
+        toDelete->key = suc->key;
+
+        delete suc;
+        suc = nullptr;
+    }
 }
 
 void demo() {
 
     int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int n = sizeof(a) / sizeof(int);
-
-    Bst *tree = createBst(1, n, a);
+    Bst *tree = createBst(0, n - 1, a);
     prettyPrint(tree, 0);
     std::cout << "os Selecting 3 random keys from the previously built tree \n";
     for(int i = 0;i < 3; i++) {
-        int j;
-        j = rand() % n;
-        Bst *node = osSelect(tree, j);
-        std::cout <<j<<"th key number " << i + 1 << ": ";
+        int j = rand() % n;
+        Bst *dummyParent = nullptr;
+        Bst *node = osSelect(tree, j, false, dummyParent);
         std::cout << node->key << std::endl;
+        osDelete(&tree, j);
+        prettyPrint(tree, 0);
+        std::cout << std::endl;
+        n--;
     }
 }
 int main() {
