@@ -65,7 +65,7 @@ Bst *osSelect(Bst *root, int i, bool delCase, Bst *&parent) {
 
 void osDelete(Bst **root, int i) {
     Bst *parent = nullptr;
-    Bst *toDelete = osSelect(*root, i, true, parent);
+    Bst *toDelete = osSelect(*root, i, false, parent);
 
     if(toDelete->right == nullptr && toDelete->left == nullptr) {
         if(parent->right == toDelete) {
@@ -75,40 +75,52 @@ void osDelete(Bst **root, int i) {
             delete toDelete;
             parent->left = nullptr;
         }
+        parent = nullptr;
+        osSelect(*root, i, true, parent);
+        return;
+    }
 
-    }else if(toDelete->right != nullptr && toDelete->left == nullptr) {
+    if(toDelete->right != nullptr && toDelete->left == nullptr) {
         Bst *dummy = toDelete;
         toDelete = toDelete->right;
         if(parent->right == dummy) {
             parent->right = toDelete;
-            parent->left = nullptr;
         }else {
             parent->left = toDelete;
-            parent->right = nullptr;
         }
         delete dummy;
-    }else if(toDelete->left != nullptr && toDelete->right == nullptr) {
+        parent = nullptr;
+        osSelect(*root, i, true, parent);
+        return;
+    }
+
+    if(toDelete->left != nullptr && toDelete->right == nullptr) {
         Bst *dummy = toDelete;
         toDelete = toDelete->left;
         if(parent->right == dummy) {
-            parent->right = toDelete;
+            parent->right = toDelete;//////////REFACEM LEGATURILE
         }else {
             parent->left = toDelete;
         }
         delete dummy;
-        dummy = nullptr;
-    }else if(toDelete->left != nullptr && toDelete->right != nullptr) {
+        parent = nullptr;
+        osSelect(*root, i, true, parent);
+        return; //////////sa nu intre pe un alt if
+    }
+
+    if(toDelete->left != nullptr && toDelete->right != nullptr) {
         Bst *succParent = nullptr;
         Bst *suc = osSelect(*root, i + 1, false, succParent);
-        if(succParent != nullptr) {
+        if(succParent->left == suc) {
             succParent->left = suc->right;
         }else {
-            toDelete->right = suc->right;
+            toDelete->right = suc->right;////////////REFACEM LEGATURILE
         }
         toDelete->key = suc->key;
 
         delete suc;
-        suc = nullptr;
+        parent = nullptr;
+        osSelect(*root, i, true, parent);
     }
 }
 
@@ -120,11 +132,15 @@ void demo() {
     prettyPrint(tree, 0);
     std::cout << "os Selecting 3 random keys from the previously built tree \n";
     for(int i = 0;i < 3; i++) {
-        int j = rand() % n;
+        int j = 0;
+        do {
+            j = rand() % n;
+        }while(n == 0);
+
         Bst *dummyParent = nullptr;
         Bst *node = osSelect(tree, j, false, dummyParent);
-        std::cout << node->key << std::endl;
-        osDelete(&tree, j);
+        std::cout << "deleteing key: "<<node->key << std::endl;
+        osDelete(&tree, 2);
         prettyPrint(tree, 0);
         std::cout << std::endl;
         n--;
