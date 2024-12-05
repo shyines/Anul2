@@ -4,7 +4,6 @@
 #include <fstream>
 #include "Profiler.h"
 #include <tuple>
-
 using namespace std;
 
 Profiler p;
@@ -51,7 +50,9 @@ void Graph::addEdge(int from, int to, int cost) {
     vertex *t = (work.find(to)->second); //to vertex
 
     tuple<vertex*, vertex*, int> dummy= make_tuple(f, t, cost);
+    tuple<vertex*, vertex*, int> dummy2 = make_tuple(t, f, cost);
     ge.push_back(dummy);//I create and add it
+    ge.push_back(dummy2);
 
     pair<int, vertex*> edge = make_pair(cost, t);
     f->adj.push_back(edge);
@@ -68,64 +69,27 @@ void Graph::print() {
         cout << "\n";
     }
 }
+/*
+class disjSet {
 
+    //Adresa la un nod, parintele sau, avem un vector de date - incapsulare buna (primul e nodul, al doilea e parintele si dupa rankul)
+    int key;
+    int parentKey;
+    int rank;
 
-class RootedNode {
-    private:
-        int rank;
-        int key;
-        RootedNode *parent;
+public:
+    void makeSet(int x);
 
-    public:
-        explicit RootedNode (int Key);
-        RootedNode *findSet(RootedNode *node);
-        void unify(RootedNode *root1, RootedNode *root2);
-        RootedNode *getParent();
-        void setParent(RootedNode *node);
-        int getRank();
-        void setRank();
 };
 
-void RootedNode::setParent(RootedNode *node) {
-    parent = node;
-}
-
-
-RootedNode *RootedNode::getParent() {
-    return parent;
-}
-
-void RootedNode::setRank() {
-    rank++;
-}
-
-int RootedNode::getRank() {
-    return rank;
-}
-
-RootedNode::RootedNode(int Key) {
+void disjSet::makeSet(int x) {
+    key = x;
+    parentKey = key;
     rank = 0;
-    key = Key;
-    parent = nullptr;
 }
 
-RootedNode *RootedNode::findSet(RootedNode *node) {
-    if (node->getParent() == nullptr) {
-        findSet(node->getParent());
-    }
-    return node;
-}
+*/
 
-void RootedNode::unify(RootedNode *root1, RootedNode *root2) {
-    if (root1->getRank() > root2->getRank()) {
-        root2->setParent(root1);
-    } else if (root1->getRank() == root2->getRank()){
-        root1->setParent(root2);
-        root2->setRank();
-    } else {
-        root1->setParent(root2);
-    }
-}
 /*
 struct Edge {
     int x;
@@ -133,47 +97,102 @@ struct Edge {
     int cost;
 };
 */
-/*
-struct Edge {
-    int x;
-    int y;
-    int cost;
-};
+struct disjSets {
+    int key;
+    int parentKey;
+    int rank;
+}parent[100005];
 
-rootedNode *makeSet(int x) {
-    rootedNode *root = new rootedNode(0, x, nullptr);
-    return root;
+
+void makeSet(int x) {
+    parent[x].key = x;
+    parent[x].parentKey = parent[x].key;
+    parent[x].rank = 0;
 }
 
-void unify(int x, int y) {
+void unify(int x, int y, vector<int>& roots) {
     if(parent[x].rank == parent[y].rank) {
-        parent[x].key = parent[y].key;
+        parent[x].parentKey = parent[y].parentKey;
         parent[y].rank++;
+        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }else if(parent[x].rank < parent[y].rank) {
-        parent[x].key = parent[y].key;
+        parent[x].parentKey = parent[y].parentKey;
+        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }else {
-        parent[y].key = parent[x].key;
+        parent[y].parentKey = parent[x].parentKey;
+        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }
 }
 int findSet(int x) {
-    if(parent[x].key == x) {
+    if(parent[x].parentKey == x) {
         return x;
     }
-    parent[x].key = findSet(parent[x].key);
-
+    return findSet(parent[x].parentKey);
 }
-*/
+
 
 void demo() {
     Graph g;
     int source[] = {1, 2, 3, 4, 5, 6, 7};
     int n = sizeof(source) / sizeof(int);
-    RootedNode* roots[n];
-
+    int m = n;
+    vector<int>roots;
 
     for (int i = 0;i < n; i++) {
         g.addVertex(source[i]);
-        roots[i] = new RootedNode(source[i]);
+        makeSet(source[i]);
+        roots.push_back(source[i]);
+    }
+    cout << "exericitiul 1: make set pe toate elementele iar apoi unify pe 5 elemente\n";
+
+    cout << "inainte de unify avem: \n";
+    for (int i = 0;i < roots.size(); i++) {
+        int special = findSet(roots.at(i));
+        cout << "setul: " << special << " cu nodurile din padure: ";
+        for (int j = 0;j < n; j++) {
+            if (findSet(parent[source[j]].parentKey) == special)
+                cout << parent[source[j]].key << " ";
+        }
+        cout << endl;
+    }
+
+    unify(parent[source[1]].parentKey, parent[source[2]].parentKey, roots);
+    unify(parent[source[0]].parentKey, parent[source[2]].parentKey, roots);
+    unify(parent[source[4]].parentKey, parent[source[6]].parentKey, roots);
+    unify(parent[source[4]].parentKey, parent[source[2]].parentKey, roots);
+    cout << "\ndupa unify: \n";
+
+    for (int i = 0;i < roots.size(); i++) {
+        int special = findSet(roots.at(i));
+        cout << "setul: " << special << " cu nodurile din padure: ";
+        for (int j = 0;j < n; j++) {
+            if (findSet(parent[source[j]].key) == special)
+                cout << parent[source[j]].key << " ";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+    g.addEdge(1, 3, 1);
+    g.addEdge(5, 7, 1);
+    g.addEdge(3, 6, 2);
+    g.addEdge(7, 4, 2);
+    g.addEdge(2, 4, 3);
+    g.addEdge(2, 5, 3);
+    g.addEdge(1, 5, 5);
+}
+
+void kruskalDemo() {
+    Graph g;
+    int source[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(source) / sizeof(int);
+    int m = n;
+    vector<int>roots;
+
+    for (int i = 0;i < n; i++) {
+        g.addVertex(source[i]);
+        makeSet(source[i]);
+        roots.push_back(source[i]);
     }
 
     g.addEdge(1, 3, 1);
@@ -184,12 +203,7 @@ void demo() {
     g.addEdge(2, 5, 3);
     g.addEdge(1, 5, 5);
 
-    g.print();
-
-    for ()
 }
-
-
 int main() {
     demo();
     return 0;
