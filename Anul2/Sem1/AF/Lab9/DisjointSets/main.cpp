@@ -50,9 +50,9 @@ void Graph::addEdge(int from, int to, int cost) {
     vertex *t = (work.find(to)->second); //to vertex
 
     tuple<vertex*, vertex*, int> dummy= make_tuple(f, t, cost);
-    tuple<vertex*, vertex*, int> dummy2 = make_tuple(t, f, cost);
+    //tuple<vertex*, vertex*, int> dummy2 = make_tuple(t, f, cost);
     ge.push_back(dummy);//I create and add it
-    ge.push_back(dummy2);
+    //ge.push_back(dummy2);
 
     pair<int, vertex*> edge = make_pair(cost, t);
     f->adj.push_back(edge);
@@ -112,22 +112,22 @@ void makeSet(int x) {
 
 void unify(int x, int y, vector<int>& roots) {
     if(parent[x].rank == parent[y].rank) {
+        roots.erase(find(roots.begin(), roots.end(), parent[x].parentKey));
         parent[x].parentKey = parent[y].parentKey;
         parent[y].rank++;
-        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }else if(parent[x].rank < parent[y].rank) {
+        roots.erase(find(roots.begin(), roots.end(), parent[x].parentKey));
         parent[x].parentKey = parent[y].parentKey;
-        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }else {
+        roots.erase(find(roots.begin(), roots.end(), parent[y].parentKey));
         parent[y].parentKey = parent[x].parentKey;
-        roots.erase(find(roots.begin(), roots.end(), parent[x].key));
     }
 }
 int findSet(int x) {
-    if(parent[x].parentKey == x) {
-        return x;
+    if (parent[x].parentKey != x) {
+        parent[x].parentKey = findSet(parent[x].parentKey);
     }
-    return findSet(parent[x].parentKey);
+    return parent[x].parentKey;
 }
 
 
@@ -135,7 +135,6 @@ void demo() {
     Graph g;
     int source[] = {1, 2, 3, 4, 5, 6, 7};
     int n = sizeof(source) / sizeof(int);
-    int m = n;
     vector<int>roots;
 
     for (int i = 0;i < n; i++) {
@@ -182,6 +181,11 @@ void demo() {
     g.addEdge(1, 5, 5);
 }
 
+bool compareEdges(const tuple<int, int, int>& a, const tuple<int, int, int>& b) {
+    return std::get<2>(a) < std::get<2>(b);  // Sort by the third element (weight)
+}
+
+
 void kruskalDemo() {
     Graph g;
     int source[] = {1, 2, 3, 4, 5, 6, 7};
@@ -195,16 +199,38 @@ void kruskalDemo() {
         roots.push_back(source[i]);
     }
 
-    g.addEdge(1, 3, 1);
-    g.addEdge(5, 7, 1);
-    g.addEdge(3, 6, 2);
-    g.addEdge(7, 4, 2);
-    g.addEdge(2, 4, 3);
-    g.addEdge(2, 5, 3);
-    g.addEdge(1, 5, 5);
+    g.addEdge(source[0], source[2], 1);
+    g.addEdge(source[4], source[6], 1);
+    g.addEdge(source[2], source[5], 2);
+    g.addEdge(source[6], source[3], 2);
+    g.addEdge(source[1], source[3], 3);
+    g.addEdge(source[1], source[4], 3);
+    g.addEdge(source[0], source[4], 5);
+
+    sort(g.ge.begin(), g.ge.end(), [](const auto& a, const auto& b) {
+        return std::get<2>(a) < std::get<2>(b);
+    });
+    for (auto& i : g.ge) {
+        if (findSet(std::get<0>(i)->key) != findSet(std::get<1>(i)->key)) {
+            unify(std::get<0>(i)->key, std::get<1>(i)->key, roots);
+        }
+    }
+
+    for (int i = 0;i < roots.size(); i++) {
+        int special = findSet(roots.at(i));
+        cout << "setul: " << special << " cu nodurile din padure: ";
+        for (int j = 0;j < n; j++) {
+            if (findSet(parent[source[j]].key) == special)
+                cout << parent[source[j]].key << " ";
+        }
+        cout << endl;
+    }
 
 }
 int main() {
     demo();
+    cout << "Kruskal demo" << endl;
+    memset(parent, 0, 10005);
+    kruskalDemo();
     return 0;
 }
