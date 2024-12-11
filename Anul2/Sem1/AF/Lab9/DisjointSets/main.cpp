@@ -213,6 +213,7 @@ void kruskalDemo() {
     for (auto& i : g.ge) {
         if (findSet(std::get<0>(i)->key) != findSet(std::get<1>(i)->key)) {
             unify(std::get<0>(i)->key, std::get<1>(i)->key, roots);
+            cout << std::get<0>(i)->key << " " << std::get<1>(i)->key << endl;
         }
     }
 

@@ -1,0 +1,9 @@
+# ninja log v6
+12	10799	7551785143186622	CMakeFiles/DisjointSets.dir/main.cpp.obj	8ef9f131da61d578
+10817	12404	7551785251235014	DisjointSets.exe	b60b4a3f739275df
+22	14637	7551786585841925	CMakeFiles/DisjointSets.dir/main.cpp.obj	8ef9f131da61d578
+14639	16669	7551786732073736	DisjointSets.exe	b60b4a3f739275df
+24	10390	7551787662574551	CMakeFiles/DisjointSets.dir/main.cpp.obj	8ef9f131da61d578
+10391	11993	7551787766230892	DisjointSets.exe	b60b4a3f739275df
+28	12548	7551792836781651	CMakeFiles/DisjointSets.dir/main.cpp.obj	8ef9f131da61d578
+12549	14508	7551792961985139	DisjointSets.exe	b60b4a3f739275df
