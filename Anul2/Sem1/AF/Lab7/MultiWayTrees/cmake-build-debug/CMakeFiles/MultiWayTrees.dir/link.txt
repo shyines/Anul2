@@ -1,0 +1,3 @@
+"D:\Apps\Clion\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\MultiWayTrees.dir/objects.a
+"D:\Apps\Clion\CLion 2024.3\bin\mingw\bin\ar.exe" qc CMakeFiles\MultiWayTrees.dir/objects.a @CMakeFiles\MultiWayTrees.dir\objects1.rsp
+"D:\Apps\Clion\CLion 2024.3\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\MultiWayTrees.dir/objects.a -Wl,--no-whole-archive -o MultiWayTrees.exe -Wl,--out-implib,libMultiWayTrees.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MultiWayTrees.dir\linkLibs.rsp

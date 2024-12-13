@@ -1,17 +1,45 @@
 #include <stdlib.h>
 #include <string.h>
 #include "bfs.h"
+#include <iostream>
 
-int get_neighbors(const Grid *grid, Point p, Point neighb[])
-{
+#include <queue>
+/*
+void prettyPrintR1(int parent[], int n, int tabs, Point *indexParent) {
+
+    for(int i = 0;i < tabs; i++) {
+        std::cout << "\t";
+    }
+    std::cout <<"("<< indexParent->row <<", " << indexParent->col << ")"<< "\n";
+
+    for(int i = 1;i <= n; i++) {
+        if(parent[i] == indexParent) {
+            prettyPrintR1(parent, n, tabs + 1, i);
+        }
+    }
+}
+*/
+int get_neighbors(const Grid *grid, Point p, Point neighb[]) { //DONE!!!!!!!!!!!!!
     int dx[] = {-1, 0, 1, 0};
     int dy[] = {0, 1, 0, -1};
-
+    int numOfNeighbors = 0;
     // TODO: fill the array neighb with the neighbors of the point p and return the number of neighbors
     // the point p will have at most 4 neighbors (up, down, left, right)
     // avoid the neighbors that are outside the grid limits or fall into a wall
     // note: the size of the array neighb is guaranteed to be at least 4
-    return 0;
+    if (grid->mat[p.row][p.col] == 1) {
+        return 0;
+    }
+    for (int i = 0;i < 4; i++) {
+            int newCol = p.col + dx[i];
+            int newRow = p.row + dy[i];
+            if (!(newCol < 0 || newCol > grid->cols || newRow < 0 || newRow > grid->rows || grid->mat[newRow][newCol])) {
+                neighb[numOfNeighbors].col = newCol;
+                neighb[numOfNeighbors].row = newRow;
+                numOfNeighbors++;
+            }
+    }
+    return numOfNeighbors;
 }
 
 void grid_to_graph(const Grid *grid, Graph *graph)
@@ -96,6 +124,30 @@ void bfs(Graph *graph, Node *s, Operation *op)
     // for counting the number of operations, the optional op parameter is received
     // since op can be NULL (when we are calling the bfs for display purposes), you should check it before counting:
     // if(op != NULL) op->count();
+    std::queue<Node *> q;
+    q.push(s);
+    while (!q.empty()) {
+        if (op != nullptr) {
+            op->count(2);
+        }
+        Node * currentNode = q.front();
+        q.pop();
+        for (int i = 0;i < currentNode->adjSize; i++) {
+            if (op != nullptr) {
+                op->count();
+            }
+            if (currentNode->adj[i]->color == COLOR_WHITE) {
+                currentNode->adj[i]->color = COLOR_GRAY;
+                currentNode->adj[i]->dist = currentNode->dist + 1;
+                currentNode->adj[i]->parent = currentNode;
+                q.push(currentNode->adj[i]);
+                if (op != nullptr) {
+                    op->count(4);
+                }
+            }
+        }
+        currentNode->color = COLOR_BLACK;
+    }
 }
 
 void print_bfs_tree(Graph *graph)
@@ -156,6 +208,7 @@ void print_bfs_tree(Graph *graph)
         // the parrent array is p (p[k] is the parent for node k or -1 if k is the root)
         // when printing the node k, print repr[k] (it contains the row and column for that point)
         // you can adapt the code for transforming and printing multi-way trees from the previous labs
+
     }
 
     if(p != NULL){
@@ -189,14 +242,47 @@ void performance()
         Operation op = p.createOperation("bfs-edges", n);
         Graph graph;
         graph.nrNodes = 100;
+        int numOfEdges = n;
         //initialize the nodes of the graph
         graph.v = (Node**)malloc(graph.nrNodes * sizeof(Node*));
         for(i=0; i<graph.nrNodes; ++i){
             graph.v[i] = (Node*)malloc(sizeof(Node));
-            memset(graph.v[i], 0, sizeof(Node));
+            graph.v[i]->adjSize = 0;
+            graph.v[i]->color = 0;
+            graph.v[i]->adj = (Node**)malloc(sizeof(Node*) * graph.nrNodes);
         }
         // TODO: generate n random edges
         // make sure the generated graph is connected
+        for (int i = 0;i < graph.nrNodes - 1; i++) {
+            graph.v[i]->adj[graph.v[i]->adjSize++] = graph.v[i + 1];
+            graph.v[i + 1]->adj[graph.v[i + 1]->adjSize++] = graph.v[i];
+        }
+        numOfEdges -= (graph.nrNodes - 1);
+
+        for (int i = 0;i < numOfEdges; i++) {
+            int dest = rand() % graph.nrNodes;
+            int start = rand() % graph.nrNodes;
+            bool ok = false;
+            for (int j = 0;j < graph.v[start]->adjSize; j++) {
+                if (graph.v[dest] == graph.v[start]->adj[j]) {
+                    ok = true;
+                    break;
+                }
+            }
+            while (ok) {
+                ok = false;
+                dest = rand() % graph.nrNodes;
+                start = rand() % graph.nrNodes;
+                for (int j = 0;j < graph.v[start]->adjSize; j++) {
+                    if (graph.v[dest] == graph.v[start]->adj[j]) {
+                        ok = true;
+                        break;
+                    }
+                }
+            }
+            graph.v[start]->adj[graph.v[start]->adjSize++] = graph.v[dest];
+            graph.v[dest]->adj[graph.v[dest]->adjSize++] = graph.v[start];
+        }
 
         bfs(&graph, graph.v[0], &op);
         free_graph(&graph);
@@ -207,14 +293,47 @@ void performance()
         Operation op = p.createOperation("bfs-vertices", n);
         Graph graph;
         graph.nrNodes = n;
+        int numOfEdges = 4500;
         //initialize the nodes of the graph
         graph.v = (Node**)malloc(graph.nrNodes * sizeof(Node*));
         for(i=0; i<graph.nrNodes; ++i){
             graph.v[i] = (Node*)malloc(sizeof(Node));
-            memset(graph.v[i], 0, sizeof(Node));
+            graph.v[i]->adjSize = 0;
+            graph.v[i]->color = 0;
+            graph.v[i]->adj = (Node**)malloc(sizeof(Node*) * graph.nrNodes);
         }
         // TODO: generate 4500 random edges
         // make sure the generated graph is connected
+        for (int i = 0;i < graph.nrNodes - 1; i++) {
+            graph.v[i]->adj[graph.v[i]->adjSize++] = graph.v[i + 1];
+            graph.v[i + 1]->adj[graph.v[i + 1]->adjSize++] = graph.v[i];
+        }
+        numOfEdges -= (graph.nrNodes - 1);
+
+        for (int i = 0;i < numOfEdges; i++) {
+            int dest = rand() % graph.nrNodes;
+            int start = rand() % graph.nrNodes;
+            bool ok = false;
+            for (int j = 0;j < graph.v[start]->adjSize; j++) {
+                if (graph.v[dest] == graph.v[start]->adj[j]) {
+                    ok = true;
+                    break;
+                }
+            }
+            while (ok) {
+                ok = false;
+                dest = rand() % graph.nrNodes;
+                start = rand() % graph.nrNodes;
+                for (int j = 0;j < graph.v[start]->adjSize; j++) {
+                    if (graph.v[dest] == graph.v[start]->adj[j]) {
+                        ok = true;
+                        break;
+                    }
+                }
+            }
+            graph.v[start]->adj[graph.v[start]->adjSize++] = graph.v[dest];
+            graph.v[dest]->adj[graph.v[dest]->adjSize++] = graph.v[start];
+        }
 
         bfs(&graph, graph.v[0], &op);
         free_graph(&graph);
