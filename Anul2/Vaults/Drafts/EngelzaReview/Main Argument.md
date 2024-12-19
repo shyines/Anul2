@@ -1,0 +1,3 @@
+
+2DToonShade is a simplistic and easy to use tool used to create shaders.
+The method employs simple yet very efficient algorithms to create shading directly out of drawn strokes.As opposed to previous approaches, this method does not rely on a complex [3D reconstruction](https://www.sciencedirect.com/topics/computer-science/3d-reconstruction "Learn more about 3D reconstruction from ScienceDirect's AI-generated Topic Pages")
