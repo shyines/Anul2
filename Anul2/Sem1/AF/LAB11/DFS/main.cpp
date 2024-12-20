@@ -3,7 +3,7 @@
 #include <string.h>
 #include <vector>
 #include "Profiler.h"
-
+#include <stack>
 Profiler p;
 enum {
     WHITE = 0,
@@ -16,8 +16,77 @@ struct node {
     //int adjSize;
     std::vector<node*>adj;
     int color;
+    int index;
+    int comp;
+    bool onStack;
+    int lowLink;
 };
+
+int index = 0;
+std::stack <node*> stack;
+int nrComponents;
 std::list<node*>list;
+
+void strongConnect(std::vector<node*> &graph, node* node) {
+    node->index = node->lowLink = index;
+    index = index + 1;
+    stack.push(node);
+    node->onStack = true;
+    for(auto it: node->adj) {
+        if(it->index == -1) {
+            strongConnect(graph, it);
+            node->lowLink = std::min(node->lowLink, it->lowLink);
+        }else if (it->onStack) {
+            node->lowLink = std::min(node->lowLink, it->index);
+        }
+    }
+
+    if(node->lowLink == node->index) {
+        nrComponents++;
+        struct node *v;
+        do {
+            v = stack.top();
+            stack.pop();
+            v->onStack = false;
+            v->comp = nrComponents;
+        }while(v != node);
+    }
+}
+
+void tarjan(std::vector<node*> &graph) {
+    index = 0;
+    while(!stack.empty())
+    {
+        stack.pop();
+    }
+    nrComponents = 0;
+
+    for(auto it: graph) {
+        it->index = -1;
+        it->lowLink = -1;
+        it->onStack = false;
+        it->comp = 0;
+    }
+
+    for(auto it: graph) {
+        if(it->index == -1) {
+            strongConnect(graph, it);
+        }
+    }
+}
+
+void printScc(std::vector<node*> &graph) {
+    for(int i = 1;i <= nrComponents; i++) {
+        std::cout << "Component nr " << i << "\n";
+        for(auto it: graph) {
+            if(it->comp == i) {
+                std::cout << " " << it->key;
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
 void dfsVisit(node *start, Operation *op) {
     start->color = GREY;
     if (op != nullptr) {
@@ -92,6 +161,8 @@ void dfsDemo() {
     showGraph(graph, numOfVertexes);
     dfs(graph, numOfVertexes, nullptr);
     showList();
+    tarjan(graph);
+    printScc(graph);
 }
 
 void performance() {
@@ -159,8 +230,8 @@ void performance() {
                 }
             }
             addVertice(start, dest, graph1);
-            dfs(graph1, static_cast<int>(graph1.size()), &op);
         }
+        dfs(graph1, static_cast<int>(graph1.size()), &op);
     }
     p.showReport();
 }
