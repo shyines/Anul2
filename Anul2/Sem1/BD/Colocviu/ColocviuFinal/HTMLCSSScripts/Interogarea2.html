@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afisare Retete si Ingrediente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Afisarea Retetelor si Ingredientelor</h1>
+
+    <!-- Formular pentru afisarea retetei care contine ingredientul specificat -->
+    <form action="rezultateform2A.php" method="post">
+        <h2>Afisarea retetei care contine ingredientul in cantitatea de x unitati de masura</h2>
+        <table>
+            <tr>
+                <td>Numele ingredientului:</td>
+                <td>
+                    <input type="text" name="Ingredient" size="20" maxlength="20" placeholder="Ex: Zahăr">
+                </td>
+            </tr>
+            <tr>
+                <td>Cantitate:</td>
+                <td>
+                    <input type="text" name="cantitate" size="10" maxlength="10" placeholder="Ex: 100">
+                </td>
+            </tr>
+            <tr>
+                <td>Unitate de masura:</td>
+                <td>
+                    <input type="text" name="um" size="10" maxlength="10" placeholder="Ex: gr">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Afiseaza">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Formular pentru afisarea perechilor unice de ingrediente -->
+    <form action="rezultateform2B.php" method="post">
+        <h2>Afisarea de perechi unice (ingred_id1, ingred_id2) din retete diferite in aceeasi cantitate si um</h2>
+        <table>
+            <tr>
+                <td>Cantitate:</td>
+                <td>
+                    <input type="text" name="cantitate" size="20" maxlength="20" placeholder="Ex: 50">
+                </td>
+            </tr>
+            <tr>
+                <td>Unitate de masura:</td>
+                <td>
+                    <input type="text" name="um" size="10" maxlength="10" placeholder="Ex: ml">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Afiseaza">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="back-link">
+        <a href="/Colocviu">Meniu Principal</a>
+    </div>
+</body>
+</html>

@@ -1,62 +1,41 @@
-Drop Table Categorie;
-Drop Table Ingredient;
-Drop Table Reteta;
-Drop Table Set_Ingrediente;
+DROP TABLE IF EXISTS Categorie;
+DROP TABLE IF EXISTS Ingredient;
+DROP TABLE IF EXISTS Reteta;
+DROP TABLE IF EXISTS Set_Ingrediente;
 
+CREATE TABLE Categorie (
+    categ_id INT NOT NULL AUTO_INCREMENT,
+    tip VARCHAR(50) NOT NULL,
+    PRIMARY KEY (categ_id)
+) ENGINE=InnoDB;
 
-Create Table Categorie (
-	categ_id NUMBER(4),
-	tip VARCHAR(50) CONSTRAINT "C_tip_nn" NOT NULL,
-    CONSTRAINT "C_categ_id_pk" PRIMARY KEY (categ_id)
-);
+CREATE TABLE Ingredient (
+    ingred_id INT NOT NULL AUTO_INCREMENT,
+    nume_ingredient VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ingred_id)
+) ENGINE=InnoDB;
 
-Create Table Ingredient(
-	ingred_id NUMBER(4),
-	nume_ingredient VARCHAR(50) CONSTRAINT "Ing_nume_ingredient_nn" NOT NULL,
-    CONSTRAINT "Ing_ingred_id" PRIMARY KEY(ingred_id)
-);
+CREATE TABLE Reteta (
+    reteta_id INT NOT NULL AUTO_INCREMENT,
+    nume VARCHAR(100),
+    descriere VARCHAR(500),
+    categ_id INT,
+    vegetariana CHAR(1),
+    timp_preparare INT,
+    portii INT,
+    PRIMARY KEY (reteta_id),
+    FOREIGN KEY (categ_id) REFERENCES Categorie(categ_id)
+) ENGINE=InnoDB;
 
-Create Table Reteta (
-	reteta_id NUMBER(4),
-	nume VARCHAR(100),
-	descriere VARCHAR(500),
-	categ_id NUMBER(4),
-	vegetariana CHAR(1),
-	timp_preparare NUMBER(3),
-	portii INTEGER,
-    CONSTRAINT "Ret_reteta_id" PRIMARY KEY(reteta_id)
-);
-
-Create Table Set_Ingrediente(
-	reteta_id NUMBER(4),
-	ingred_id NUMBER(4),
-	cantitate INTEGER,
-    um VARCHAR(10)
-);
-
-ALTER TABLE Reteta ADD CONSTRAINT "Ret_categ_id_fk" FOREIGN KEY (categ_id)
-    REFERENCES Categorie(categ_id);
-
-ALTER TABLE Set_Ingrediente ADD CONSTRAINT "Set_I_reteta_id_fk" FOREIGN KEY (reteta_id)
-    REFERENCES Reteta(reteta_id);
-
-ALTER TABLE Set_Ingrediente ADD CONSTRAINT "Set_I_ingred_id_fk" FOREIGN KEY (ingred_id)
-    REFERENCES Ingredient(ingred_id);
-
-ALTER TABLE Reteta
-    ADD (autor VARCHAR(14));
-
-ALTER TABLE Set_Ingrediente ADD CONSTRAINT "Set_I_um_ck" 
-CHECK (um = 'gr' or um = 'ml' or um = 'lingura' or um ='lingurita' or um = 'buc' or um = 'cana');
-
-ALTER TABLE Set_Ingrediente ADD CONSTRAINT "Set_I_cantitate_ck" 
-CHECK (NOT (um = 'buc' AND (cantitate <= 0 OR cantitate > 25)));
-
-ALTER TABLE Categorie ADD CONSTRAINT "Categ_tip_ck" 
-CHECK (tip  = 'aperitiv rece' or tip = 'aperitiv cald' or tip = 'supa' or tip = 'ciorba' or tip = 'fel principal' or tip = 'salata' or tip = 'desert');
-
-ALTER TABLE Reteta ADD CONSTRAINT "Ret_vegetariana_ck"
-CHECK(vegetariana = 'D' or vegetariana = 'N');
+CREATE TABLE Set_Ingrediente (
+    reteta_id INT NOT NULL,
+    ingred_id INT NOT NULL,
+    cantitate DECIMAL(10, 2),
+    um ENUM('gr', 'ml', 'lingura', 'lingurita', 'buc', 'cana'),
+    PRIMARY KEY (reteta_id, ingred_id),
+    FOREIGN KEY (reteta_id) REFERENCES Reteta(reteta_id),
+    FOREIGN KEY (ingred_id) REFERENCES Ingredient(ingred_id)
+) ENGINE=InnoDB;
 
 INSERT INTO Categorie (categ_id, tip)
     VALUES(1, 'aperitiv rece');
@@ -446,210 +425,3 @@ VALUES (33, 19, 150, 'gr');
 
 INSERT INTO Set_Ingrediente(reteta_id, ingred_id, cantitate, um)
 VALUES (34, 20, 100, 'gr');
-
-
-4.3
-a)
-select descriere
-from reteta
-where vegetariana = 'D'
-order by timp_preparare desc, nume asc
-
-b)		
-select ingred_id, nume_ingredient as Nume
-from ingredient
-where nume_ingredient like '%e%'
-order by nume_ingredient asc;
-
-4.4
-a)
-select Nume as Nume, descriere as Descriere, tip as Tip, cantitate, um
-from set_ingrediente s join reteta r on (r.reteta_id = s.reteta_id) join Categorie c on (r.categ_id = c.categ_id) join ingredient i on (s.ingred_id = i.ingred_id)
-where i.nume_ingredient = 'Ceapă' and s.cantitate = 500 and s.um = 'gr';
-
-b)
-SELECT DISTINCT 
-    LEAST(s1.ingred_id, s2.ingred_id) AS ingred_id1,
-    GREATEST(s1.ingred_id, s2.ingred_id) AS ingred_id2
-FROM 
-    Set_Ingrediente s1
-JOIN 
-    Set_Ingrediente s2
-ON 
-    s1.reteta_id <> s2.reteta_id  -- Rețete diferite
-    AND s1.ingred_id <> s2.ingred_id  -- Ingrediente diferite
-    AND s1.cantitate = s2.cantitate  -- Aceeași cantitate
-    AND s1.um = s2.um  -- Aceeași unitate de măsură
-GROUP BY 
-    LEAST(s1.ingred_id, s2.ingred_id), 
-    GREATEST(s1.ingred_id, s2.ingred_id);
-
-
-4.5
-a)
-SELECT nume, descriere, timp_preparare
-FROM Reteta R1
-WHERE vegetariana = 'D'
-AND NOT EXISTS (
-    SELECT 1
-    FROM Reteta R2
-    WHERE R2.vegetariana = 'D'
-    AND R2.timp_preparare > R1.timp_preparare
-);
-
-
-b)
-
-4.6
-a)
-SELECT categ_id,	
-       Round(MIN(timp_preparare),0) AS timp_minim,
-       Round(AVG(timp_preparare),0) AS timp_mediu,
-       Round(MAX(timp_preparare),0) AS timp_maxim
-FROM Reteta
-GROUP BY categ_id;
-
-b)
-SELECT AVG(si.cantitate) AS cantitate_medie_usturoi
-FROM Set_Ingrediente si
-JOIN Ingredient i ON si.ingred_id = i.ingred_id
-JOIN Reteta r ON si.reteta_id = r.reteta_id
-WHERE i.nume_ingredient = 'usturoi'
-AND r.nume LIKE '%toc%';
-
-4.7
-a)
-Insert into Reteta (Reteta_id, nume, descriere, categ_id, vegetariana, timp_preparare, portii, autor)
-    Values(35, 'Beef Stroganoff', NULL, 5, 'N', 40, 1, 'Matei');
-
-
-Insert into ingredient (ingred_id, nume_ingredient)
-    values (32, 'muschi de vita');
-
-Insert into ingredient (ingred_id, nume_ingredient)
-    values (33, 'mustar de Dijon');
-
-declare
-
-begin
-insert into Set_ingrediente(reteta_id, ingred_id, cantitate, um)
-    values ((Select reteta_id
-            from Reteta
-            where nume = 'Beef Stroganoff'),
-
-            (Select ingred_id
-            from ingredient
-            where nume_ingredient = 'muschi de vita'),
-
-            500, 'gr');
-
-insert into Set_ingrediente(reteta_id, ingred_id, cantitate, um)
-    values ((Select reteta_id
-            from Reteta
-            where nume = 'Beef Stroganoff'),
-
-            (Select ingred_id
-            from ingredient
-            where nume_ingredient = 'mustar de Dijon'),
-
-            1, 'lingura');
-insert into Set_ingrediente(reteta_id, ingred_id, cantitate, um)
-    values ((Select reteta_id
-            from Reteta
-            where nume = 'Beef Stroganoff'),
-
-            (Select ingred_id
-            from ingredient
-            where nume_ingredient = 'Smântână'),
-
-            250, 'ml');
-end;
-
-b)
-DECLARE
-    CURSOR cur IS
-        SELECT categ_id, tip
-        FROM Categorie
-        WHERE NOT EXISTS (
-            SELECT 1
-            FROM Reteta
-            WHERE Reteta.categ_id = Categorie.categ_id
-        );
-BEGIN
-    FOR cat IN cur LOOP
-        DBMS_OUTPUT.PUT_LINE('Se va șterge categoria: ' || cat.tip);
-    END LOOP;
-
-    -- Ștergerea propriu-zisă
-    DELETE FROM Categorie
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM Reteta
-        WHERE Reteta.categ_id = Categorie.categ_id
-    );
-
-    COMMIT;
-END;
-
-c)
-DECLARE
-    CURSOR cur_set_ingrediente IS
-        SELECT reteta_id, ingred_id, cantitate
-        FROM set_ingrediente
-        WHERE um = 'lingurita'
-        FOR UPDATE NOWAIT;
-BEGIN
-    FOR cat IN cur_set_ingrediente LOOP
-        UPDATE set_ingrediente
-        SET cantitate = cantitate / 2,
-            um = 'lingura'
-        WHERE reteta_id = cat.reteta_id
-        AND ingred_id = cat.ingred_id;
-    END LOOP;
-
-    COMMIT;
-END;
-
-
-4.8
-
-CREATE TABLE Exceptii AS
-SELECT Reteta.*, CAST(NULL AS VARCHAR2(100)) AS natura_exceptiei
-FROM Reteta
-WHERE 1 = 0;
-
-
-CREATE OR REPLACE PROCEDURE Inserare_Exceptii AS
-BEGIN
-    -- Condiția 1: Supe fără apă
-    INSERT INTO Exceptii
-    SELECT r.*, 'Supă fără apă' AS natura_exceptiei
-    FROM Reteta r
-    WHERE r.categ_id = (SELECT categ_id FROM Categorie WHERE categ_id = 3)
-    AND NOT EXISTS (
-        SELECT 1
-        FROM Set_Ingrediente si
-        JOIN Ingredient i ON si.ingred_id = i.ingred_id
-        WHERE si.reteta_id = r.reteta_id AND LOWER(i.nume_ingredient) = 'apă'
-    );
-
-    -- Condiția 2: Rețetă vegetariană cu carne
-    INSERT INTO Exceptii
-    SELECT r.*, 'Rețetă vegetariană cu carne' AS natura_exceptiei
-    FROM Reteta r
-    WHERE r.vegetariana = 'D'
-    AND EXISTS (
-        SELECT 1
-        FROM Set_Ingrediente si
-        JOIN Ingredient i ON si.ingred_id = i.ingred_id
-        WHERE si.reteta_id = r.reteta_id AND LOWER(i.nume_ingredient) = 'carne'
-    );
-
-    -- Confirmă tranzacția
-    COMMIT;
-END Inserare_Exceptii;
-
-BEGIN
-    Inserare_Exceptii;
-END;
-	

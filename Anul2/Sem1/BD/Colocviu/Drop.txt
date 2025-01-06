@@ -1,0 +1,21 @@
+Drop Table Categorie;
+Drop Table Ingredient;
+Drop Table Reteta;
+Drop Table Set_Ingrediente;
+
+
+order by timp_preparare desc, nume asc 
+
+select nume, nume_ingredient, cantitate, um
+from reteta r join set_ingrediente s on (r.reteta_id = s.reteta_id) join ingredient i on (i.ingred_id = s.ingred_id)
+
+select Nume as Nume, descriere as Descriere, tip as Tip, cantitate, um, i.nume_ingredient, 
+from reteta r join set_ingrediente s on (r.reteta_id = s.reteta_id) join ingredient i on (i.ingred_id = s.ingred_id)
+
+SELECT * FROM `retetecuingrediente` WHERE nume_ingredient = 'Carne de Vita' and cantitate = 500 and um = 'gr'
+"SELECT * FROM `retetecuingrediente` WHERE nume_ingredient = '.$ingredient' and cantitate = $cantitate and um = '.$um'";
+
+
+Select r.nume
+from reteta r join set_ingrediente si on (r.reteta_id = si.reteta id)
+where si.ingred_id = 1;

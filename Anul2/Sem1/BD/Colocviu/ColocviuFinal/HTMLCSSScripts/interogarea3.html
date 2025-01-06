@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalii Rețete - Ingredient și Cantitate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalii Rețete - Ingredient și Cantitate</h1>
+    <form action="rezultateform3B.php" method="post">
+        <table>
+            <tr>
+                <td><label for="ingredient">Ingredientul:</label></td>
+                <td>
+                    <input type="text" id="ingredient" name="ingredient" size="20" maxlength="20" placeholder="Ex: Zahăr" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="reteta">Rețeta:</label></td>
+                <td>
+                    <input type="text" id="reteta" name="reteta" size="50" maxlength="50" placeholder="Ex: Tort de ciocolată" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="um">Unitate de măsură:</label></td>
+                <td>
+                    <input type="text" id="um" name="um" size="10" maxlength="10" placeholder="Ex: grame" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Afișează">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="back-link">
+        <a href="/Colocviu">Meniu Principal</a>
+    </div>
+</body>
+</html>
