@@ -5,3 +5,30 @@ SELECT r.categ_id, c.tip,
        Round(MAX(r.timp_preparare),0) AS timp_maxim
 FROM Reteta r join categorie c on r.categ_id = c.categ_id
 GROUP BY r.categ_id;
+
+CREATE view retetecuingrediente as
+SELECT nume, nume_ingredient, cantitate, um
+from set_ingrediente si 
+join ingredient i on (si.ingred_id = i.ingred_id) j
+oin reteta r on (si.reteta_id = r.reteta_id)
+
+FUNCTIA 
+DELIMITER $$
+
+CREATE FUNCTION calcul_diferenta_maxim_mediu(categ_id INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE diferenta INT;
+
+    -- Calculăm diferența între timp_maxim și timp_mediu pentru categoria dată
+    SELECT timp_maxim - timp_mediu 
+    INTO diferenta
+    FROM categorii
+    WHERE categ_id = categ_id;
+
+    -- Returnăm rezultatul calculat
+    RETURN diferenta;
+END$$
+
+DELIMITER ;
