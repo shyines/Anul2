@@ -1,0 +1,32 @@
+[aimspice]
+[description]
+105
+Redresor MonoAlternant
+rl 2 0 100
+D1 1 2 Diodas
+.model Diodas D tt=1e-9
+vin 1 0 dc 5 sin(0 10 1k 0 0)
+[tran]
+1e9
+6e-3
+X
+X
+0
+[ana]
+4 2
+0
+1 1
+1 1 -10 10
+3
+Time
+v(2)
+v(1)
+0
+1 1
+1 1 -10 10
+4
+Time
+v(2)
+v(1)
+i(vin)
+[end]

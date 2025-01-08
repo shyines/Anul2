@@ -1,0 +1,33 @@
+[aimspice]
+[description]
+406
+Stabilizator parametric cu dioda Zener
+D1 1 2 Dioda
+D2 3 2 Dioda
+D3 0 3 Dioda
+D4 0 1 Dioda
+.Model Dioda D tt=1e-9
+D5 0 2 Zener
+.Model Zener D bv=6.8
+!*bv=Breakdown Voltage(tensiune de comutare inversa)
+C 2 0 1m
+R 2 0 100
+Vin 1 3 sin(0 10 50 0 0)
+!*Dioda Zener permite variatii mari de curent la variatii mici ale tenisunii inverse pe dioda
+!*Dioda Zener lasa sa treaca curentul in ambele parti
+[tran]
+1e-8
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -2 10
+3
+v(1)
+v(2)
+v(3)
+[end]

@@ -1,0 +1,78 @@
+1A. Prima Interogare
+SELECT descriere 
+FROM reteta 
+WHERE vegetariana = '$dSauN' 
+ORDER BY timp_preparare DESC, nume ASC
+
+1B.
+SELECT ingred_id, nume_ingredient AS Nume 
+FROM ingredient 
+WHERE nume_ingredient LIKE '%$secv%' 
+ORDER BY nume_ingredient ASC
+
+2A.
+SELECT * 
+FROM `retetecuingrediente` 
+WHERE nume_ingredient = ? AND cantitate = ? AND um = ?
+
+2B.
+SELECT DISTINCT 
+        LEAST(a.ingred_id, b.ingred_id) AS ingred_id1,
+        GREATEST(a.ingred_id, b.ingred_id) AS ingred_id2
+    FROM 
+        Set_Ingrediente a
+    JOIN 
+        Set_Ingrediente b
+    ON 
+        a.cantitate = b.cantitate
+        AND a.um = b.um
+        AND a.reteta_id != b.reteta_id
+        AND a.ingred_id < b.ingred_id
+    WHERE 
+        a.cantitate = $cantitate
+        AND a.um = '$um'
+    ORDER BY ingred_id1, ingred_id2
+
+3B.
+SELECT 
+        r.nume AS nume_reteta, 
+        r.descriere, 
+        r.timp_preparare, 
+        si.cantitate, 
+        si.um
+    FROM 
+        Reteta r
+    JOIN 
+        Set_Ingrediente si ON r.reteta_id = si.reteta_id
+    JOIN 
+        Ingredient i ON si.ingred_id = i.ingred_id
+    WHERE 
+        TRIM(LOWER(i.nume_ingredient)) LIKE TRIM(LOWER('%$ingredient%')) 
+        AND si.cantitate > (
+            SELECT 
+                si2.cantitate
+            FROM 
+                Reteta r2
+            JOIN 
+                Set_Ingrediente si2 ON r2.reteta_id = si2.reteta_id
+            JOIN 
+                Ingredient i2 ON si2.ingred_id = i2.ingred_id
+            WHERE 
+                TRIM(LOWER(r2.nume)) LIKE TRIM(LOWER('%$reteta%')) 
+                AND TRIM(LOWER(i2.nume_ingredient)) LIKE TRIM(LOWER('%$ingredient%')) 
+                AND si2.um = '$um'
+        )
+        AND si.um = '$um';
+
+4.
+SELECT 
+    categ_id,
+    tip,
+    timp_minim,
+    timp_mediu,
+    timp_maxim,
+    calcul_diferenta_maxim_mediu($tip_id) AS diferenta
+    FROM 
+    categorii 
+    WHERE 
+    categ_id = '$tip_id'

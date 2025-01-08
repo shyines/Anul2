@@ -1,0 +1,73 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Jan  8 18:10:33 2025
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab2\Redresor dubla alternanta in punte.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Redresor dubla alternanta in punte
+     2:  D1 1 2 Dioda
+     3:  D2 3 2 Dioda
+     4:  D3 0 3 Dioda
+     5:  D4 0 1 Dioda
+     6:  .Model Dioda D
+     7:  R1 2 0 100
+     8:  Vin 1 3 sin(0 10 1k 0 0)
+     9:  !*Pentru alternantele pozitive sunt deschise diodele D1 si D3
+    10:  !*Pentru alternantele negative sunt deschise diodele D2 si D4
+    11:  !*In acest fel, la iesire se va obtine doar tensiune pozitiva
+    12:  !*Utilizare: folosirea intregii cantitati de curent
+    13:  .tran 1e-9 6e-3 0 0.0000001
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-3
+	Display start time .. : 0
+	Maximum step size ... : 0.0000001
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 120035
+	Number of iterations for transient analysis....: 120028
+	Total number of timepoints.....................: 60015
+	Number of timepoints accepted..................: 60015
+	Number of timepoints rejected..................: 0
+	Total analysis time (sec)......................: 22.14
+	Transient analysis time (sec)..................: 22.121
+	Time spent in device loading (sec).............: 1.694
+	Time spent in L-U decomposition (sec)..........: 0.045
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0.031
+	Time spent in transient L-U decomposition (sec): 0.045
+	Time spent in transient matrix solving (sec)...: 0.031
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Redresor dubla alternanta in punte
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

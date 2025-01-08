@@ -1,0 +1,25 @@
+[aimspice]
+[description]
+317
+Redresor monoalternanta
+D1 1 2 Dioda
+.Model Dioda D
+R1 2 0 100
+Vin 1 0 sin(0 10 1k 0 0)
+!*Este permisa trecerea alternantelor pozitive si sunt blocate alternantele negative
+!*Acest lucru se intampla deoarece dioda este deschisa cand tensiunea din anod e pozitiva, si e inchisa cand tensiunea din anod e negativa
+[tran]
+1e-9
+6e-3
+0
+0.0000001
+0
+[ana]
+4 1
+0
+1 1
+1 1 -10 10
+2
+v(1)
+v(2)
+[end]

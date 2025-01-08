@@ -7,20 +7,26 @@
                  *                                           *
                  *********************************************
 
-	Date: Wed Jan  8 17:25:58 2025
-	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab2\CircuitCuODioda.cir
+	Date: Wed Jan  8 18:27:52 2025
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab4\InversorBipolatr.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
-     1:  !Circuit Dioda
+     1:  !inversor_lab5
      2:  
-     3:  D1 1 2 DiodaS
-     4:  .Model DiodaS D tt = 1e-9
-     5:  vin 1 0 dc 5 sin(0 5 1k 0 0)
-     6:  rl 2 0 100
-     7:  
-     8:  .tran 1e9 6e-3
+     3:  vin in 0 dc 0 pulse (0 5 0 1e-9 1e-9 1e-7 2e-7)
+     4:  vec ec 0 dc 5
+     5:  veb eb 0 dc -1
+     6:  c1 in b 15p
+     7:  c2 out 0 1p
+     8:  r1 in b 1k
+     9:  r2 out ec 1k
+    10:  r3 b eb 7k
+    11:  q1 out b 0 transistor
+    12:  .model transistor npn tr=5e-9 tf=8e-9
+    13:  
+    14:  .tran 1e-9 6e-7
 
 ***************************  Model Parameters  ****************************
 
@@ -31,8 +37,8 @@
 
 **************************  Analysis Parameters  **************************
 
-	Stepsize ............ : 1e9
-	Final time .......... : 6e-3
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-7
 	Use Initial Conditions: Off
 
 
@@ -43,22 +49,22 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 337
-	Number of iterations for transient analysis....: 330
-	Total number of timepoints.....................: 94
-	Number of timepoints accepted..................: 75
-	Number of timepoints rejected..................: 19
-	Total analysis time (sec)......................: 0.069
-	Transient analysis time (sec)..................: 0.061
-	Time spent in device loading (sec).............: 0.004
-	Time spent in L-U decomposition (sec)..........: 0
+	Total number of iterations.....................: 747
+	Number of iterations for transient analysis....: 742
+	Total number of timepoints.....................: 215
+	Number of timepoints accepted..................: 182
+	Number of timepoints rejected..................: 33
+	Total analysis time (sec)......................: 0.137
+	Transient analysis time (sec)..................: 0.132
+	Time spent in device loading (sec).............: 0.011
+	Time spent in L-U decomposition (sec)..........: 0.002
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient L-U decomposition (sec): 0.002
 	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: !Circuit Dioda
+Circuit: !inversor_lab5
 
 

@@ -1,0 +1,7 @@
+CREATE VIEW categorii AS
+SELECT r.categ_id, c.tip,	
+       Round(MIN(r.timp_preparare),0) AS timp_minim,
+       Round(AVG(r.timp_preparare),0) AS timp_mediu,
+       Round(MAX(r.timp_preparare),0) AS timp_maxim
+FROM Reteta r join categorie c on r.categ_id = c.categ_id
+GROUP BY r.categ_id;

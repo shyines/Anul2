@@ -1,0 +1,73 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Jan  8 18:16:43 2025
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\lab3\Stabilizator parametric cu Dioda Zener.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Stabilizator parametric cu dioda Zener
+     2:  D1 1 2 Dioda
+     3:  D2 3 2 Dioda
+     4:  D3 0 3 Dioda
+     5:  D4 0 1 Dioda
+     6:  .Model Dioda D tt=1e-9
+     7:  D5 0 2 Zener
+     8:  .Model Zener D bv=6.8
+     9:  !*bv=Breakdown Voltage(tensiune de comutare inversa)
+    10:  C 2 0 1m
+    11:  R 2 0 100
+    12:  Vin 1 3 sin(0 10 50 0 0)
+    13:  !*Dioda Zener permite variatii mari de curent la variatii mici ale tenisunii inverse pe dioda
+    14:  !*Dioda Zener lasa sa treaca curentul in ambele parti
+    15:  .tran 1e-8 60e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-8
+	Final time .......... : 60e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 1399
+	Number of iterations for transient analysis....: 1389
+	Total number of timepoints.....................: 395
+	Number of timepoints accepted..................: 306
+	Number of timepoints rejected..................: 89
+	Total analysis time (sec)......................: 0.312
+	Transient analysis time (sec)..................: 0.306
+	Time spent in device loading (sec).............: 0.027
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Stabilizator parametric cu dioda Zener
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

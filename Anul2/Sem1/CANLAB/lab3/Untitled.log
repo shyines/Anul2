@@ -7,20 +7,22 @@
                  *                                           *
                  *********************************************
 
-	Date: Wed Jan  8 17:25:58 2025
-	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab2\CircuitCuODioda.cir
+	Date: Wed Jan  8 18:04:39 2025
+	Circuit File: Untitled
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
-     1:  !Circuit Dioda
-     2:  
-     3:  D1 1 2 DiodaS
-     4:  .Model DiodaS D tt = 1e-9
-     5:  vin 1 0 dc 5 sin(0 5 1k 0 0)
-     6:  rl 2 0 100
-     7:  
-     8:  .tran 1e9 6e-3
+     1:  Redresor cu Filtru
+     2:  D1 1 2 DiodaS 
+     3:  D2 0 1 DiodaS
+     4:  D3 0 3 DiodaS
+     5:  D4 3 2 DiodaS
+     6:  .model DiodaS D tt = 1e-9
+     7:  R 2 0 100
+     8:  C 2 0 3m
+     9:  Vin 1 3 sin(0 10 50 0 0)
+    10:  .tran 1e-8 60e-3
 
 ***************************  Model Parameters  ****************************
 
@@ -31,8 +33,8 @@
 
 **************************  Analysis Parameters  **************************
 
-	Stepsize ............ : 1e9
-	Final time .......... : 6e-3
+	Stepsize ............ : 1e-8
+	Final time .......... : 60e-3
 	Use Initial Conditions: Off
 
 
@@ -43,14 +45,14 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 337
-	Number of iterations for transient analysis....: 330
-	Total number of timepoints.....................: 94
-	Number of timepoints accepted..................: 75
-	Number of timepoints rejected..................: 19
-	Total analysis time (sec)......................: 0.069
-	Transient analysis time (sec)..................: 0.061
-	Time spent in device loading (sec).............: 0.004
+	Total number of iterations.....................: 478
+	Number of iterations for transient analysis....: 471
+	Total number of timepoints.....................: 144
+	Number of timepoints accepted..................: 116
+	Number of timepoints rejected..................: 28
+	Total analysis time (sec)......................: 0.113
+	Transient analysis time (sec)..................: 0.099
+	Time spent in device loading (sec).............: 0.025
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
@@ -59,6 +61,8 @@
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: !Circuit Dioda
+Circuit: Redresor cu Filtru
 
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
 
