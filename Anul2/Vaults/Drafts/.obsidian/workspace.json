@@ -48,6 +48,30 @@
             }
           },
           {
+            "id": "b25787a27e436589",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-01-11 17.20.59.excalidraw"
+            }
+          },
+          {
+            "id": "69ba577e3289e2ec",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "OOPColocviu/Drawing 2025-01-11 22.44.03.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-01-11 22.44.03.excalidraw"
+            }
+          },
+          {
             "id": "99d979c2ad7b6f6a",
             "type": "leaf",
             "state": {
@@ -60,7 +84,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -112,8 +136,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -203,14 +226,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "63fbf595c13b3cd8",
+  "active": "69ba577e3289e2ec",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md",
+    "OOPColocviu/Drawing 2025-01-11 22.44.03.excalidraw.md",
+    "bdColocviu/Design Pagina Principala.md",
+    "OOPColocviu/AirportSimpleApp",
+    "OOPColocviu",
     "bdColocviu",
     "bdColocviu/Bd - design aplicatie web.md",
     "bdColocviu/BD Notes.md",
     "bdColocviu/Click aici pentru comenzi HTML - front end.md",
     "Comenzi HTML.md",
-    "bdColocviu/Design Pagina Principala.md",
     "ViitorInginer/Traseul Bucovina + Moldova.md",
     "ViitorInginer/Traseul Apuseni (PREZENTARE DE 40 DE MINUTE).md",
     "EngelzaReview/Evaluating the evidence.md",
@@ -235,13 +262,11 @@
     "2024-11-11.md",
     "Excalidraw/Drawing 2024-11-23 13.58.18.excalidraw.md",
     "Excalidraw/Drawing 2024-11-11 21.35.48.excalidraw.md",
-    "MSI/Seminar 5 - Serii de puteri.Teorema Rezidurilor.md",
     "MSI",
     "AfNotes/Poza.png",
     "Excalidraw",
     "AfNotes",
     "afDrafts/Lab5/Untitled.canvas",
-    "afDrafts/Lab5",
-    "afDrafts"
+    "afDrafts/Lab5"
   ]
 }

@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="jframe-fereastra-principală"><strong>1. JFrame (Fereastra Principală)</strong></h2>
+<h3 id="descriere"><strong>Descriere:</strong></h3>
+<p><code>JFrame</code> este containerul de bază pentru aplicațiile GUI. Acesta servește drept <strong>fereastră principală</strong>.</p>
+<h3 id="metode-importante"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>setTitle(String title)</code> – Setează titlul ferestrei.</li>
+<li><code>setSize(int width, int height)</code> – Dimensiunile ferestrei.</li>
+<li><code>setDefaultCloseOperation(int operation)</code> – Comportamentul la închidere (ex. <code>EXIT_ON_CLOSE</code>).</li>
+<li><code>setVisible(boolean visible)</code> – Afișează sau ascunde fereastra.</li>
+<li><code>add(Component comp)</code> – Adaugă componente în fereastră.</li>
+</ul>
+<h3 id="exemplu"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JFrameExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Exemplu JFrame"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setLayout</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FlowLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"Buton 1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JLabel</span><span class="token punctuation">(</span><span class="token string">"Salut, lume!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="jpanel-container-secundar"><strong>2. JPanel (Container Secundar)</strong></h2>
+<h3 id="descriere-1"><strong>Descriere:</strong></h3>
+<p><code>JPanel</code> este folosit pentru organizarea altor componente într-o fereastră.</p>
+<h3 id="metode-importante-1"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>setLayout(LayoutManager layout)</code> – Specifică layout-ul pentru componente.</li>
+<li><code>setBackground(Color color)</code> – Schimbă culoarea de fundal.</li>
+<li><code>add(Component comp)</code> – Adaugă componente.</li>
+<li><code>paintComponent(Graphics g)</code> – Suprascris pentru a desena grafica personalizată.</li>
+</ul>
+<h3 id="exemplu-1"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JPanelExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Exemplu JPanel"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JPanel panel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JPanel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">setLayout</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">GridLayout</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span>LIGHT_GRAY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>panel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="jbutton-buton"><strong>3. JButton (Buton)</strong></h2>
+<h3 id="descriere-2"><strong>Descriere:</strong></h3>
+<p><code>JButton</code> este un buton care declanșează evenimente când este apăsat.</p>
+<h3 id="metode-importante-2"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>setText(String text)</code> – Setează textul butonului.</li>
+<li><code>addActionListener(ActionListener listener)</code> – Adaugă un ascultător de eveniment pentru acțiuni.</li>
+<li><code>setEnabled(boolean enabled)</code> – Activează/dezactivează butonul.</li>
+</ul>
+<h3 id="exemplu-2"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JButtonExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Exemplu JButton"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JButton button <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"Apasă-mă"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        button<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ActionListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span>ActionEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                JOptionPane<span class="token punctuation">.</span><span class="token function">showMessageDialog</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Buton apăsat!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="jlabel-etichetă"><strong>4. JLabel (Etichetă)</strong></h2>
+<h3 id="metode-importante-3"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>setText(String text)</code> – Schimbă textul.</li>
+<li><code>setIcon(Icon icon)</code> – Adaugă o imagine.</li>
+<li><code>setHorizontalAlignment(int alignment)</code> – Alinierea orizontală (<code>CENTER</code>, <code>LEFT</code>, <code>RIGHT</code>).</li>
+</ul>
+<h3 id="exemplu-3"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JLabelExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Exemplu JLabel"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JLabel label <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JLabel</span><span class="token punctuation">(</span><span class="token string">"Etichetă Centrată"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        label<span class="token punctuation">.</span><span class="token function">setHorizontalAlignment</span><span class="token punctuation">(</span>SwingConstants<span class="token punctuation">.</span>CENTER<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>label<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="jtextfield-câmp-de-text"><strong>5. JTextField (Câmp de Text)</strong></h2>
+<h3 id="metode-importante-4"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>setText(String text)</code> – Setează textul.</li>
+<li><code>getText()</code> – Obține textul.</li>
+<li><code>setColumns(int columns)</code> – Lățimea câmpului.</li>
+</ul>
+<h3 id="exemplu-4"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JTextFieldExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Exemplu JTextField"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JTextField textField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JTextField</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        JButton button <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"Afișează"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        button<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+            JOptionPane<span class="token punctuation">.</span><span class="token function">showMessageDialog</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Text: "</span> <span class="token operator">+</span> textField<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        JPanel panel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JPanel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JLabel</span><span class="token punctuation">(</span><span class="token string">"Introdu text:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>textField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        panel<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>panel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h2 id="mouselistener-și-mousemotionlistener"><strong>6. MouseListener și MouseMotionListener</strong></h2>
+<h3 id="mouselistener-metode-importante"><strong>MouseListener Metode Importante:</strong></h3>
+<ul>
+<li><code>mouseClicked(MouseEvent e)</code> – Detectează click-uri.</li>
+<li><code>mousePressed(MouseEvent e)</code> – Detectează apăsarea butonului mouse.</li>
+<li><code>mouseReleased(MouseEvent e)</code> – Detectează eliberarea butonului mouse.</li>
+<li><code>mouseEntered(MouseEvent e)</code> – Mouse intră într-o componentă.</li>
+<li><code>mouseExited(MouseEvent e)</code> – Mouse iese dintr-o componentă.</li>
+</ul>
+<h3 id="exemplu-mouselistener"><strong>Exemplu MouseListener:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MouseListenerExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"MouseListener Example"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JPanel panel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JPanel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        panel<span class="token punctuation">.</span><span class="token function">addMouseListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MouseAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mouseClicked</span><span class="token punctuation">(</span>MouseEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Click la: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mouseEntered</span><span class="token punctuation">(</span>MouseEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                panel<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>Color<span class="token punctuation">.</span>YELLOW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mouseExited</span><span class="token punctuation">(</span>MouseEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                panel<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>Color<span class="token punctuation">.</span>LIGHT_GRAY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        panel<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>Color<span class="token punctuation">.</span>LIGHT_GRAY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>panel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="timer-animație"><strong>7. Timer (Animație)</strong></h2>
+<h3 id="metode-importante-5"><strong>Metode Importante:</strong></h3>
+<ul>
+<li><code>start()</code> – Pornește animația.</li>
+<li><code>stop()</code> – Oprește animația.</li>
+</ul>
+<h3 id="exemplu-5"><strong>Exemplu:</strong></h3>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TimerExample</span> <span class="token keyword">extends</span> <span class="token class-name">JPanel</span> <span class="token keyword">implements</span> <span class="token class-name">ActionListener</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    Timer timer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Timer</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">TimerExample</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        timer<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">paintComponent</span><span class="token punctuation">(</span>Graphics g<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">paintComponent</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        g<span class="token punctuation">.</span><span class="token function">fillOval</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span>ActionEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        x <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;</span> <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token function">repaint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JFrame frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"Animație Timer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TimerExample</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frame<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="exemplu-complet-de-arhitectură-mvc"><strong>8. Exemplu Complet de Arhitectură MVC</strong></h2>
+<p>Arhitectura <strong>Model-View-Controller (MVC)</strong> oferă o modalitate organizată de separare a logicii aplicației (Model), interfeței grafice (View), și interacțiunii utilizatorului (Controller).</p>
+<h3 id="componentele-mvc"><strong>Componentele MVC:</strong></h3>
+<ul>
+<li><strong>Model</strong>: Gestionează datele și logica aplicației.</li>
+<li><strong>View</strong>: Afișează datele din Model către utilizator.</li>
+<li><strong>Controller</strong>: Preia intrările utilizatorului și actualizează Modelul și View-ul corespunzător.</li>
+</ul>
+<hr>
+<h3 id="exemplu-practic-calculator-simplu"><strong>Exemplu Practic: Calculator Simplu</strong></h3>
+<p>Acest exemplu implementează un calculator simplu care realizează <strong>adunări</strong> și <strong>resetări</strong>, utilizând arhitectura <strong>MVC</strong>.</p>
+<hr>
+<h3 id="structura-codului"><strong>Structura Codului</strong></h3>
+<ol>
+<li><strong>Model</strong> – Gestionează logica matematică.</li>
+<li><strong>View</strong> – Interfața grafică (GUI).</li>
+<li><strong>Controller</strong> – Ascultătorii care tratează evenimentele din View.</li>
+</ol>
+<hr>
+<h3 id="codul-complet"><strong>Codul Complet</strong></h3>
+<h4 id="model-calcmodel.java"><strong>1. Model (CalcModel.java)</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalcModel</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> total<span class="token punctuation">;</span>  <span class="token comment">// Stochează rezultatul</span>
+
+    <span class="token keyword">public</span> <span class="token function">CalcModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Valoare inițială</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        total <span class="token operator">+=</span> value<span class="token punctuation">;</span>  <span class="token comment">// Adaugă valoarea</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Resetează rezultatul</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> total<span class="token punctuation">;</span>  <span class="token comment">// Returnează rezultatul</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h4 id="view-calcview.java"><strong>2. View (CalcView.java)</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalcView</span> <span class="token keyword">extends</span> <span class="token class-name">JFrame</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> JTextField inputField <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JTextField</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> JButton addButton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"Adună"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> JButton resetButton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JButton</span><span class="token punctuation">(</span><span class="token string">"Reset"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> JLabel resultLabel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JLabel</span><span class="token punctuation">(</span><span class="token string">"Total: 0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">CalcView</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Calculator Simplu - MVC"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setLayout</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FlowLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setDefaultCloseOperation</span><span class="token punctuation">(</span>JFrame<span class="token punctuation">.</span>EXIT_ON_CLOSE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JLabel</span><span class="token punctuation">(</span><span class="token string">"Introduceți un număr:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">add</span><span class="token punctuation">(</span>inputField<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">add</span><span class="token punctuation">(</span>addButton<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">add</span><span class="token punctuation">(</span>resetButton<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">add</span><span class="token punctuation">(</span>resultLabel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">setVisible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> inputField<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Returnează textul introdus</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setTotal</span><span class="token punctuation">(</span><span class="token keyword">int</span> total<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        resultLabel<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Total: "</span> <span class="token operator">+</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Actualizează rezultatul</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addAddButtonListener</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>ActionListener listener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        addButton<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Ascultător pentru butonul "Adună"</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addResetButtonListener</span><span class="token punctuation">(</span>java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>ActionListener listener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        resetButton<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Ascultător pentru butonul "Reset"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h4 id="controller-calccontroller.java"><strong>3. Controller (CalcController.java)</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>event<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalcController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> CalcModel model<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> CalcView view<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">CalcController</span><span class="token punctuation">(</span>CalcModel model<span class="token punctuation">,</span> CalcView view<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>view <span class="token operator">=</span> view<span class="token punctuation">;</span>
+
+        <span class="token comment">// Adăugăm ascultători pentru butoane</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addAddButtonListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">AddButtonListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span><span class="token function">addResetButtonListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ResetButtonListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Ascultător pentru butonul "Adună"</span>
+    <span class="token keyword">class</span> <span class="token class-name">AddButtonListener</span> <span class="token keyword">implements</span> <span class="token class-name">ActionListener</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span>ActionEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">int</span> value <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>view<span class="token punctuation">.</span><span class="token function">getInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                model<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                view<span class="token punctuation">.</span><span class="token function">setTotal</span><span class="token punctuation">(</span>model<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NumberFormatException</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                JOptionPane<span class="token punctuation">.</span><span class="token function">showMessageDialog</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Introduceți un număr valid!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Ascultător pentru butonul "Reset"</span>
+    <span class="token keyword">class</span> <span class="token class-name">ResetButtonListener</span> <span class="token keyword">implements</span> <span class="token class-name">ActionListener</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span>ActionEvent e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            model<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            view<span class="token punctuation">.</span><span class="token function">setTotal</span><span class="token punctuation">(</span>model<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h4 id="program-principal-calcmvc.java"><strong>4. Program Principal (CalcMVC.java)</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalcMVC</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        CalcModel model <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CalcModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Creează Modelul</span>
+        CalcView view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CalcView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// Creează View-ul</span>
+        <span class="token keyword">new</span> <span class="token class-name">CalcController</span><span class="token punctuation">(</span>model<span class="token punctuation">,</span> view<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Inițializează Controller-ul</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<hr>
+<h3 id="explicație-cod"><strong>Explicație Cod:</strong></h3>
+<ol>
+<li><strong>Model</strong> (<code>CalcModel</code>) gestionează <strong>totalul</strong> și metodele de adunare și resetare.</li>
+<li><strong>View</strong> (<code>CalcView</code>) oferă interfața grafică cu <strong>câmp de text</strong>, <strong>butoane</strong>, și <strong>etichete</strong>.</li>
+<li><strong>Controller</strong> (<code>CalcController</code>) gestionează interacțiunile dintre utilizator și aplicație:
+<ul>
+<li>Butonul <strong>Adună</strong> preia numărul din câmpul de text, îl adaugă în Model și actualizează View-ul.</li>
+<li>Butonul <strong>Reset</strong> resetează totalul în Model și actualizează View-ul.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="rezultat-final"><strong>Rezultat Final:</strong></h3>
+<ol>
+<li><strong>Interfață Simplă</strong> cu:
+<ul>
+<li>Câmp de text pentru introducerea numerelor.</li>
+<li>Butoane „Adună” și „Reset”.</li>
+<li>Etichetă care afișează totalul curent.</li>
+</ul>
+</li>
+<li>Logica aplicației este <strong>separată clar</strong> conform arhitecturii MVC.</li>
+</ol>
+<hr>
+<h3 id="beneficii-mvc"><strong>Beneficii MVC:</strong></h3>
+<ul>
+<li><strong>Separare logică</strong> între date, interfață și funcționalități.</li>
+<li>Cod <strong>ușor de întreținut</strong> și extins.</li>
+<li>Permite reutilizarea <strong>Modelului</strong> în alte aplicații (ex. consolă, web).</li>
+</ul>
+</div>
+</body>
+
+</html>

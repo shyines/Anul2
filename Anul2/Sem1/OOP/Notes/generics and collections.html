@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h3 id="java-collections-framework-jcf"><strong>Java Collections Framework (JCF)</strong></h3>
+<p>JCF is a unified framework for managing collections of objects. It includes:</p>
+<ol>
+<li><strong>Interfaces</strong>: Abstract data types like <code>List</code>, <code>Set</code>, <code>Map</code>.</li>
+<li><strong>Implementations</strong>: Concrete classes such as <code>ArrayList</code>, <code>HashSet</code>, <code>HashMap</code>.</li>
+<li><strong>Utility Methods</strong>: Algorithms for operations like sorting, searching, and shuffling.</li>
+</ol>
+<hr>
+<h4 id="why-use-jcf"><strong>Why Use JCF?</strong></h4>
+<ul>
+<li>Simplifies development with pre-built data structures and algorithms.</li>
+<li>Provides <strong>type safety</strong> and <strong>interoperability</strong>.</li>
+<li>Enhances <strong>performance</strong> and code <strong>maintainability</strong>.</li>
+</ul>
+<hr>
+<h3 id="key-collections-and-their-examples"><strong>Key Collections and Their Examples</strong></h3>
+<h4 id="list"><strong>1. List</strong></h4>
+<p>A sequence of elements that allows duplicates and preserves insertion order.</p>
+<ul>
+<li>
+<p><strong>Common Implementations</strong>:</p>
+<ul>
+<li><code>ArrayList</code>: Dynamic array, fast random access.</li>
+<li><code>LinkedList</code>: Doubly linked list, efficient for frequent insertions/removals.</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Using ArrayList</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arrayList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Duplicates allowed</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arrayList<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [Apple, Banana, Apple]</span>
+
+<span class="token comment">// Using LinkedList</span>
+List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> linkedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+linkedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+linkedList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Removes element at index 1</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>linkedList<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [1, 3]</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="set"><strong>2. Set</strong></h4>
+<p>A collection of unique elements, with no duplicate values.</p>
+<ul>
+<li>
+<p><strong>Common Implementations</strong>:</p>
+<ul>
+<li><code>HashSet</code>: Uses a hash table for fast lookups.</li>
+<li><code>TreeSet</code>: Maintains sorted order using a binary tree.</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Using HashSet</span>
+Set<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> hashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Dog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Cat"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Dog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Duplicate ignored</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hashSet<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [Dog, Cat]</span>
+
+<span class="token comment">// Using TreeSet</span>
+Set<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>treeSet<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [5, 10, 20]</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="map"><strong>3. Map</strong></h4>
+<p>A collection of key-value pairs, where keys are unique.</p>
+<ul>
+<li>
+<p><strong>Common Implementations</strong>:</p>
+<ul>
+<li><code>HashMap</code>: Unordered, fast lookups.</li>
+<li><code>TreeMap</code>: Sorted by key.</li>
+<li><code>LinkedHashMap</code>: Maintains insertion order.</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Using HashMap</span>
+Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">&gt;</span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Overwrites value for "Alice"</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hashMap<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: {Alice=28, Bob=30}</span>
+
+<span class="token comment">// Using TreeMap</span>
+Map<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">&gt;</span> treeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"Three"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"One"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+treeMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Two"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>treeMap<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: {1=One, 2=Two, 3=Three}</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="queue-and-deque"><strong>4. Queue and Deque</strong></h4>
+<p>Used for element retrieval based on FIFO or LIFO order.</p>
+<ul>
+<li>
+<p><strong>Common Implementations</strong>:</p>
+<ul>
+<li><code>PriorityQueue</code>: Elements are ordered by natural ordering or a comparator.</li>
+<li><code>ArrayDeque</code>: Double-ended queue.</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Using PriorityQueue</span>
+Queue<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> priorityQueue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+priorityQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+priorityQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+priorityQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>priorityQueue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 10 (smallest element)</span>
+
+<span class="token comment">// Using ArrayDeque</span>
+Deque<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> deque <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayDeque</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+deque<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token string">"First"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+deque<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token string">"Last"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">pollFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: First</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>deque<span class="token punctuation">.</span><span class="token function">pollLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Output: Last</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="utility-methods-in-collections"><strong>Utility Methods in Collections</strong></h3>
+<p>Java provides utility methods via the <code>Collections</code> class for operations on collections:</p>
+<ol>
+<li>
+<p><strong>Sorting</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java">List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Zebra"</span><span class="token punctuation">,</span> <span class="token string">"Monkey"</span><span class="token punctuation">,</span> <span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Collections<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [Apple, Monkey, Zebra]</span>
+
+</code></pre>
+</li>
+<li>
+<p><strong>Shuffling</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java">Collections<span class="token punctuation">.</span><span class="token function">shuffle</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Random order</span>
+
+</code></pre>
+</li>
+<li>
+<p><strong>Finding Min/Max</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">int</span> max <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 4</span>
+
+</code></pre>
+</li>
+</ol>
+<hr>
+<h3 id="overview-of-generics"><strong>Overview of Generics</strong></h3>
+<p>Generics allow you to create classes, interfaces, and methods that operate on types specified at runtime, ensuring type safety and flexibility.</p>
+<hr>
+<h3 id="syntax-overview"><strong>Syntax Overview</strong></h3>
+<ul>
+<li><code>T</code>, <code>E</code>, <code>K</code>, <code>V</code> are common placeholders for types:
+<ul>
+<li><code>T</code> – Type.</li>
+<li><code>E</code> – Element (used in collections).</li>
+<li><code>K</code>, <code>V</code> – Key and Value (used in maps).</li>
+</ul>
+</li>
+<li><code>?</code> – Wildcard for unknown types.</li>
+</ul>
+<hr>
+<h3 id="generic-classes"><strong>Generic Classes</strong></h3>
+<p>A generic class uses type parameters to ensure type safety.</p>
+<ul>
+<li>
+<p><strong>Example</strong>: Generic Container Class</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Box</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> T value<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span>T value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> T <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+Box<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> intBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+intBox<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>intBox<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 123</span>
+
+Box<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> strBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+strBox<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"Hello Generics!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strBox<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Hello Generics!</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="generic-methods"><strong>Generic Methods</strong></h3>
+<p>A method can define its own type parameter, independent of the class.</p>
+<ul>
+<li>
+<p><strong>Example</strong>: Method to Find Maximum of Two Elements</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Comparable</span><span class="token operator">&lt;</span>T<span class="token operator">&gt;&gt;</span> T <span class="token function">findMax</span><span class="token punctuation">(</span>T a<span class="token punctuation">,</span> T b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">findMax</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 7</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">findMax</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Banana</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="bounded-type-parameters"><strong>Bounded Type Parameters</strong></h3>
+<p>You can restrict a generic type to a specific class or interface using <code>extends</code> (upper bound) or <code>super</code> (lower bound).</p>
+<ul>
+<li>
+<p><strong>Example</strong>: Upper-Bounded Generics</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">&gt;</span> <span class="token keyword">double</span> <span class="token function">calculateSum</span><span class="token punctuation">(</span>T a<span class="token punctuation">,</span> T b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">doubleValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> b<span class="token punctuation">.</span><span class="token function">doubleValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">calculateSum</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 12.0</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">calculateSum</span><span class="token punctuation">(</span><span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">7.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 12.8</span>
+
+</code></pre>
+</li>
+<li>
+<p><strong>Example</strong>: Lower-Bounded Generics</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addNumberToList</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Integer<span class="token operator">&gt;</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+List<span class="token operator">&lt;</span>Number<span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">addNumberToList</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [10]</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="wildcard-types"><strong>Wildcard Types</strong></h3>
+<p>Wildcards (<code>?</code>) are used when the exact type is unknown.</p>
+<ul>
+<li>
+<p><strong>Unbounded Wildcard (<code>?</code>)</strong> Allows any type.</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">printList</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>Object elem <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> strings <span class="token operator">=</span> List<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printList</span><span class="token punctuation">(</span>strings<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: A B C</span>
+
+</code></pre>
+</li>
+<li>
+<p><strong>Upper-Bounded Wildcard (<code>? extends T</code>)</strong> Limits to <code>T</code> and its subclasses.</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token function">sumNumbers</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">&gt;</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">double</span> sum <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>Number n <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> n<span class="token punctuation">.</span><span class="token function">doubleValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> integers <span class="token operator">=</span> List<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>Double<span class="token operator">&gt;</span> doubles <span class="token operator">=</span> List<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1.1</span><span class="token punctuation">,</span> <span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">3.3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">sumNumbers</span><span class="token punctuation">(</span>integers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 6.0</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">sumNumbers</span><span class="token punctuation">(</span>doubles<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 6.6</span>
+
+</code></pre>
+</li>
+<li>
+<p><strong>Lower-Bounded Wildcard (<code>? super T</code>)</strong> Accepts <code>T</code> and its supertypes.</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addElements</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Integer<span class="token operator">&gt;</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+List<span class="token operator">&lt;</span>Number<span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">addElements</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [1, 2, 3]</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="generic-interfaces"><strong>Generic Interfaces</strong></h3>
+<p>Generic interfaces allow flexible implementations.</p>
+<ul>
+<li>
+<p><strong>Example</strong>: Generic Interface for a Pair</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Pair</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    K <span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    V <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">KeyValuePair</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">&gt;</span> <span class="token keyword">implements</span> <span class="token class-name">Pair</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> K key<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> V value<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">KeyValuePair</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> K <span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> key<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> V <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> value<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+Pair<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> String<span class="token operator">&gt;</span> pair <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KeyValuePair</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"One"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>pair<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: 1</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>pair<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: One</span>
+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="real-world-examples"><strong>Real-World Examples</strong></h3>
+<h4 id="filtering-elements-in-a-collection"><strong>1. Filtering Elements in a Collection</strong></h4>
+<p>Use generics to filter elements of a specific type.</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> List<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">filter</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> list<span class="token punctuation">,</span> Predicate<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> predicate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    List<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>T element <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>predicate<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> strings <span class="token operator">=</span> List<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Cherry"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> filtered <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>strings<span class="token punctuation">,</span> s <span class="token operator">-</span><span class="token operator">&gt;</span> s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>filtered<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [Banana]</span>
+
+</code></pre>
+<h4 id="swapping-elements-in-an-array"><strong>2. Swapping Elements in an Array</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span>T<span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    T temp <span class="token operator">=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+Integer<span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">swap</span><span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: [3, 2, 1]</span>
+
+</code></pre>
+<h4 id="generic-stack-implementation"><strong>3. Generic Stack Implementation</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span>E<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>E<span class="token operator">&gt;</span> elements <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span>E element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        elements<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> E <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>elements<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">EmptyStackException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> elements<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>elements<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> elements<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+Stack<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: B</span>
+
+</code></pre>
+</div>
+</body>
+
+</html>
