@@ -7,9 +7,9 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov  8 11:14:02 2024
+	Date: Thu Jan  9 15:53:57 2025
 	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab4\serii de circuite integrate ttl.cir
-	Analysis: DC Transfer Curves
+	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
@@ -36,7 +36,7 @@
     21:  r2 3 cc 1.6k
     22:  r3 4 0 1k
     23:  r4 cc 5 130	
-    24:  .dc va 0 5 0.1
+    24:  .tran 1e-9 6e-6
 
 ***************************  Model Parameters  ****************************
 
@@ -47,10 +47,9 @@
 
 **************************  Analysis Parameters  **************************
 
-	Source name #1 .. : va
-	Start value #1 .. : 0
-	End value #1 .... : 5
-	Increment value #1: 0.1
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-6
+	Use Initial Conditions: Off
 
 
 
@@ -60,12 +59,19 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations...........: 163
-	Total analysis time (sec)............: 0.028
-	Time spent in device loading (sec)...: 0.001
-	Time spent in L-U decomposition (sec): 0
-	Time spent in matrix reordering (sec): 0
-	Time spent in matrix solving (sec)...: 0
+	Total number of iterations.....................: 1893
+	Number of iterations for transient analysis....: 1879
+	Total number of timepoints.....................: 444
+	Number of timepoints accepted..................: 341
+	Number of timepoints rejected..................: 103
+	Total analysis time (sec)......................: 0.08
+	Transient analysis time (sec)..................: 0.077
+	Time spent in device loading (sec).............: 0.006
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 

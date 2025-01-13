@@ -7,23 +7,21 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov 15 11:20:27 2024
+	Date: Fri Jan 10 09:17:41 2025
 	Circuit File: Untitled
-	Analysis: DC Transfer Curves
+	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
-     1:  Poarta SI-NU
-     2:  .model nand nmos vto=2.5
-     3:  M3 vdd vgg vout vout nand l=25u w=10u
-     4:  M2 vout a x x nand l=1u w=10u
-     5:  M1 x b 0 0 nand l=1u w=10u
-     6:  va a 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
-     7:  vb b 0 dc 5
-     8:  VDD vdd 0 dc 5
-     9:  VGG vgg 0 dc 7.5
-    10:  
-    11:  .dc va 0 5 0.1
+     1:  M1 out A 0 0 nmos L=1u W=10u
+     2:  M2 out B 0 0 nmos L=1u W=10u
+     3:  M3 vdd vgg out out nmos L=10u W=1u
+     4:  .model nmos NMOS vto=2.5
+     5:  vgg vgg 0 dc 7.5
+     6:  vdd vdd 0 dc 5
+     7:  Va A 0 dc 0
+     8:  Vb B 0 dc 0
+     9:  .tran 1e-9 6e-3
 
 ***************************  Model Parameters  ****************************
 
@@ -34,10 +32,9 @@
 
 **************************  Analysis Parameters  **************************
 
-	Source name #1 .. : va
-	Start value #1 .. : 0
-	End value #1 .... : 5
-	Increment value #1: 0.1
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-3
+	Use Initial Conditions: Off
 
 
 
@@ -47,15 +44,23 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations...........: 119
-	Total analysis time (sec)............: 0.038
-	Time spent in device loading (sec)...: 0
-	Time spent in L-U decomposition (sec): 0
-	Time spent in matrix reordering (sec): 0
-	Time spent in matrix solving (sec)...: 0
+	Total number of iterations.....................: 159
+	Number of iterations for transient analysis....: 148
+	Total number of timepoints.....................: 75
+	Number of timepoints accepted..................: 75
+	Number of timepoints rejected..................: 0
+	Total analysis time (sec)......................: 0.033
+	Transient analysis time (sec)..................: 0.026
+	Time spent in device loading (sec).............: 0.001
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: Poarta SI-NU
+Circuit: M1 out A 0 0 nmos L=1u W=10u
 
+Warning: Node a has less than two connections
 

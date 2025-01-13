@@ -7,18 +7,18 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Oct 11 11:21:56 2024
-	Circuit File: D:\TEST2\Code_Facultate\Anul2\Sem1\CANLAB\Lab1\HPF.cir
+	Date: Thu Jan  9 17:49:45 2025
+	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab1\HPF.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
      1:  Filtru trece sus (HIGH PASS FILTER)
-     2:  c1 out 0 470n
-     3:  r1 in out 10k
-     4:  !vin in 0 dc 5 sin(0 5 10 0 0)
-     5:  vin in 0 dc 5 sin(0 5 10 0 0)
-     6:  .tran 1e-9 100e-3
+     2:  c1 in out 470n
+     3:  r1 out 0 10k
+     4:  vin in 0 dc 5 sin(0 5 10 0 0)
+     5:  
+     6:  .tran 1e-9 6e-3
 
 ***************************  Model Parameters  ****************************
 
@@ -30,7 +30,7 @@
 **************************  Analysis Parameters  **************************
 
 	Stepsize ............ : 1e-9
-	Final time .......... : 100e-3
+	Final time .......... : 6e-3
 	Use Initial Conditions: Off
 
 
@@ -41,13 +41,13 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 159
-	Number of iterations for transient analysis....: 156
-	Total number of timepoints.....................: 79
-	Number of timepoints accepted..................: 79
+	Total number of iterations.....................: 151
+	Number of iterations for transient analysis....: 148
+	Total number of timepoints.....................: 75
+	Number of timepoints accepted..................: 75
 	Number of timepoints rejected..................: 0
-	Total analysis time (sec)......................: 0.012
-	Transient analysis time (sec)..................: 0.01
+	Total analysis time (sec)......................: 0.029
+	Transient analysis time (sec)..................: 0.024
 	Time spent in device loading (sec).............: 0
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0

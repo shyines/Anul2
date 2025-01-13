@@ -1,0 +1,23 @@
+[aimspice]
+[description]
+211
+Circuit RC trece-jos(analizã curent continuu)
+C1 out 0 470n
+R1 in out 1k
+Vin in 0 DC 5
+!* iesirea este infinit deoarece nu avem variatie de tensiune pe condensator(nu intalnim condensator in curent continuu)
+[dc]
+1
+Vin
+0
+5
+6e-3
+[ana]
+1 1
+0
+1 1
+1 1 -1 6
+2
+v(in)
+v(out)
+[end]

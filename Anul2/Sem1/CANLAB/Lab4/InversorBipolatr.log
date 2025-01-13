@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Wed Jan  8 18:27:52 2025
+	Date: Thu Jan  9 15:15:06 2025
 	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab4\InversorBipolatr.cir
 	Analysis: Transient
 
@@ -54,13 +54,13 @@
 	Total number of timepoints.....................: 215
 	Number of timepoints accepted..................: 182
 	Number of timepoints rejected..................: 33
-	Total analysis time (sec)......................: 0.137
-	Transient analysis time (sec)..................: 0.132
-	Time spent in device loading (sec).............: 0.011
-	Time spent in L-U decomposition (sec)..........: 0.002
+	Total analysis time (sec)......................: 0.037
+	Transient analysis time (sec)..................: 0.032
+	Time spent in device loading (sec).............: 0.002
+	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0.002
+	Time spent in transient L-U decomposition (sec): 0
 	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************

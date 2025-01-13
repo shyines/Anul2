@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Wed Jan  8 18:10:58 2025
+	Date: Thu Jan  9 18:37:26 2025
 	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\lab3\Redresor cu filtru.cir
 	Analysis: Transient
 
@@ -52,13 +52,13 @@
 	Total number of timepoints.....................: 94
 	Number of timepoints accepted..................: 89
 	Number of timepoints rejected..................: 5
-	Total analysis time (sec)......................: 0.095
-	Transient analysis time (sec)..................: 0.092
-	Time spent in device loading (sec).............: 0.004
-	Time spent in L-U decomposition (sec)..........: 0
+	Total analysis time (sec)......................: 0.032
+	Transient analysis time (sec)..................: 0.026
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0.001
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient L-U decomposition (sec): 0.001
 	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************

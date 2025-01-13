@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Wed Jan  8 18:16:43 2025
+	Date: Thu Jan  9 18:53:35 2025
 	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\lab3\Stabilizator parametric cu Dioda Zener.cir
 	Analysis: Transient
 
@@ -55,9 +55,9 @@
 	Total number of timepoints.....................: 395
 	Number of timepoints accepted..................: 306
 	Number of timepoints rejected..................: 89
-	Total analysis time (sec)......................: 0.312
-	Transient analysis time (sec)..................: 0.306
-	Time spent in device loading (sec).............: 0.027
+	Total analysis time (sec)......................: 0.151
+	Transient analysis time (sec)..................: 0.145
+	Time spent in device loading (sec).............: 0.055
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

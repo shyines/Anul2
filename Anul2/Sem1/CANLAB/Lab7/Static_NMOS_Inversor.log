@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov 15 10:45:53 2024
+	Date: Fri Jan 10 08:49:47 2025
 	Circuit File: D:\TEST2\Anul2\Anul2\Sem1\CANLAB\Lab7\Static_NMOS_Inversor.cir
 	Analysis: DC Transfer Curves
 
@@ -47,8 +47,8 @@
 *************************  Simulation Statistics  *************************
 
 	Total number of iterations...........: 120
-	Total analysis time (sec)............: 0.027
-	Time spent in device loading (sec)...: 0.002
+	Total analysis time (sec)............: 0.029
+	Time spent in device loading (sec)...: 0.006
 	Time spent in L-U decomposition (sec): 0
 	Time spent in matrix reordering (sec): 0
 	Time spent in matrix solving (sec)...: 0

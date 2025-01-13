@@ -1,6 +1,6 @@
 [aimspice]
 [description]
-262
+246
 NMOS Inversor Static
 !Mxx D G S
 M1 out in 0 0 nmos_m1 L=1u W=1u
@@ -9,5 +9,19 @@ M2 vdd vgg out out nmos_m2 L=25u W=1u
 .model nmos_m2 nmos vto=2.5
 VDD vdd 0 dc 5
 VGG vgg 0 dc 7.5
-Vin in 0 dc 0 Pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)Untitled circuit
+Vin in 0 dc 0 Pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+[dc]
+1
+Vin
+0
+5
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 -1 6
+2
+v(out)
+v(in)
 [end]

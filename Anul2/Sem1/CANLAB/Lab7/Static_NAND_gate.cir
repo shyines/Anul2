@@ -1,18 +1,17 @@
 [aimspice]
 [description]
 228
-NOR:
-
-VGG vgg 0 dc 7.5
-VDD vdd 0 dc 5
+Nand:
+.model nand nmos vto=2.5
+M3 vdd vgg vout vout nand l=25u w=10u
+M2 vout a x x nand l=1u w=10u
+M1 x b 0 0 nand l=1u w=10u
 va a 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
-vb b 0 dc 0
+vb b 0 dc 5
+VDD vdd 0 dc 5
+VGG vgg 0 dc 7.5
 
-M3 vdd vgg vout vout nor l=25u w=10u
-M1 vout a 0 0 nor l=1u w=10u
-M2 vout b 0 0 nor l=1u w=10u
 
-.model nor nmos vto=2.5
 [dc]
 1
 va
