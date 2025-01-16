@@ -401,6 +401,6 @@ int main() {
     demoBbSort();
 
     ///Perf
-    perfAll();
+   // perfAll();
     return 0;
 }

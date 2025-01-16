@@ -63,12 +63,14 @@
             "id": "69ba577e3289e2ec",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "OOPColocviu/Drawing 2025-01-11 22.44.03.excalidraw.md"
+                "file": "Peda/Rezolv excercitii vere.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-01-11 22.44.03.excalidraw"
+              "icon": "lucide-file",
+              "title": "Rezolv excercitii vere"
             }
           },
           {
@@ -228,8 +230,15 @@
   },
   "active": "69ba577e3289e2ec",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md",
+    "Peda/Examen peda.md",
+    "Peda/Rezolv excercitii vere.md",
+    "AfNotes/HeapSort.md",
+    "Peda",
+    "AfNotes/Untitled.md",
+    "Drum&BassNotes/What goes with what.md",
+    "EngelzaReview/Evaluating the evidence.md",
     "OOPColocviu/Drawing 2025-01-11 22.44.03.excalidraw.md",
+    "Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md",
     "bdColocviu/Design Pagina Principala.md",
     "OOPColocviu/AirportSimpleApp",
     "OOPColocviu",
@@ -240,7 +249,6 @@
     "Comenzi HTML.md",
     "ViitorInginer/Traseul Bucovina + Moldova.md",
     "ViitorInginer/Traseul Apuseni (PREZENTARE DE 40 DE MINUTE).md",
-    "EngelzaReview/Evaluating the evidence.md",
     "ViitorInginer",
     "EngelzaReview/Structure.md",
     "Drum&BassNotes/Artisti sau DJ pe care i-am ascultat.md",
@@ -256,17 +264,11 @@
     "AfNotes/Drawing 2024-11-19 19.26.39.excalidraw.md",
     "Excalidraw/Drawing 2024-11-28 10.17.00.excalidraw.md",
     "2024-12-11.md",
-    "AfNotes/The selection Problem.md",
     "Pasted Image 20241128101751_329.png",
-    "Welcome.md",
-    "2024-11-11.md",
-    "Excalidraw/Drawing 2024-11-23 13.58.18.excalidraw.md",
-    "Excalidraw/Drawing 2024-11-11 21.35.48.excalidraw.md",
     "MSI",
     "AfNotes/Poza.png",
     "Excalidraw",
     "AfNotes",
-    "afDrafts/Lab5/Untitled.canvas",
-    "afDrafts/Lab5"
+    "afDrafts/Lab5/Untitled.canvas"
   ]
 }

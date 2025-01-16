@@ -46,4 +46,14 @@
 3. Is the experiment plausible? 
 	- I believe that 12 participants were not enough and thus, the evidence is not fully plausible! Moreover, if they selected as many experienced artists as unexperienced, the experiment would have been more credible. On this matter, the Tool is not a really good documented tool.
 4. Comparisons with other tools
-	1. 
+
+3.The Reasoning - Pretty good and credible
+	The arguments given by the author flow from point to point. There seems to be no biases and no emotional appeals. The author supports his arguments with lots of images such as drawn artwork and animation shaded with their system.
+	Moreover, they compare their system with two of the best animation softwares: Toon Boom Harmony Pro© and TVPaint Pro©. 
+		The method wich they used to analyze the tools mentioned above were by usign them on 3 models. It looked plausible.
+
+4. Tone and style: 
+		Style: Very technical, is suited for people who are profesionals or have a better understanding of animations and drawings.
+		Tone: They want to promote their Tool, so maybe it glamourizes it. There is no clear sign of favoritism. Besides technical words, the author does not use words that strike emotion.
+		
+		
