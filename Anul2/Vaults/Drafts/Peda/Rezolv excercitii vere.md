@@ -27,3 +27,36 @@ Exemplu de metodologie didactica:
 1. Efectul halo: Subaprecierea/Supraaprecierea elevilor. Aceasta se corecteaza prin setarea a unor criterii de notare pentru fiecare evaluare.
 2. Generozitatea, sau notele prea mari/mici. Aceasta se remediaza cu ajutorul unui barem. Baremul trebuie riguros respectat.
 3. Eroarea de contrast: Compararea cu alte raspunsuri. Se corecteaza prin evaluarea fiecarui raspuns individual.
+
+# Tema 3 - Analiza procesului de invatamant ca si sistem (cele 3 dimensiuni)
+
+## Cerinta: Detaliati cele 3 dimensiuni
+1. **Prima Dimensiune: Dimensiunea Funcțională (obiective, cerințe)**  (Ce se cere)
+Această dimensiune subliniază faptul că procesul de învățământ urmărește atingerea unor obiective clar stabilite, care sunt formulate în concordanță cu cerințele și nevoile societății.
+2. A doua dimensiune: Dimensiunea Structurala (Ce se pregateste)
+	1. Procesul de invatamant este constituit din mai multe componente strans legate intre ele. Puterea sistemului de invatamant provine din puterea interactiunilor acestor componente.
+		1. Componentele sunt:
+			1. Continutul didactic
+			2. Resurse umane
+			3. Mediul fizic
+			4. Contextul educational
+3. A treia dimensiune: Dimensiunea Operationala (Ce se pune in aplicare)
+	1. Desfasurarea procesului de invatamant
+		1. Strategii didactice
+		2. Mijloace de invatamant
+		3. Forme de organizarea
+		4. Feedback
+
+
+# Tema 4 - Surse de distorsiune/blocaj
+
+## Cerinta: 5-7 exemple
+1. Profesori:
+	1. Limbaj nepotrivit
+	2. Prejudecati sau etichetari
+2. Elev:
+	1. Lipsa de ascultare activa
+	2. Prejudecati sau etichetari
+3. Ambiental: 
+	1. Conditii ambientale necorespunzatoare
+	2. Tehnologie ulitizata incorect sau insuficient
