@@ -10,9 +10,6 @@
 
 
 
-$$
- I_{OL} \geq \sum I_{IL}
-$$
 $$ 
 I_{OH} \geq \sum I_{IH}
 $$

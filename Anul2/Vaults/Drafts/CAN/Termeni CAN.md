@@ -46,23 +46,34 @@ Vcc = tensiunea de alimentare
 **Puterea totala consumata** - $$P_{m} = P_{CC} + P_{C}$$
 
 
-## Magistrala I2C
+## [[Realizarea Magistralelor cu Circuite Logice]]
 
-**Open-drain/open-collector** cu un buffer de intrare pe aceeasi linie
-**Pull-down FET** pentru transmiterea datelor
-**Buffer** pentru citirea datelor de intrare
+**Open drain/Open collector (Colector in gol/drena in gol)**- colectoarele/drenele tranzistoarelor legate impreuna, punctul comun fiind conectat la o sursa cu o rezistenta. UN CIORCHINE DE COLECTOARE VEREEEEEEEEE!!!11!!!!!1111
 
-Un dizpozitiv poate sa traga linia de magistrala la un nivel coborat (scurtcircuit la masa prin deschiderea FET) sau sa elibereze linia de magistrala (inalta impedanta la masa prin blocarea FET) si sa permita rezistentei de ridicare sa creasca tensiunea
+**Open emiter/Open Source (Emitator liber/Sursa libera)**- LA FEL CA MAI SUS LMAO!!!!!
 
-Niciun dizpozitiv nu poate tine linia de magistrala la un nivel ridicat
 
-O singura linie de date folosita pentru flux de date bidirectional
+## Stabilizator cu reactie cu amplificator de eroare
 
-Niciun dispozitiv nu poate forta un nivel ridicat pe o linie
+$$ V_{OUT} = V_{Z} - V_{BE}$$
+V_be = ceva tensiune
+Vz = tensiune de referinta
+Vout = tensiunea la iesire
 
-Linia nu se va confrunta niciodată cu o problemă de comunicatie unde un dispozitiv poate incerca sa transmita un nivel ridicat si altul sa transmita un nivel coborat, provocând un scurtcircuit (alimentare la masă)
 
-Daca un master transmite un nivel ridicat, dar vede ca linia este la un nivel coborat, opreste comunicatiile deoarece un alt dispozitiv foloseste magistrala
-Daca dispozitivul doreste sa transmita un nivel coborat, va activa tranzistorul FET de coborare, care va furniza un scurtcircuit la masa, tragand linia la nivel coborat.
+## Factorul de incarcare - 
 
-Daca dispozitivul doreste sa transmita un nivel ridicat, poate doar elibera linia de magistrala blocand tranzistorul FET de coborare. Acesta lasa linia de magistrala flotanta, iar rezistenta de ridicare va trage tensiunea in sus spre tensiunea de alimentare, care va fi interpretata ca un nivel ridicat.
+Cate alte circuite pot fi incarcate cu voltajul pe care un circuit tata il scoate. Se calculeaza cu formula: 
+$$
+F_{OL} = \left[ \frac{I_{OL}}{I_{IL}} \right]
+$$
+aia e pentru 0 logic, iar
+
+$$F_{IL} = \left[ \frac{I_{OH}}{I_{IH}} \right]$$
+
+IAR PENTRU PORTI DIN ACEEASI FAMILIE SE IA FORMULA ASTA
+$$
+I_{OL} \geq \sum I_{IL}
+$$
+$$I_{OH} \geq \sum I_{IH}$$
+
