@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OOPColocviu/Examen/OOP TERMENI (Mostenire).md",
+                "file": "Sem2/OS/Lab 2 Notes (Command line).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OOP TERMENI (Mostenire)"
+              "title": "Lab 2 Notes (Command line)"
+            }
+          },
+          {
+            "id": "a31b8c2f6adc54ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sem2/OS/Lab 2 Notes (Command line).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lab 2 Notes (Command line)"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -164,54 +179,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "019ed0467e8d0e11",
+  "active": "24c1719f7fccd7c8",
   "lastOpenFiles": [
-    "CAN/Realizarea Magistralelor cu Circuite Logice.md",
-    "AfNotes/Examen Raspunsuri.md",
+    "Sem1/OOPColocviu/Examen/OOP TERMENI (Mostenire).md",
+    "Sem2/OS/Lab 2 Notes (Command line).md",
+    "Sem2/OS",
+    "Sem1",
+    "Sem2",
+    "Sem1/CAN/Realizarea Magistralelor cu Circuite Logice.md",
+    "Sem1/AfNotes/Examen Raspunsuri.md",
     "MES, Subiecte pe Cursuri.md",
-    "OOPColocviu/Examen/OOP TERMENI (Mostenire).md",
     "OOPColocviu/Examen/Untitled",
     "OOPColocviu/Untitled.md",
-    "OOPColocviu/Examen",
+    "Sem1/OOPColocviu/Examen",
     "Untitled",
-    "CAN/Termeni CAN.md",
-    "CAN/Circuite Numerice.md",
-    "CAN/Regimul de comutaţie al elementelor semiconductoare.md",
-    "CAN/Circuite analogice.md",
-    "CAN/Circuite logice NMOS.md",
+    "Sem1/CAN/Termeni CAN.md",
+    "Sem1/CAN/Circuite Numerice.md",
+    "Sem1/CAN/Regimul de comutaţie al elementelor semiconductoare.md",
+    "Sem1/CAN/Circuite analogice.md",
+    "Sem1/CAN/Circuite logice NMOS.md",
     "Excalidraw/Drawing 2025-01-23 10.34.40.excalidraw.md",
     "Excalidraw/Drawing 2025-01-23 10.33.58.excalidraw.md",
     "Excalidraw/Drawing 2025-01-23 10.32.20.excalidraw.md",
-    "Poze lmao/Pasted image 20250122140237.png",
-    "Poze lmao",
-    "Poze lmao/Pasted image 20250122135824.png",
-    "Poze lmao/Pasted image 20250122140215.png",
-    "Poze lmao/Pasted Image 20250118211251_110.png",
-    "Poze lmao/Pasted image 20250118184608.png",
-    "Poze lmao/Pasted Image 20241128101751_329.png",
-    "Excalidraw/Drawing 2025-01-18 18.44.46.excalidraw.md",
-    "Poze lmao/Pasted image 20250122132349.png",
-    "Poze lmao/Pasted image 20250122132323.png",
+    "Sem1/Poze lmao/Pasted image 20250122140237.png",
+    "Sem1/Poze lmao",
+    "Sem1/Poze lmao/Pasted image 20250122135824.png",
+    "Sem1/Poze lmao/Pasted image 20250122140215.png",
+    "Sem1/Poze lmao/Pasted Image 20250118211251_110.png",
+    "Sem1/Poze lmao/Pasted image 20250118184608.png",
+    "Sem1/Poze lmao/Pasted Image 20241128101751_329.png",
+    "Sem1/Excalidraw/Drawing 2025-01-18 18.44.46.excalidraw.md",
+    "Sem1/Poze lmao/Pasted image 20250122132349.png",
+    "Sem1/Poze lmao/Pasted image 20250122132323.png",
     "CAN - RASPUNSURI CU EXPLICATII.md",
     "Pasted image 20250118185625.png",
-    "Poze lmao/Pasted image 20250121204539.png",
-    "CAN",
-    "AfNotes/Untitled.md",
+    "Sem1/Poze lmao/Pasted image 20250121204539.png",
+    "Sem1/CAN",
+    "Sem1/AfNotes/Untitled.md",
     "Ce n-am stiut la AF.md",
-    "AfNotes/Cursuri.md",
-    "AfNotes/Drawing 2024-11-19 19.26.39.excalidraw.md",
-    "AfNotes/Drawing 2024-12-12 12.56.27.excalidraw.md",
+    "Sem1/AfNotes/Cursuri.md",
+    "Sem1/AfNotes/Drawing 2024-11-19 19.26.39.excalidraw.md",
+    "Sem1/AfNotes/Drawing 2024-12-12 12.56.27.excalidraw.md",
     "ViitorInginer/Traseul Bucovina + Moldova.md",
-    "bdColocviu/Bd - design aplicatie web.md",
-    "bdColocviu/Design Pagina Principala.md",
-    "Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md",
-    "Peda/Rezolv excercitii vere.md",
-    "Peda/Examen peda.md",
-    "Peda",
+    "Sem1/bdColocviu/Bd - design aplicatie web.md",
+    "Sem1/bdColocviu/Design Pagina Principala.md",
+    "Sem1/Excalidraw/Drawing 2025-01-11 17.20.59.excalidraw.md",
+    "Sem1/Peda/Rezolv excercitii vere.md",
+    "Sem1/Peda",
     "OOPColocviu/AirportSimpleApp",
-    "OOPColocviu",
-    "bdColocviu",
-    "ViitorInginer",
     "AfNotes/Untitled.canvas",
     "afDrafts/Lab5/Untitled.canvas"
   ]

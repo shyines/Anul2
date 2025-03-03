@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Mar  3 15:20:15 2025
+# Process ID: 14204
+# Current directory: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log test_env.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_env.tcl
+# Log file: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.runs/synth_1/test_env.vds
+# Journal file: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.runs/synth_1\vivado.jou
+# Running On: DESKTOP-2R1EJAP, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 33885 MB
+#-----------------------------------------------------------
+source test_env.tcl -notrace
