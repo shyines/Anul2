@@ -1,0 +1,28 @@
+SO - lab2 
+1. ^ - se face match la inceput de linie!!  ( grep "^mosi" /etc/passwd )
+     - se mai poate folosi si varialibe de mediu ( grep "^$USER" /etc/passwd )
+     
+2. insert mode = i (cu "esc" iesi din insert mode)
+    ca sa iesi pui :wq (q! se forteaza sa iesi fara sa salveze)
+    - grep -v "text1" exemplu.txt | grep -v "text2"
+3.  - ls /etc (continutul directorului /etc)
+    - ls /etc | wc -l
+    - ls -l | cut -b 1 ( selectam primul caracter din prima linie )
+    - ls -l | cut -b 1 | grep d | wc -l ( sa vedem cate directoare avem intr-un director )
+    - ls -l 9 afiseaza mai multe detalii despre fisierele pe care le avem )
+    - cut -b 1 ( ia doar primul bite )
+    - man cut ( spune ce face o comanda !!! )
+4.  - script = fisier de comenzi, care pot avea structuri de control
+    - cand ne folosim de valoare unei variabile punem $ !!!
+    - cand asignam valoarea unei variabile NU punem $
+    - apostrof invers : toata expresia se evalueaza si pune in variabila rezultatul evaluarii
+script: 
+#!/bin/bash
+
+for FNAME in find . -name "*.c"; do
+	echo "$FNAME";
+	SIZE=wc -l $FNAME | cut -d" " -f 1
+	if test $SIZE -gt 20; then 
+		echo #FNAME
+	fi
+done;

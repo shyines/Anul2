@@ -1,0 +1,21 @@
+# ninja log v6
+1	55	7627820945832757	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-mkdir	f8f9d970608c75bb
+1	55	7627820945832757	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-mkdir	f8f9d970608c75bb
+56	33945	7627821284735446	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-download	ed9764b5c26cf594
+56	33945	7627821284735446	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-download	ed9764b5c26cf594
+33945	34092	7627821284776618	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-update	84fdf5253c863945
+33945	34092	7627821284776618	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-update	84fdf5253c863945
+34092	34144	7627821286720847	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-patch	46ace157621b02fa
+34092	34144	7627821286720847	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-patch	46ace157621b02fa
+34144	34196	7627821287241469	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-configure	c6e42da9a7dd3391
+34144	34196	7627821287241469	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-configure	c6e42da9a7dd3391
+34196	34248	7627821287758708	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-build	6e91db748cb6f5d6
+34196	34248	7627821287758708	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-build	6e91db748cb6f5d6
+34248	34300	7627821288287332	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-install	431a2d0573763613
+34248	34300	7627821288287332	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-install	431a2d0573763613
+34300	34353	7627821288810498	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-test	d02d20d452c524ab
+34300	34353	7627821288810498	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-test	d02d20d452c524ab
+34353	34422	7627821289497949	CMakeFiles/sdl-populate-complete	986366ee77987277
+34353	34422	7627821289497949	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-done	986366ee77987277
+34353	34422	7627821289497949	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/CMakeFiles/sdl-populate-complete	986366ee77987277
+34353	34422	7627821289497949	D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-done	986366ee77987277

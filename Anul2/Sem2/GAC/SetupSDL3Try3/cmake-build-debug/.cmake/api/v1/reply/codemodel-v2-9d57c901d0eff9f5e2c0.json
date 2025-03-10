@@ -1,0 +1,120 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "_deps/sdl-build",
+					"jsonFile" : "directory-_deps.sdl-build-Debug-946d016ba4f78f4d04bd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "cmake-build-debug/_deps/sdl-src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SetupSDL3Try3",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "SDL3",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3-shared::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3-shared-Debug-581a1821a8dd4d52709f.json",
+					"name" : "SDL3-shared",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3_test::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3_test-Debug-0190630710f47c426e45.json",
+					"name" : "SDL3_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL_uclibc::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL_uclibc-Debug-a2aa979447e6666a13b7.json",
+					"name" : "SDL_uclibc",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SetupSDL3Try3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SetupSDL3Try3-Debug-6650732b840216f604ae.json",
+					"name" : "SetupSDL3Try3",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3/cmake-build-debug",
+		"source" : "D:/Facultate/Anul2/Anul2/Sem2/GAC/SetupSDL3Try3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
