@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.runs/synth_1/test_env.tcl"
+  variable script "D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.runs/synth_1/test_env.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,24 +70,25 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a100tcsg324-1
+create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.cache/wt [current_project]
-set_property parent.project_path D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.xpr [current_project]
+set_property webtalk.parent_dir D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.cache/wt [current_project]
+set_property parent.project_path D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.cache/ip [current_project]
+set_property ip_output_repo d:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  D:/Facultate/Anul2/Anul2/Sem2/ACLab/Lab1/MPG.vhd
-  D:/Facultate/Anul2/Anul2/Sem2/ACLab/Lab1/test_env.vhd
+  D:/Facultate/Anul2/Anul2/Sem2/AC/Lab1/MPG.vhd
+  D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.srcs/sources_1/new/SSD.vhd
+  D:/Facultate/Anul2/Anul2/Sem2/AC/Lab1/test_env.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -98,16 +99,16 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Facultate/Anul2/Anul2/Sem2/ACLab/Utility/NexysA7_test_env.xdc
-set_property used_in_implementation false [get_files D:/Facultate/Anul2/Anul2/Sem2/ACLab/Utility/NexysA7_test_env.xdc]
+read_xdc D:/Facultate/Anul2/Anul2/Sem2/AC/Utility/Basys-3-Master.xdc
+set_property used_in_implementation false [get_files D:/Facultate/Anul2/Anul2/Sem2/AC/Utility/Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.srcs/utils_1/imports/synth_1/test_env.dcp
+read_checkpoint -auto_incremental -incremental D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.srcs/utils_1/imports/synth_1/test_env.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top test_env -part xc7a100tcsg324-1
+synth_design -top test_env -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

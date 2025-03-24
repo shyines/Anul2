@@ -9,6 +9,10 @@
 #include "vec2.h"
 #include "vec3.h"
 #include "vec4.h"
+#include "mat3.h"
+#include "mat4.h"
+#include "testMatrix.h"
+#include "testTransform.h"
 
 int testVec2Implementation()
 {
@@ -227,9 +231,19 @@ int main(int argc, const char * argv[]) {
     nrOfErrors += testVec3Implementation();
     nrOfErrors += testVec4Implementation();
     
-    std::cout << "Number of errors: " << nrOfErrors << std::endl;
+    std::cout << "Lab2(Vector operations): Number of errors: " << nrOfErrors << std::endl;
 
-    std:getchar();
+    int nrOfErrors_lab_3 = 0;
+
+    nrOfErrors += egc::testMat3Implementation();
+    nrOfErrors += egc::testMat4Implementation();
+
+    std::cout << "Lab3(Matrix Operations Implementation): Number of errors: " << nrOfErrors_lab_3 << std::endl;
+
+    std::getchar();
+
+
+    std::getchar();
     
     return 0;
 }

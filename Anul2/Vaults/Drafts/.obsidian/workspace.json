@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e20e34e40189f601",
+        "id": "ba0540a916150bb6",
         "type": "tabs",
         "children": [
           {
-            "id": "019ed0467e8d0e11",
+            "id": "1d4587a495ba0978",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sem2/OS/Lab 2 Notes (Command line).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Lab 2 Notes (Command line)"
+              "title": "New tab"
             }
           }
         ]
@@ -164,9 +160,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "019ed0467e8d0e11",
+  "active": "1d4587a495ba0978",
   "lastOpenFiles": [
     "Sem2/OS/Lab 3 Notes.md",
+    "Sem2/OS/Assignments/A1.md",
+    "Sem2/OS/Assignments",
     "Sem2/OS/Lab 2 Notes (Command line).md",
     "Sem2/TO DO.md",
     "2024-11-11.md",
@@ -205,13 +203,10 @@
     "CAN - RASPUNSURI CU EXPLICATII.md",
     "Pasted image 20250118185625.png",
     "Sem1/Poze lmao/Pasted image 20250121204539.png",
-    "Sem1/CAN",
     "Sem1/AfNotes/Untitled.md",
     "Ce n-am stiut la AF.md",
     "Sem1/AfNotes/Cursuri.md",
     "Sem1/AfNotes/Drawing 2024-11-19 19.26.39.excalidraw.md",
-    "Sem1/AfNotes/Drawing 2024-12-12 12.56.27.excalidraw.md",
-    "ViitorInginer/Traseul Bucovina + Moldova.md",
     "AfNotes/Untitled.canvas",
     "afDrafts/Lab5/Untitled.canvas"
   ]

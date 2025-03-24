@@ -34,20 +34,21 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity test_env is
   Port (clk : in STD_LOGIC;
-        btn : in STD_LOGIC_VECTOR (4 downto 0);
-        sw : in STD_LOGIC_VECTOR (15 downto 0);
-        led : out STD_LOGIC_VECTOR (15 downto 0);
-        an : out STD_LOGIC_VECTOR (7 downto 0);
-        cat : out STD_LOGIC_VECTOR (6 downto 0));
+        btn : in STD_LOGIC_VECTOR (2 downto 0);
+        an : out STD_LOGIC_VECTOR (3 downto 0);
+        cat : out STD_LOGIC_VECTOR (6 downto 0);
+        led: out std_logic_vector(4 downto 0));
 end test_env;
 
 architecture Behavioral of test_env is
-signal CNT : std_logic_vector (1 downto 0) := (others => '0');
+
+signal cnt : std_logic_vector (4 downto 0) := (others => '0');
 signal en : STD_LOGIC := '0';
-signal s_digits: std_logic_vector (31 downto 0) := (others => '0');
-signal s_sw_A: std_logic_vector(31 downto 0) := (others => '0');
-signal s_sw_B: std_logic_vector(31 downto 0) := (others => '0');
-signal s_sw_C: std_logic_vector(31 downto 0) := (others => '0');
+signal en_register_write: std_logic := '0';
+signal s_digits: std_logic_vector (15 downto 0) := (others => '0');
+signal rd1: std_logic_vector (15 downto 0) := (others => '0');
+signal rd2: std_logic_vector (15 downto 0) := (others => '0');
+signal wd: std_logic_vector (15 downto 0) := (others => '0');
 
 --componentele: MPG-UL SI SSD-UL
 
@@ -60,16 +61,35 @@ end component;
 
 component SSD
     port (
-        digits: in std_logic_vector(31 downto 0);
-        an : out STD_LOGIC_VECTOR (7 downto 0);
+        digits: in std_logic_vector(15 downto 0);
+        an : out STD_LOGIC_VECTOR (3 downto 0);
         cat : out STD_LOGIC_VECTOR (6 downto 0);
         clk: in std_logic);
 end component;
 
+component register_file 
+    port (
+           clk: in std_logic;
+           reg_write: in std_logic; 
+           read_addr_1: in std_logic_vector(4 downto 0);
+           read_addr_2: in std_logic_vector(4 downto 0);
+           write_addr: in std_logic_vector(4 downto 0);
+           write_data: in std_logic_vector(15 downto 0);
+           read_data_1: out std_logic_vector(15 downto 0);
+           read_data_2: out std_logic_vector(15 downto 0)
+          );
+end component;
+
 begin
-MonoPulseGenerator: MPG port map (
+mpg_cnt: MPG port map (
     enable => en,
     btn => btn(0),
+    clk => clk
+);
+
+mpg_reg_file: mpg port map (
+    enable => en_register_write,
+    btn => btn(1),
     clk => clk
 );
 
@@ -80,38 +100,41 @@ SevenSegmentDisplay: SSD port map (
     clk => clk 
 );
 
+reg_file: register_file port map (
+    clk => clk,
+    reg_write => en_register_write,
+    read_addr_1 => cnt,
+    read_addr_2 => cnt,
+    write_addr => cnt,
+    write_data => wd,
+    read_data_1 => rd1,
+    read_data_2 => rd2
+);
+
+---En counter
+
 process(CLK)
 begin
 if rising_edge(CLK) then
-    if en = '1' then
-        if sw(0) = '1' then
-            CNT <= CNT + 1;
-        else
-            CNT <= CNT - 1;
-        end if;    
+    if en = '1' then      
+        CNT <= CNT + 1;
     end if;
 end if;
+
+if(btn(2) = '1') then
+   cnt <= "00000";
+end if;
 end process;
+
 led <= cnt;
 
---Here I implemented the ALU
-process (CNT) 
+process(clk)
 begin
-    case CNT is
-        when "00" =>
-             s_sw_A <= X"0000000" & sw(3 downto 0);
-             s_sw_B <= X"0000000" & sw(7 downto 4);
-             s_digits <= s_sw_A + s_sw_B;
-        when "01" =>
-             s_sw_A <= X"0000000" & sw(3 downto 0);
-             s_sw_B <= X"0000000" & sw(7 downto 4);
-             s_digits <= s_sw_A - s_sw_B;
-        when "10" =>
-             s_sw_C <= X"0000" & sw(7 downto 0);
-             s_digits <= s_sw_C(29 downto 0) & "00";
-        when "11" =>
-             s_sw_C <= X"0000" & sw(7 downto 0);
-             s_digits <= "00" & s_sw_C(31 downto 2);
-        end case;
+    if(rising_edge(clk))then
+        s_digits <= rd1 + rd2;
+        wd <= s_digits;
+    end if;
 end process;
+
+
 end Behavioral;

@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Facultate\Anul2\Anul2\Sem2\GAC\lab4\include;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,11 +129,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mat3.cpp" />
+    <ClCompile Include="mat4.cpp" />
+    <ClCompile Include="testMatrix.cpp" />
+    <ClCompile Include="transform.cpp" />
     <ClCompile Include="vec2.cpp" />
     <ClCompile Include="vec3.cpp" />
     <ClCompile Include="vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mat3.h" />
+    <ClInclude Include="mat4.h" />
+    <ClInclude Include="testMatrix.h" />
+    <ClInclude Include="testTransform.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="vec2.h" />
     <ClInclude Include="vec3.h" />
     <ClInclude Include="vec4.h" />

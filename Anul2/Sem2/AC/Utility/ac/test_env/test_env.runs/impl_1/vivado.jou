@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Mar 10 18:20:03 2025
+# Process ID: 12888
+# Current directory: D:/Facultate/Anul2/Anul2/Sem2/AC/Utility/ac/test_env/test_env.runs/impl_1
+# Command line: vivado.exe -log saqwdf.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source saqwdf.tcl -notrace
+# Log file: D:/Facultate/Anul2/Anul2/Sem2/AC/Utility/ac/test_env/test_env.runs/impl_1/saqwdf.vdi
+# Journal file: D:/Facultate/Anul2/Anul2/Sem2/AC/Utility/ac/test_env/test_env.runs/impl_1\vivado.jou
+# Running On: DESKTOP-2R1EJAP, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 33885 MB
+#-----------------------------------------------------------
+source saqwdf.tcl -notrace

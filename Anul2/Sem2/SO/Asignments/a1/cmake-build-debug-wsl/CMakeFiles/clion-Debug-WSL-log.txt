@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -S /mnt/d/Facultate/Anul2/Anul2/Sem2/SO/Asignments/a1 -B /mnt/d/Facultate/Anul2/Anul2/Sem2/SO/Asignments/a1/cmake-build-debug-wsl
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /mnt/d/Facultate/Anul2/Anul2/Sem2/SO/Asignments/a1/cmake-build-debug-wsl

@@ -36,3 +36,6 @@ Depistarea de memory leak - uri
 
 **valgrind program arg1 arg2** - ne anunta doar daca s-au gasit memory leak-uri
 **valgrind --leak-check=full --show-leak-kinds=all program arg1 arg2** - liniile la care s-a alocat memorie care nu a fost mai apoi dealocata
+
+
+touch input2.txt

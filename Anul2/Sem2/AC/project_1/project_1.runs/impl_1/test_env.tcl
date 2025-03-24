@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.runs/impl_1/test_env.tcl"
+  variable script "D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.runs/impl_1/test_env.tcl"
   variable category "vivado_impl"
 }
 
@@ -124,10 +124,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 3
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 6  }
   open_checkpoint test_env_routed.dcp
-  set_property webtalk.parent_dir D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.cache/wt [current_project]
+  set_property webtalk.parent_dir D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.cache/wt [current_project]
 set_property TOP test_env [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

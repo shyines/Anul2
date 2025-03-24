@@ -35,9 +35,10 @@ entity test_new is
   Port (clk : in STD_LOGIC;
         btn : in STD_LOGIC_VECTOR (4 downto 0);
         sw : in STD_LOGIC_VECTOR (15 downto 0);
-        led : out STD_LOGIC_VECTOR (7 downto 0);
-        an : out STD_LOGIC_VECTOR (7 downto 0);
-        cat : out STD_LOGIC_VECTOR (6 downto 0));
+        led : out STD_LOGIC_VECTOR (7 downto 0)
+       -- an : out STD_LOGIC_VECTOR (7 downto 0);
+       -- cat : out STD_LOGIC_VECTOR (6 downto 0));
+       );
 end test_new;
 
 architecture Behavioral of test_new is

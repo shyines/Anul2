@@ -1,0 +1,73 @@
+;;INSTRUCTIUNI ASSEMBLY
+
+	SE PRESUPUNE CA TOATE REGISTRELE SUNT INITIAL 0, IAR MEMORIA ESTE INCARCATA DEJA CU TOT CE TREBUIE
+
+;;incarc INT_MAX in memorie la adresa 0 
+
+addi $0, $0, INT_MAX - adaug rezultatul dintre registrul la adresa 0 si val imediata INT_MAX in registrul la adresa 0
+addi $1, $1, 0 - adaug rezultatul dintre registrul la adresa 1 si val imediata 1 in registrul la adresa 1
+sw $0, 0($1) - stochez in memorie efectiva la adresa (offset(0) + $1 (1)) val registrului de la adresa 0 (INT_MAX)
+
+;;citesc din memorie numarul de elemente pe care sirul le are (N)
+
+addi $0, $0, 4 - adaug rezultatul dintre registrul la adresa 0 si val imediata 0 in registrul la adresa 0
+lw $1, 0($0) - incarc in $1 cuv de la adresa 4
+addi $2, $2, 0 - adaug rezultatul dintre registrul la adresa 2 si val imediata 0 in registrul la adresa 2
+addi $5, $5, 0
+;;incepem executia
+
+
+begin_loop: 
+	beq $1, $2, end_loop
+	lw $3, A_addr($2) ;; A_addr - 8
+	slt $4, $3, $0
+	bgtz $4, change_min
+	addi $2, $2, 1
+	j begin_loop	
+
+
+end_loop:
+	lw $3, A_addr($2) ;; A_addr - 8
+	slt $4, $3, $0
+	bgtz $4, change_min
+	sub $2, $2, 1
+
+
+change_min:
+	sw $3, 0($5)
+	lw $0, 0($5)
+	addi $2, $2, 1
+	j begin_loop
+
+
+
+
+
+
+
+
+
+
+
+
+$0 - val minima curenta
+$1 - nr de elemente din sir
+$2 - indicele din sirul de elemente
+$3 - elementul de pe pozitia indicelui
+$4 - flag-ul pentru mai mic
+$5 - adresa unde se stocheaza min
+compar $2 cu $1
+	daca da
+		compar cu $0
+			daca e mai mic stochez la adresa 0 si dupa incarc din adresa 0 in $0
+
+
+	altfel
+		se termina executia
+
+
+
+
+
+;;RTL
+	

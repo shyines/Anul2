@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\mat3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\mat3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\testMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\testMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\vec2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{63718AB1-F6EC-4860-9E8C-D16157A30CD0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\mat4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "vec2.h",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.h",
-              "RelativeDocumentMoniker": "Project1\\vec2.h",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.h",
-              "RelativeToolTip": "Project1\\vec2.h",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFYAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "mat3.h",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.h",
+              "RelativeDocumentMoniker": "Project1\\mat3.h",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.h",
+              "RelativeToolTip": "Project1\\mat3.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-05T13:34:00.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "vec2.cpp",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.cpp",
-              "RelativeDocumentMoniker": "Project1\\vec2.cpp",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec2.cpp",
-              "RelativeToolTip": "Project1\\vec2.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADEAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-05T12:36:57.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "vec4.h",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.h",
-              "RelativeDocumentMoniker": "Project1\\vec4.h",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.h",
-              "RelativeToolTip": "Project1\\vec4.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAF8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-05T13:04:37.607Z",
+              "WhenOpened": "2025-03-19T12:36:14.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "vec4.cpp",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.cpp",
-              "RelativeDocumentMoniker": "Project1\\vec4.cpp",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec4.cpp",
-              "RelativeToolTip": "Project1\\vec4.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-05T13:04:34.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "vec3.h",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.h",
-              "RelativeDocumentMoniker": "Project1\\vec3.h",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.h",
-              "RelativeToolTip": "Project1\\vec3.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAVAAAAAAAAAA==",
+              "Title": "transform.h",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.h",
+              "RelativeDocumentMoniker": "Project1\\transform.h",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.h",
+              "RelativeToolTip": "Project1\\transform.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-05T12:41:20.366Z",
+              "WhenOpened": "2025-03-19T12:09:21.61Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "vec3.cpp",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.cpp",
-              "RelativeDocumentMoniker": "Project1\\vec3.cpp",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\vec3.cpp",
-              "RelativeToolTip": "Project1\\vec3.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADAAAAAVAAAAAAAAAA==",
+              "Title": "transform.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.cpp",
+              "RelativeDocumentMoniker": "Project1\\transform.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\transform.cpp",
+              "RelativeToolTip": "Project1\\transform.cpp",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEQAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-05T13:14:05.6Z",
+              "WhenOpened": "2025-03-19T12:09:18.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\main.cpp",
-              "RelativeDocumentMoniker": "Project1\\main.cpp",
-              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\main.cpp",
-              "RelativeToolTip": "Project1\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "testMatrix.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\testMatrix.cpp",
+              "RelativeDocumentMoniker": "Project1\\testMatrix.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\testMatrix.cpp",
+              "RelativeToolTip": "Project1\\testMatrix.cpp",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-05T12:36:07.326Z",
+              "WhenOpened": "2025-03-18T10:44:39.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "mat4.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat4.cpp",
+              "RelativeDocumentMoniker": "Project1\\mat4.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat4.cpp",
+              "RelativeToolTip": "Project1\\mat4.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-18T10:37:17.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "mat3.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.cpp",
+              "RelativeDocumentMoniker": "Project1\\mat3.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\lab2\\Project1\\Project1\\mat3.cpp",
+              "RelativeToolTip": "Project1\\mat3.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-18T10:34:27.728Z",
               "EditorCaption": ""
             }
           ]

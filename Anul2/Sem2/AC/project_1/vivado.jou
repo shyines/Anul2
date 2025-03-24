@@ -3,14 +3,13 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Mar  3 17:03:51 2025
-# Process ID: 1496
-# Current directory: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11540 D:\Facultate\Anul2\Anul2\Sem2\ACLab\project_1\project_1.xpr
-# Log file: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/vivado.log
-# Journal file: D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1\vivado.jou
+# Start of session at: Mon Mar 10 17:39:51 2025
+# Process ID: 13488
+# Current directory: D:/Facultate/Anul2/Anul2/Sem2/AC/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17824 D:\Facultate\Anul2\Anul2\Sem2\AC\project_1\project_1.xpr
+# Log file: D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/vivado.log
+# Journal file: D:/Facultate/Anul2/Anul2/Sem2/AC/project_1\vivado.jou
 # Running On: DESKTOP-2R1EJAP, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 33885 MB
 #-----------------------------------------------------------
 start_gui
-open_project D:/Facultate/Anul2/Anul2/Sem2/ACLab/project_1/project_1.xpr
-update_compile_order -fileset sources_1
+open_project D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.xpr

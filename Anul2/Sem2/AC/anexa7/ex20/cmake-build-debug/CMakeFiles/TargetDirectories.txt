@@ -1,0 +1,3 @@
+/mnt/d/Facultate/Anul2/Anul2/Sem2/AC/anexa7/ex20/cmake-build-debug/CMakeFiles/ex20.dir
+/mnt/d/Facultate/Anul2/Anul2/Sem2/AC/anexa7/ex20/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Facultate/Anul2/Anul2/Sem2/AC/anexa7/ex20/cmake-build-debug/CMakeFiles/rebuild_cache.dir
