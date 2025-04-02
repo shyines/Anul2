@@ -34,28 +34,33 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity test_env is
   Port (clk : in STD_LOGIC;
-        btn : in STD_LOGIC_VECTOR (2 downto 0);
+        sw: in std_logic_vector(7 downto 0);
+        led: out std_logic_vector (7 downto 0);
+        btn: in STD_LOGIC_vector(1 downto 0);
         an : out STD_LOGIC_VECTOR (3 downto 0);
-        cat : out STD_LOGIC_VECTOR (6 downto 0);
-        led: out std_logic_vector(4 downto 0));
+        cat : out STD_LOGIC_VECTOR (6 downto 0)
+       );
 end test_env;
 
 architecture Behavioral of test_env is
 
-signal cnt : std_logic_vector (4 downto 0) := (others => '0');
-signal en : STD_LOGIC := '0';
-signal en_register_write: std_logic := '0';
-signal s_digits: std_logic_vector (15 downto 0) := (others => '0');
-signal rd1: std_logic_vector (15 downto 0) := (others => '0');
-signal rd2: std_logic_vector (15 downto 0) := (others => '0');
-signal wd: std_logic_vector (15 downto 0) := (others => '0');
-
+signal s_instruction: std_logic_vector(15 downto 0);
+signal s_pc: std_logic_vector(15 downto 0);
+signal s_en: std_logic;
+signal s_digits: std_logic_vector(15 downto 0);
+signal s_rst: std_logic;
 --componentele: MPG-UL SI SSD-UL
 
-component MPG
-    port (enable : out STD_LOGIC;
-           btn : in STD_LOGIC;
-           clk : in STD_LOGIC
+component I_Fetch
+    port (rst: in std_logic;
+        clk: in std_logic;
+        jump_address: in std_logic_vector (15 downto 0);
+        branch_address: in std_logic_vector(15 downto 0);
+        jump: in std_logic;
+        PCSrc: in std_logic;
+        PC: out std_logic_vector (15 downto 0);
+        en: in std_logic;
+        instruction: out std_logic_vector(15 downto 0)
     );
 end component;
 
@@ -67,28 +72,33 @@ component SSD
         clk: in std_logic);
 end component;
 
-component register_file 
-    port (
-           clk: in std_logic;
-           reg_write: in std_logic; 
-           read_addr_1: in std_logic_vector(4 downto 0);
-           read_addr_2: in std_logic_vector(4 downto 0);
-           write_addr: in std_logic_vector(4 downto 0);
-           write_data: in std_logic_vector(15 downto 0);
-           read_data_1: out std_logic_vector(15 downto 0);
-           read_data_2: out std_logic_vector(15 downto 0)
-          );
+component mpg
+    Port ( enable : out STD_LOGIC;
+           btn : in STD_LOGIC;
+           clk : in STD_LOGIC);
 end component;
 
 begin
-mpg_cnt: MPG port map (
-    enable => en,
+inst_IF: I_Fetch port map (
+    rst => s_rst,
+    clk => clk,
+    jump_address => X"0004",
+    branch_address => X"0000",
+    jump => sw(0),
+    PCSrc => sw(1),
+    PC => s_pc,
+    en => s_en,
+    instruction => s_instruction
+);
+
+mpg_i_fetch: mpg port map (
+    enable => s_en,
     btn => btn(0),
     clk => clk
 );
 
-mpg_reg_file: mpg port map (
-    enable => en_register_write,
+mpg_rst: mpg port map (
+    enable => s_rst,
     btn => btn(1),
     clk => clk
 );
@@ -100,41 +110,11 @@ SevenSegmentDisplay: SSD port map (
     clk => clk 
 );
 
-reg_file: register_file port map (
-    clk => clk,
-    reg_write => en_register_write,
-    read_addr_1 => cnt,
-    read_addr_2 => cnt,
-    write_addr => cnt,
-    write_data => wd,
-    read_data_1 => rd1,
-    read_data_2 => rd2
-);
-
----En counter
-
-process(CLK)
-begin
-if rising_edge(CLK) then
-    if en = '1' then      
-        CNT <= CNT + 1;
-    end if;
-end if;
-
-if(btn(2) = '1') then
-   cnt <= "00000";
-end if;
-end process;
-
-led <= cnt;
-
-process(clk)
-begin
-    if(rising_edge(clk))then
-        s_digits <= rd1 + rd2;
-        wd <= s_digits;
-    end if;
-end process;
-
-
+with sw(7) select
+    s_digits <= s_pc when '1',
+                s_instruction when '0',
+                (others => 'X') when others;
+    led(7) <= sw(7);
+    led(0) <= sw(0);
+    led(1) <= sw(1);
 end Behavioral;
