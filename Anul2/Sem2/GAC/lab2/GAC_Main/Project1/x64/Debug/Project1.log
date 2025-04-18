@@ -1,1 +1,18 @@
-﻿  Project1.vcxproj -> D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\Project1\x64\Debug\Project1.exe
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol SDL_GetError referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_GetDisplayContentScale referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "void __cdecl destroyWindow(void)" (?destroyWindow@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_GetMouseState referenced in function SDL_main
+main.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function SDL_main
+main.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "void __cdecl destroyWindow(void)" (?destroyWindow@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_Log referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_RunApp referenced in function wWinMain
+main.obj : error LNK2019: unresolved external symbol SDL_CreateWindowAndRenderer referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_SetRenderScale referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "bool __cdecl initWindow(void)" (?initWindow@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_RenderLine referenced in function SDL_main
+main.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function SDL_main
+main.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "void __cdecl destroyWindow(void)" (?destroyWindow@@YAXXZ)
+D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\x64\Debug\Project1.exe : fatal error LNK1120: 16 unresolved externals

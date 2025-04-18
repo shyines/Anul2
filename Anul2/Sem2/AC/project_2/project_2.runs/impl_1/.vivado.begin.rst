@@ -1,10 +1,25 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="7892" HostCore="12" HostMemory="033885753344">
+    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="5528" HostCore="12" HostMemory="033885753344">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="9356" HostCore="12" HostMemory="033885753344">
+    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="8012" HostCore="12" HostMemory="033885753344">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="24264" HostCore="12" HostMemory="033885753344">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="20916" HostCore="12" HostMemory="033885753344">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="matei" Host="DESKTOP-2R1EJAP" Pid="4268" HostCore="12" HostMemory="033885753344">
     </Process>
 </ProcessHandle>

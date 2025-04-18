@@ -19,12 +19,12 @@
 /*******************************************************************************************************************/
 
 #include <iostream>
-#include <SDL3/SDL.h>
+#include "SDL3/SDL.h"
 #include "clip.h"
+#include "clipCB.h"
 
 using namespace egc;
 
-// define rectangle vertices
 vec3 p1{ 0.0f, 0.0f, 1.0f };
 vec3 p2{ 0.0f, 0.0f, 1.0f };
 
@@ -125,7 +125,7 @@ int main(int argc, char* argv[]) {
 	initClipWindow();
 
 	std::cout << "Draw the line you want to clip witha drang-n-drop mouse action!" << "\n";
-	std::cout << "Press the \'c\' key to apply the Cohen-Sutherland clipping algorithm!" << "\n\n";
+	std::cout << "Press the \'c\' key to apply the Cyrus-Beck clipping algorithm!" << "\n\n";
 
 	SDL_zero(currentEvent);
 
@@ -174,9 +174,9 @@ int main(int argc, char* argv[]) {
 				switch (currentEvent.key.key)
 				{
 				case SDLK_C:
-					std::cout << "Applying Cohen-Sutherland clipping" << "\n";
-					//Applies the Cohen-Sutherland clipping algorithm -> implemented by you
-					if (lineClip_CohenSutherland(clipWindow, p1, p2) == -1)
+					std::cout << "Applying Cyrus-Beck clipping" << "\n";
+					//Applies the Cyrus-Beck clipping algorithm -> implemented by you
+					if (lineClip_CyrusBeck(clipWindow, p1, p2) == -1)
 						p1.x = p2.x = p1.y = p2.y = 0.0f;
 					break;
 				case SDLK_ESCAPE:

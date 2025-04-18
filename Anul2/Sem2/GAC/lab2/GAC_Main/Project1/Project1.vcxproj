@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_2;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_3;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_4;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_6;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\SDL3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_2;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_3;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_4;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_6;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\SDL3\include;D:\Facultate\Anul2\Anul2\Sem2\GAC\lab2\GAC_Main\Project1\include_lab_7;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +136,7 @@
     <ClCompile Include="src_lab_3\mat3.cpp" />
     <ClCompile Include="src_lab_3\mat4.cpp" />
     <ClCompile Include="src_lab_4\transform.cpp" />
+    <ClCompile Include="src_lab_7\clipCB.cpp" />
     <ClCompile Include="testMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,8 @@
     <ClInclude Include="include_lab_3\mat4.h" />
     <ClInclude Include="include_lab_4\transform.h" />
     <ClInclude Include="include_lab_6\clip.h" />
+    <ClInclude Include="include_lab_7\clipCB.h" />
+    <ClInclude Include="SDL3\include\SDL3\SDL.h" />
     <ClInclude Include="testMatrix.h" />
     <ClInclude Include="testTransform.h" />
   </ItemGroup>

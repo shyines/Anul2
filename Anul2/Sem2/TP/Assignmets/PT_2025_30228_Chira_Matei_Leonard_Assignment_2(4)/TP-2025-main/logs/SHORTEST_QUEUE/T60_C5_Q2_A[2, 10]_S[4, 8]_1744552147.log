@@ -1,0 +1,99 @@
+Clock: 0
+Waiting clients: [(1, 4, 4), (2, 9, 6), (3, 2, 6), (4, 2, 5), (5, 5, 5)]
+Queue 0:empty
+Queue 1:empty
+
+Clock: 1
+Waiting clients: [(1, 4, 4), (2, 9, 6), (3, 2, 6), (4, 2, 5), (5, 5, 5)]
+Queue 0:empty
+Queue 1:empty
+
+Clock: 2
+Waiting clients: [(1, 4, 4), (2, 9, 6), (5, 5, 5)]
+Queue 0:[(3, 2, 6)]
+Queue 1:[(4, 2, 5)]
+
+Clock: 3
+Waiting clients: [(1, 4, 4), (2, 9, 6), (5, 5, 5)]
+Queue 0:[(3, 2, 5)]
+Queue 1:[(4, 2, 4)]
+
+Clock: 4
+Waiting clients: [(2, 9, 6), (5, 5, 5)]
+Queue 0:[(3, 2, 4), (1, 4, 4)]
+Queue 1:[(4, 2, 3)]
+
+Clock: 5
+Waiting clients: [(2, 9, 6)]
+Queue 0:[(3, 2, 3), (1, 4, 4)]
+Queue 1:[(4, 2, 2), (5, 5, 5)]
+
+Clock: 6
+Waiting clients: [(2, 9, 6)]
+Queue 0:[(3, 2, 2), (1, 4, 4)]
+Queue 1:[(4, 2, 1), (5, 5, 5)]
+
+Clock: 7
+Waiting clients: [(2, 9, 6)]
+Queue 0:[(3, 2, 1), (1, 4, 4)]
+Queue 1:[(5, 5, 5)]
+
+Clock: 8
+Waiting clients: [(2, 9, 6)]
+Queue 0:[(1, 4, 4)]
+Queue 1:[(5, 5, 4)]
+
+Clock: 9
+Waiting clients: []
+Queue 0:[(1, 4, 3), (2, 9, 6)]
+Queue 1:[(5, 5, 3)]
+
+Clock: 10
+Waiting clients: []
+Queue 0:[(1, 4, 2), (2, 9, 6)]
+Queue 1:[(5, 5, 2)]
+
+Clock: 11
+Waiting clients: []
+Queue 0:[(1, 4, 1), (2, 9, 6)]
+Queue 1:[(5, 5, 1)]
+
+Clock: 12
+Waiting clients: []
+Queue 0:[(2, 9, 6)]
+Queue 1:empty
+
+Clock: 13
+Waiting clients: []
+Queue 0:[(2, 9, 5)]
+Queue 1:empty
+
+Clock: 14
+Waiting clients: []
+Queue 0:[(2, 9, 4)]
+Queue 1:empty
+
+Clock: 15
+Waiting clients: []
+Queue 0:[(2, 9, 3)]
+Queue 1:empty
+
+Clock: 16
+Waiting clients: []
+Queue 0:[(2, 9, 2)]
+Queue 1:empty
+
+Clock: 17
+Waiting clients: []
+Queue 0:[(2, 9, 1)]
+Queue 1:empty
+
+Clock: 18
+Waiting clients: []
+Queue 0:empty
+Queue 1:empty
+
+Average waiting time: 4.40
+AverageServiceTime: 5.20
+Peak hour: 5
+

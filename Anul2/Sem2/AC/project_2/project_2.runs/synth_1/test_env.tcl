@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -86,9 +87,12 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.srcs/sources_1/new/ID.vhd
   D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.srcs/sources_1/new/I_Fetch.vhd
   D:/Facultate/Anul2/Anul2/Sem2/AC/Lab1/MPG.vhd
   D:/Facultate/Anul2/Anul2/Sem2/AC/project_1/project_1.srcs/sources_1/new/SSD.vhd
+  D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.srcs/sources_1/new/UC.vhd
+  D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.srcs/sources_1/new/register_file.vhd
   D:/Facultate/Anul2/Anul2/Sem2/AC/Lab1/test_env.vhd
 }
 OPTRACE "Adding files" END { }

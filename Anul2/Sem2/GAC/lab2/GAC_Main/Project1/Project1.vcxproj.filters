@@ -42,6 +42,9 @@
     <ClCompile Include="clip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src_lab_7\clipCB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="testMatrix.h">
@@ -69,6 +72,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include_lab_6\clip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include_lab_7\clipCB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL3\include\SDL3\SDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,9 +35,9 @@ entity register_file is
     port ( 
            clk: in std_logic;
            reg_write: in std_logic; 
-           read_addr_1: in std_logic_vector(4 downto 0);
-           read_addr_2: in std_logic_vector(4 downto 0);
-           write_addr: in std_logic_vector(4 downto 0);
+           read_addr_1: in std_logic_vector(2 downto 0);
+           read_addr_2: in std_logic_vector(2 downto 0);
+           write_addr: in std_logic_vector(2 downto 0);
            write_data: in std_logic_vector(15 downto 0);
            read_data_1: out std_logic_vector(15 downto 0);
            read_data_2: out std_logic_vector(15 downto 0)
@@ -46,12 +46,7 @@ end register_file;
 
 architecture Behavioral of register_file is
 type registers is array(0 to 4) of std_logic_vector(15 downto 0);
-signal regs: registers := (
-    X"0001",
-    X"0201",
-    X"2402",
-    X"1003",
-others => X"0000");
+signal regs: registers := (others => X"0000");
 
 begin
     process(clk)

@@ -60,6 +60,8 @@
 #include <SDL3/SDL_loadso.h>
 #include <SDL3/SDL_locale.h>
 #include <SDL3/SDL_log.h>
+#include <SDL3/SDL_main.h>
+#include <SDL3/SDL_main_impl.h>
 #include <SDL3/SDL_messagebox.h>
 #include <SDL3/SDL_metal.h>
 #include <SDL3/SDL_misc.h>

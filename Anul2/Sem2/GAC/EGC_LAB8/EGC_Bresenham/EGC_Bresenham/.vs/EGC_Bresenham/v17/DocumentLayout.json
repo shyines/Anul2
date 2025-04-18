@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|solutionrelative:EGC_Bresenham\\bresenham.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|solutionrelative:EGC_Bresenham\\bresenham.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{842E4847-F111-490E-9BF7-8FDC9A61EE51}|EGC_Bresenham\\EGC_Bresenham.vcxproj|solutionrelative:EGC_Bresenham\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\main.cpp",
+              "RelativeDocumentMoniker": "EGC_Bresenham\\main.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\main.cpp",
+              "RelativeToolTip": "EGC_Bresenham\\main.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T11:26:54.901Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "bresenham.cpp",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.cpp",
+              "RelativeDocumentMoniker": "EGC_Bresenham\\bresenham.cpp",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.cpp",
+              "RelativeToolTip": "EGC_Bresenham\\bresenham.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-16T11:27:15.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "bresenham.h",
+              "DocumentMoniker": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.h",
+              "RelativeDocumentMoniker": "EGC_Bresenham\\bresenham.h",
+              "ToolTip": "D:\\Facultate\\Anul2\\Anul2\\Sem2\\GAC\\EGC_LAB8\\EGC_Bresenham\\EGC_Bresenham\\EGC_Bresenham\\bresenham.h",
+              "RelativeToolTip": "EGC_Bresenham\\bresenham.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T11:27:00.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
