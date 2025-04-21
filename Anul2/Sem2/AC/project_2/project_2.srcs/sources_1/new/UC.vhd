@@ -63,10 +63,10 @@ begin
                 MemtoReg <= '0';
                 RegWrite <= '1';
             when "001" => --ADDI
-                ALUOp <= "000";
-                RegDst <= '1';
-                ExtOp <= 'X';
-                ALUSrc <= '0';
+                ALUOp <= "001";
+                RegDst <= '0';
+                ExtOp <= '1';
+                ALUSrc <= '1';
                 Branch <= '0';
                 Jump <= '0';
                 MemWrite <= '0';
@@ -81,7 +81,7 @@ begin
                 Jump <= '0';
                 MemWrite <= '1';
                 MemtoReg <= 'X';
-                RegWrite <= '1';
+                RegWrite <= '0';
              when "010" => --LW
                 ALUOp <= "001";
                 RegDst <= '0';

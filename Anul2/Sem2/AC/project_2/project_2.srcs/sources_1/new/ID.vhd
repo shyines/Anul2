@@ -42,7 +42,11 @@ entity ID is
            RD2: out std_logic_vector(15 downto 0);
            Ext_imm: out std_logic_vector(15 downto 0);
            func: out std_logic_vector(2 downto 0);
-           sa: out std_logic
+           sa: out std_logic;
+           debugSignal_ID: in std_logic;
+           enable_ID: in std_logic;
+           rst_ID: in std_logic;
+           DebugReg_ID: out std_logic_vector(15 downto 0)
            );
 end ID;
 
@@ -57,7 +61,11 @@ component register_file is
            write_addr: in std_logic_vector(2 downto 0);
            write_data: in std_logic_vector(15 downto 0);
            read_data_1: out std_logic_vector(15 downto 0);
-           read_data_2: out std_logic_vector(15 downto 0)
+           read_data_2: out std_logic_vector(15 downto 0);
+           debugSignal: in std_logic;
+           enable: in std_logic;
+           rst: in std_logic;
+           DebugReg: out std_logic_vector(15 downto 0)
            );
 end component;
 
@@ -70,8 +78,8 @@ begin
                         (others => 'X') when others;
                         
                         
-    Ext_imm(7 downto 0) <= Instr(7 downto 0);
-    Ext_imm(15 downto 8) <= (others => Instr(15)) when ExtOp = '1' else
+    Ext_imm(6 downto 0) <= Instr(6 downto 0);
+    Ext_imm(15 downto 7) <= (others => Instr(15)) when ExtOp = '1' else
                             (others => '0');
     
     func <= instr(2 downto 0);
@@ -85,7 +93,11 @@ reg_file: register_file port map(
     write_addr => WriteAddress,
     write_data => WD,
     read_data_1 => RD1,
-    read_data_2 => RD2  
+    read_data_2 => RD2,
+    debugSignal => debugSignal_ID,
+    enable => enable_ID,
+    rst => rst_id,
+    DebugReg => debugreg_id
 );
 
 end Behavioral;

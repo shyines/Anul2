@@ -40,13 +40,18 @@ entity register_file is
            write_addr: in std_logic_vector(2 downto 0);
            write_data: in std_logic_vector(15 downto 0);
            read_data_1: out std_logic_vector(15 downto 0);
-           read_data_2: out std_logic_vector(15 downto 0)
+           read_data_2: out std_logic_vector(15 downto 0);
+           debugSignal: in std_logic;
+           enable: in std_logic;
+           rst: in std_logic;
+           DebugReg: out std_logic_vector(15 downto 0)
            );
 end register_file;
 
 architecture Behavioral of register_file is
-type registers is array(0 to 4) of std_logic_vector(15 downto 0);
+type registers is array(0 to 5) of std_logic_vector(15 downto 0);
 signal regs: registers := (others => X"0000");
+signal debugCount: std_logic_vector(5 downto 0);
 
 begin
     process(clk)
@@ -58,6 +63,17 @@ begin
             end if;
             read_data_1 <= regs(conv_integer(read_addr_1));
             read_data_2 <= regs(conv_integer(read_addr_2));
+            
+            if(debugSignal = '1') then
+        if(rising_edge(clk)) then
+            if(rst = '1') then
+                debugCount <= "000000";
+            elsif (rst = '0' and enable = '1') then
+                debugCount <= debugCount + 1;
+                DebugReg <= regs(conv_integer(debugCount));
+            end if;
+            end if;
+    end if;
     end process;
 
 end Behavioral;

@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ExectionUnit is
+entity ExecutionUnit is
   Port (AluOp: in std_logic_vector(2 downto 0);
         func: in std_logic_vector(2 downto 0);
         sa: in std_logic;
@@ -43,12 +43,13 @@ entity ExectionUnit is
         zero: out std_logic;
         pc: in std_logic_vector (15 downto 0);
         branch_address: out std_logic_vector (15 downto 0));
-end ExectionUnit;
+end ExecutionUnit;
 
-architecture Behavioral of ExectionUnit is
+architecture Behavioral of ExecutionUnit is
 
 signal AluIn2: std_logic_vector (15 downto 0);
 signal AluCtrl: std_logic_vector (2 downto 0);
+signal s_alures: std_logic_vector (15 downto 0);
 begin
 --mux: either a immediate opp or a register opp
 with AluSrc select
@@ -73,7 +74,7 @@ process(AluOp, func)
                     when "111" => AluCtrl <= "111"; --SLT
                     when others => AluCtrl <= (others => 'X'); --undefined
                 end case;
-             when "001" => AluCtrl <= "000"; --+
+             when "001" => AluCtrl <= "000"; -- +
              when "010" => AluCtrl <= "001"; -- -
              when "101" => AluCtrl <= "100"; -- &
              when "110" => AluCtrl <= "101"; -- |
@@ -81,28 +82,35 @@ process(AluOp, func)
         end case;
 end process;
 
+
+
 process(AluCtrl, Rd1, AluIn2, sa)
     begin
         case AluCtrl is
             when "000" => -- add
-                AluRes <= Rd1 + AluIn2;
+                s_alures <= Rd1 + AluIn2;
             when "001" => -- sub
-                AluRes <= Rd1 - AluIn2;
+                s_alures <= Rd1 - AluIn2;
             when "010" => -- sll
-                AluRes <= to_stdlogicvector(to_bitvector(rd1) sll conv_integer(AluIn2));
+                s_alures <= to_stdlogicvector(to_bitvector(rd1) sll conv_integer(AluIn2));
             when "011" => -- srl
-                AluRes <= to_stdlogicvector(to_bitvector(rd1) srl conv_integer(AluIn2));
+                s_alures <= to_stdlogicvector(to_bitvector(rd1) srl conv_integer(AluIn2));
             when "100" => -- and
-                AluRes <= Rd1 and AluIn2;
+                s_alures <= Rd1 and AluIn2;
             when "101" => -- or
-                AluRes <= Rd1 or AluIn2;
+                s_alures <= Rd1 or AluIn2;
             when "110" =>
-                AluRes <= Rd1 xor AluIn2;
+                s_alures <= Rd1 xor AluIn2;
             when others =>
-                AluRes <= (others => 'X');
+                s_alures <= (others => 'X');
         end case;
 end process;
 
-branch_address <= pc + ext_imm;
+--result of the opperations
+AluRes <= s_alures;
 
+branch_address <= pc + 1 + ext_imm(13 downto 0);
+
+--we deduce the zero signal
+zero <= '1' when s_alures = 0 else '0';
 end Behavioral;

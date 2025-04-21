@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu Apr 17 21:01:11 2025
-# Process ID: 8032
+# Start of session at: Mon Apr 21 10:50:29 2025
+# Process ID: 19668
 # Current directory: D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.runs/impl_1
 # Command line: vivado.exe -log test_env.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_env.tcl -notrace
 # Log file: D:/Facultate/Anul2/Anul2/Sem2/AC/project_2/project_2.runs/impl_1/test_env.vdi
